@@ -10,7 +10,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 
 gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.5'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -19,5 +18,3 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
-gem 'react-rails', '2.2.0'
