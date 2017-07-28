@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import ArticlesIndex from '../components/containers/articles/index'
 
@@ -7,7 +8,11 @@ class Base extends React.Component {
 
     render() {
         return (
-            <ArticlesIndex />
+            <Router>
+                <div>
+                    <Route exact path="/articles" component={ArticlesIndex}/>
+                </div>
+            </Router>
         )
     }
 }
