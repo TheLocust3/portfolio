@@ -1,24 +1,9 @@
-# README
+# Portfolio
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository is a complete redo to my current [blog](jakekinsella.com). This time, making full use of React, Redux, and Webpacker. The idea is that this new site will both show off my work and blog posts.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## TODO
+- Articles
+- Portfolio section
+- Admin page
+- Make it look nice
