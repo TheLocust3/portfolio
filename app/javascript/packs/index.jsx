@@ -19,9 +19,10 @@ class Base extends React.Component {
             <Provider store={store}>
                 <Router>
                     <div>
+                        <Route exact path="/admin/articles/new" component={ArticlesNew}/>
+                        <Route exact path="/admin/articles/:id/edit" component={ArticlesEdit}/>
+
                         <Route exact path="/articles" component={ArticlesIndex}/>
-                        <Route exact path="/articles/new" component={ArticlesNew}/>
-                        <Route exact path="/articles/:id/edit" component={ArticlesEdit}/>
                         <Route exact path="/articles/:id" component={ArticlesShow}/>
                     </div>
                 </Router>

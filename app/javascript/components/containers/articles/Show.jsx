@@ -5,7 +5,7 @@ class Show extends React.Component {
     render() {
         return (
             <div>
-                Show Article
+                Show Article: {this.props.match.params['id']}
             </div>
         )
     }
