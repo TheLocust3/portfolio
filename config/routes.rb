@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  resources :articles
-  get 'admin/articles/new' => 'articles#new'
-  get 'admin/articles/:id/edit' => 'articles#edit'
+  get '*path', to: 'root#index'
 
   namespace :api do
     resources :articles
