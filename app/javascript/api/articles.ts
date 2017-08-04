@@ -1,43 +1,86 @@
 import $ from 'jquery'
+import ApiObject from './api'
 
-export function getAllArticles() {
-    return new Promise((resolve, reject) => {
-        $.ajax('/api/v1/articles/', {
-            type: 'get',
-            success: resolve,
-            error: reject
-        });
-    });
-}
+export default class Article extends ApiObject {
+    private _title: string;
+    private _text: string;
 
-export function getArticle(id) {
-    return new Promise((resolve, reject) => {
-        $.ajax(`/api/v1/articles/${id}`, {
-            type: 'get',
-            success: resolve,
-            error: reject
-        });
-    });
-}
+    constructor(id: number, title: string, text: string) {
+        super(id);
 
-export function createArticle(name, text) {
-    return new Promise((resolve, reject) => {
-        $.ajax('/api/v1/articles/new', {
-            type: 'get',
-            data: { name: name, text: text },
-            success: resolve,
-            error: reject
-        });
-    });
-}
+        this._title = title;
+        this._text = text
+    }
 
-export function updateArticle(id, name, text) {
-    return new Promise((resolve, reject) => {
-        $.ajax(`/api/v1/articles/${id}/edit`, {
-            type: 'get',
-            data: { name: name, text: text },
-            success: resolve,
-            error: reject
+    static all(): Promise<Article[]> {
+        return new Promise((resolve, reject) => {
+            $.ajax('/api/articles/', {
+                type: 'get',
+                success: resolve,
+                error: reject
+            });
+        }).then((response: any) => {
+            return response.map((article) => {
+                return new Article(article.id, article.title, article.text);
+            })
         });
-    });
+    }
+
+    static get(id: number): Promise<Article> {
+        return new Promise((resolve, reject) => {
+            $.ajax(`/api/articles/${id}`, {
+                type: 'get',
+                success: resolve,
+                error: reject
+            });
+        }).then((response: any) => {
+            return new Article(response.id, response.title, response.text);
+        });
+    }
+
+    get title(): string {
+        return this._title;
+    }
+
+    set title(title: string) {
+        this._title = title;
+    }
+
+    get text(): string {
+        return this._text;
+    }
+
+    set text(text: string) {
+        this._text = text;
+    }
+
+    save(): Promise<any> {
+        if (this.id == null) {
+            return this.saveCreate();
+        } else {
+            return this.saveUpdate();
+        }
+    }
+
+    private saveCreate(): Promise<any> {
+        return new Promise((resolve, reject) => {
+            $.ajax('/api/articles', {
+                type: 'post',
+                data: { title: this.title, text: this.text },
+                success: resolve,
+                error: reject
+            });
+        });
+    }
+
+    private saveUpdate(): Promise<any> {
+        return new Promise((resolve, reject) => {
+            $.ajax(`/api/articles/${this.id}`, {
+                type: 'patch',
+                data: { title: this.title, text: this.text },
+                success: resolve,
+                error: reject
+            });
+        });
+    }
 }

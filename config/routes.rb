@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get '*path', to: 'root#index'
-
   namespace :api do
     resources :articles
   end
+
+  get '*path', to: 'root#index'
 end

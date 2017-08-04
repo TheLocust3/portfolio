@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import thunkMiddleware from 'redux-thunk'
 
 import reducer from '../components/reducers/root_reducer';
 import ArticlesIndex from '../components/containers/articles/Index.tsx';
@@ -10,7 +11,7 @@ import ArticlesNew from '../components/containers/articles/New.tsx';
 import ArticlesEdit from '../components/containers/articles/Edit.tsx';
 import ArticlesShow from '../components/containers/articles/Show.tsx';
 
-let store = createStore(reducer);
+let store = createStore(reducer, applyMiddleware(thunkMiddleware));
 
 class Base extends React.Component {
 
