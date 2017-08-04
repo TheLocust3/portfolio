@@ -1,14 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-class Index extends React.Component {
+class Index extends React.Component<any, any> {
 
     render() {
         return (
             <div>
                 Articles Index
             </div>
-        )
+        );
     }
 }
 
-export default Index
+export default Index;
