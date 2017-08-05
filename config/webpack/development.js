@@ -15,6 +15,10 @@ module.exports = merge(sharedConfig, {
     pathinfo: true
   },
 
+  resolve: {
+      extensions: ['.ts', '.tsx']
+  },
+
   devServer: {
     clientLogLevel: 'none',
     https: settings.dev_server.https,

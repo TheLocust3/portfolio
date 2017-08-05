@@ -1,5 +1,5 @@
-import $ from 'jquery'
-import ApiObject from './api'
+import $ from 'jquery';
+import ApiObject from './api';
 
 export default class Article extends ApiObject {
     private _title: string;

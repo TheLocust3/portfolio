@@ -1,4 +1,4 @@
-import Article from '../api/articles'
+import Article from '../api/articles';
 
 export interface StoreState {
     articles: ArticleStoreState;

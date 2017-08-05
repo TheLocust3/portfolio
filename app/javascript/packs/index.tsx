@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Redux, { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import thunkMiddleware from 'redux-thunk'
+import thunkMiddleware from 'redux-thunk';
 
 import reducer from '../components/reducers/root_reducer';
-import ArticlesIndex from '../components/containers/articles/Index.tsx';
-import ArticlesNew from '../components/containers/articles/New.tsx';
-import ArticlesEdit from '../components/containers/articles/Edit.tsx';
-import ArticlesShow from '../components/containers/articles/Show.tsx';
+import ArticlesIndex from '../components/containers/articles/Index';
+import ArticlesNew from '../components/containers/articles/New';
+import ArticlesEdit from '../components/containers/articles/Edit';
+import ArticlesShow from '../components/containers/articles/Show';
 import { StoreState } from "../types/store_state";
 
 const store: Redux.Store<StoreState> = createStore<StoreState>(reducer, applyMiddleware(thunkMiddleware));

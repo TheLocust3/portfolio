@@ -1,6 +1,6 @@
-import { createActions } from 'redux-actions'
+import { createActions } from 'redux-actions';
 
-import Article from '../../api/articles'
+import Article from '../../api/articles';
 
 export const articleActions = createActions({
     ARTICLES: {

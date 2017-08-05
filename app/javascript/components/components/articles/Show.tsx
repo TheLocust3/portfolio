@@ -1,7 +1,7 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
-import { ConnectedState, ConnectedDispatch } from '../../containers/articles/Show'
+import { ConnectedState, ConnectedDispatch } from '../../containers/articles/Show';
 
 class Show extends React.Component<ConnectedState & ConnectedDispatch & RouteComponentProps, any> {
 

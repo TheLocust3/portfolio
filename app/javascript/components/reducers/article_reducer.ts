@@ -1,7 +1,7 @@
-import Redux from 'redux'
-import { handleActions } from 'redux-actions'
+import Redux from 'redux';
+import { handleActions } from 'redux-actions';
 
-import { ArticleStoreState } from '../../types/store_state'
+import { ArticleStoreState } from '../../types/store_state';
 
 const defaultState: ArticleStoreState = { isReady: false, articles: [], article: null };
 
@@ -15,4 +15,4 @@ const reducer: Redux.Reducer<ArticleStoreState> = handleActions({
     })
 }, defaultState);
 
-export default reducer
+export default reducer;

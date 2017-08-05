@@ -1,9 +1,9 @@
-import Redux, { connect } from 'react-redux'
+import Redux, { connect } from 'react-redux';
 
-import { StoreState } from '../../../types/store_state'
-import { articleRequests } from '../../actions/article_actions'
+import { StoreState } from '../../../types/store_state';
+import { articleRequests } from '../../actions/article_actions';
 import Article from "../../../api/articles";
-import Index from '../../components/articles/Index.tsx'
+import Index from '../../components/articles/Index';
 
 export interface ConnectedState {
     isReady: boolean;
@@ -14,7 +14,7 @@ export interface ConnectedDispatch {
     getAllArticles: () => void;
 }
 
-const mapStateToProps = (state: StoreState, ownProps: any): ConnectedState => ({
+const mapStateToProps = (state: StoreState): ConnectedState => ({
     isReady: state.articles.isReady,
     articles: state.articles.articles
 });

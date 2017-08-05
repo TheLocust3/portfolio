@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ConnectedState, ConnectedDispatch } from '../../containers/articles/New'
+import { ConnectedState, ConnectedDispatch } from '../../containers/articles/New';
 
 class New extends React.Component<ConnectedState & ConnectedDispatch, any> {
 
