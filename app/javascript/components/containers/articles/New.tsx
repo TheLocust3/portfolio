@@ -2,7 +2,7 @@ import React from 'react';
 
 class New extends React.Component<any, any> {
 
-    render() {
+    render(): JSX.Element {
         return (
             <div>
                 New Article

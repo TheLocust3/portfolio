@@ -8,7 +8,7 @@ class Show extends React.Component<RouteComponentProps, any> {
         super(props)
     }
 
-    render() {
+    render(): JSX.Element {
         return (
             <div>
                 Show Article: {this.props.match.params['id']}

@@ -7,7 +7,7 @@ class Edit extends React.Component<RouteComponentProps, any> {
         super(props)
     }
 
-    render() {
+    render(): JSX.Element {
         return (
             <div>
                 Edit Article: {this.props.match.params['id']}

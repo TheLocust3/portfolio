@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { createStore, applyMiddleware } from 'redux';
+import Redux, { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk'
 
@@ -10,12 +10,13 @@ import ArticlesIndex from '../components/containers/articles/Index.tsx';
 import ArticlesNew from '../components/containers/articles/New.tsx';
 import ArticlesEdit from '../components/containers/articles/Edit.tsx';
 import ArticlesShow from '../components/containers/articles/Show.tsx';
+import { StoreState } from "../types/store_state";
 
-let store = createStore(reducer, applyMiddleware(thunkMiddleware));
+const store: Redux.Store<StoreState> = createStore<StoreState>(reducer, applyMiddleware(thunkMiddleware));
 
 class Base extends React.Component {
 
-    render() {
+    render(): JSX.Element {
         return (
             <Provider store={store}>
                 <Router>

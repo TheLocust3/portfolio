@@ -1,14 +1,28 @@
-import React from 'react';
+import Redux, { connect } from 'react-redux'
 
-class Index extends React.Component<any, any> {
+import { StoreState } from '../../../types/store_state'
+import { articleRequests } from '../../actions/article_actions'
+import Article from "../../../api/articles";
+import Index from '../../components/articles/Index.tsx'
 
-    render() {
-        return (
-            <div>
-                Articles Index
-            </div>
-        );
-    }
+export interface ConnectedState {
+    isReady: boolean;
+    articles: Article[];
 }
 
-export default Index;
+export interface ConnectedDispatch {
+    getAllArticles: () => void;
+}
+
+const mapStateToProps = (state: StoreState, ownProps: any): ConnectedState => ({
+    isReady: state.articles.isReady,
+    articles: state.articles.articles
+});
+
+const mapDispatchToProps = (dispatch: Redux.Dispatch<StoreState>): ConnectedDispatch => ({
+    getAllArticles: () => {
+        dispatch(articleRequests.getAllArticles())
+    },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Index);

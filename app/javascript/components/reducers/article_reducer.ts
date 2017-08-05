@@ -1,8 +1,11 @@
+import Redux from 'redux'
 import { handleActions } from 'redux-actions'
 
-const defaultState = {  };
+import { ArticleStoreState } from '../../types/store_state'
 
-const reducer = handleActions({
+const defaultState: ArticleStoreState = { isReady: false, articles: [], article: null };
+
+const reducer: Redux.Reducer<ArticleStoreState> = handleActions({
     GET_ALL_ARTICLES: (state, data) => ({
         articles: data
     }),
