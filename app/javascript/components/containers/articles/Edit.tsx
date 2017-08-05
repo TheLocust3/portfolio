@@ -1,19 +1,28 @@
-import React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+import Redux, { connect } from 'react-redux'
 
-class Edit extends React.Component<RouteComponentProps, any> {
+import { StoreState } from '../../../types/store_state'
+import { articleRequests } from '../../actions/article_actions'
+import Article from "../../../api/articles";
+import Edit from '../../components/articles/Edit.tsx'
 
-    constructor(props: RouteComponentProps) {
-        super(props)
-    }
-
-    render(): JSX.Element {
-        return (
-            <div>
-                Edit Article: {this.props.match.params['id']}
-            </div>
-        );
-    }
+export interface ConnectedState {
+    isReady: boolean;
+    article: Article;
 }
 
-export default Edit;
+export interface ConnectedDispatch {
+    getArticle: () => void;
+}
+
+const mapStateToProps = (state: StoreState, ownProps: any): ConnectedState => ({
+    isReady: state.articles.isReady,
+    article: state.articles.article
+});
+
+const mapDispatchToProps = (dispatch: Redux.Dispatch<StoreState>): ConnectedDispatch => ({
+    getArticle: () => {
+        dispatch(articleRequests.getArticle())
+    },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Edit);

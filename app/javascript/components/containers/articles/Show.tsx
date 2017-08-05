@@ -1,20 +1,28 @@
-import React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+import Redux, { connect } from 'react-redux'
 
+import { StoreState } from '../../../types/store_state'
+import { articleRequests } from '../../actions/article_actions'
+import Article from "../../../api/articles";
+import Show from '../../components/articles/Show.tsx'
 
-class Show extends React.Component<RouteComponentProps, any> {
-
-    constructor(props: RouteComponentProps) {
-        super(props)
-    }
-
-    render(): JSX.Element {
-        return (
-            <div>
-                Show Article: {this.props.match.params['id']}
-            </div>
-        );
-    }
+export interface ConnectedState {
+    isReady: boolean;
+    article: Article;
 }
 
-export default Show;
+export interface ConnectedDispatch {
+    getArticle: () => void;
+}
+
+const mapStateToProps = (state: StoreState, ownProps: any): ConnectedState => ({
+    isReady: state.articles.isReady,
+    article: state.articles.article
+});
+
+const mapDispatchToProps = (dispatch: Redux.Dispatch<StoreState>): ConnectedDispatch => ({
+    getArticle: () => {
+        dispatch(articleRequests.getArticle())
+    },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Show);

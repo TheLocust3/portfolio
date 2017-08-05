@@ -1,14 +1,28 @@
-import React from 'react';
+import Redux, { connect } from 'react-redux'
 
-class New extends React.Component<any, any> {
+import { StoreState } from '../../../types/store_state'
+import { articleRequests } from '../../actions/article_actions'
+import Article from "../../../api/articles";
+import New from '../../components/articles/New.tsx'
 
-    render(): JSX.Element {
-        return (
-            <div>
-                New Article
-            </div>
-        );
-    }
+export interface ConnectedState {
+    isReady: boolean;
+    article: Article;
 }
 
-export default New;
+export interface ConnectedDispatch {
+    createArticle: () => void;
+}
+
+const mapStateToProps = (state: StoreState, ownProps: any): ConnectedState => ({
+    isReady: state.articles.isReady,
+    article: state.articles.article
+});
+
+const mapDispatchToProps = (dispatch: Redux.Dispatch<StoreState>): ConnectedDispatch => ({
+    createArticle: () => {
+        dispatch(articleRequests.createArticle())
+    },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(New);

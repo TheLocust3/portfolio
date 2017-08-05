@@ -25,5 +25,23 @@ export const articleRequests = {
                 dispatch(articleActions.articls.collection.receive(articles))
             })
         }
+    },
+
+    getArticle() {
+        return (dispatch) => {
+
+        }
+    },
+
+    createArticle() {
+        return (dispatch) => {
+
+        }
+    },
+
+    updateArticle() {
+        return (dispatch) => {
+
+        }
     }
 };
