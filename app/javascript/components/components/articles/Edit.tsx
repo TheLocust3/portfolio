@@ -5,8 +5,12 @@ import { ConnectedState, ConnectedDispatch } from '../../containers/articles/Edi
 
 class Edit extends React.Component<ConnectedState & ConnectedDispatch & RouteComponentProps, any> {
 
-    constructor(props: RouteComponentProps) {
+    constructor(props) {
         super(props)
+    }
+
+    componentWillMount(): void {
+        this.props.getArticle(this.props.match.params['id']);
     }
 
     render(): JSX.Element {

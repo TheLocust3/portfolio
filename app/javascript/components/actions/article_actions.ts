@@ -22,26 +22,18 @@ export const articleRequests = {
             dispatch(articleActions.articles.collection.request);
 
             Article.all().then((articles: Article[]) => {
-                dispatch(articleActions.articls.collection.receive(articles))
+                dispatch(articleActions.articles.collection.receive(articles))
             })
         }
     },
 
-    getArticle() {
+    getArticle(id: number) {
         return (dispatch) => {
+            dispatch(articleActions.articles.member.request);
 
-        }
-    },
-
-    createArticle() {
-        return (dispatch) => {
-
-        }
-    },
-
-    updateArticle() {
-        return (dispatch) => {
-
+            Article.get(id).then((article: Article) => {
+                dispatch(articleActions.articles.member.receive(article))
+            })
         }
     }
 };

@@ -5,8 +5,12 @@ import { ConnectedState, ConnectedDispatch } from '../../containers/articles/Sho
 
 class Show extends React.Component<ConnectedState & ConnectedDispatch & RouteComponentProps, any> {
 
-    constructor(props: RouteComponentProps) {
+    constructor(props) {
         super(props)
+    }
+
+    componentWillMount(): void {
+        this.props.getArticle();
     }
 
     render(): JSX.Element {

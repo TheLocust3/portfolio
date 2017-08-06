@@ -2,16 +2,25 @@ import Redux from 'redux';
 import { handleActions } from 'redux-actions';
 
 import { ArticleStoreState } from '../../types/store_state';
+import { articleActions } from '../actions/article_actions'
 
 const defaultState: ArticleStoreState = { isReady: false, articles: [], article: null };
 
 const reducer: Redux.Reducer<ArticleStoreState> = handleActions({
-    GET_ALL_ARTICLES: (state, data) => ({
-        articles: data
+    [articleActions.articles.collection.request.toString()]: (state: ArticleStoreState) => ({
+        isReady: false
+    }),
+    [articleActions.articles.collection.receive.toString()]: (state: ArticleStoreState, data: any) => ({ // TODO: find data type
+        isReady: true,
+        articles: data.payload.articles
     }),
 
-    GET_ARTICLE: (state, data) => ({
-        article: data
+    [articleActions.articles.member.request.toString()]: (state: ArticleStoreState) => ({
+        isReady: false
+    }),
+    [articleActions.articles.member.request.toString()]: (state: ArticleStoreState, data: any) => ({
+        isReady: true,
+        article: data.payload.article
     })
 }, defaultState);
 

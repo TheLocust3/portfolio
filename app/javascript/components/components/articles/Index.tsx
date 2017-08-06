@@ -9,6 +9,7 @@ export default class Index extends React.Component<ConnectedState & ConnectedDis
     }
 
     render(): JSX.Element {
+        console.log(this.props)
         return (
             <div>
                 Articles Index

@@ -1,4 +1,5 @@
 import Redux, { connect } from 'react-redux';
+import { RouteComponentProps } from 'react-router-dom';
 
 import { StoreState } from '../../../types/store_state';
 import { articleRequests } from '../../actions/article_actions';
@@ -19,9 +20,9 @@ const mapStateToProps = (state: StoreState): ConnectedState => ({
     article: state.articles.article
 });
 
-const mapDispatchToProps = (dispatch: Redux.Dispatch<StoreState>): ConnectedDispatch => ({
+const mapDispatchToProps = (dispatch: Redux.Dispatch<StoreState>, props: RouteComponentProps): ConnectedDispatch => ({
     getArticle: () => {
-        dispatch(articleRequests.getArticle())
+        dispatch(articleRequests.getArticle(props.match.params['id']))
     },
 });
 
