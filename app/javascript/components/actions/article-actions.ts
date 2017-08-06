@@ -1,6 +1,8 @@
+import Redux from 'redux';
 import { createActions } from 'redux-actions';
 
 import Article from '../../api/articles';
+import { StoreState } from "../../types/store-state";
 
 export const articleActions = createActions({
     ARTICLES: {
@@ -18,17 +20,17 @@ export const articleActions = createActions({
 export const articleRequests = {
 
     getAllArticles() {
-        return (dispatch) => {
+        return (dispatch: Redux.Dispatch<StoreState>) => {
             dispatch(articleActions.articles.collection.request);
 
             Article.all().then((articles: Article[]) => {
-                dispatch(articleActions.articles.collection.receive(articles))
+                dispatch(articleActions.articles.collection.receive(articles));
             })
         }
     },
 
     getArticle(id: number) {
-        return (dispatch) => {
+        return (dispatch: Redux.Dispatch<StoreState>) => {
             dispatch(articleActions.articles.member.request);
 
             Article.get(id).then((article: Article) => {

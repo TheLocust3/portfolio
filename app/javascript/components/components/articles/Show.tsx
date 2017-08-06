@@ -13,10 +13,21 @@ class Show extends React.Component<ConnectedState & ConnectedDispatch & RouteCom
         this.props.getArticle();
     }
 
+    renderArticle() {
+        if (!this.props.isReady) return;
+
+        return (
+            <div>
+                <h1>{this.props.article.title}</h1>
+                {this.props.article.text}
+            </div>
+        )
+    }
+
     render(): JSX.Element {
         return (
             <div>
-                Show Article: {this.props.match.params['id']}
+                {this.renderArticle()}
             </div>
         );
     }
