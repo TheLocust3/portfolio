@@ -1,8 +1,8 @@
 import Redux from 'redux';
 import { handleActions } from 'redux-actions';
 
-import { ArticleStoreState } from '../../types/store_state';
-import { articleActions } from '../actions/article_actions'
+import { ArticleStoreState } from '../../types/store-state';
+import { articleActions } from '../actions/article-actions'
 
 const defaultState: ArticleStoreState = { isReady: false, articles: [], article: null };
 

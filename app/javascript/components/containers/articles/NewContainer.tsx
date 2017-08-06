@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { StoreState } from '../../../types/store_state';
+import { StoreState } from '../../../types/store-state';
 import Article from "../../../api/articles";
 import New from '../../components/articles/New';
 

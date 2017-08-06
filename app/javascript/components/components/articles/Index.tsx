@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ConnectedState, ConnectedDispatch } from '../../containers/articles/Index';
+import { ConnectedState, ConnectedDispatch } from '../../containers/articles/IndexContainer';
 
 export default class Index extends React.Component<ConnectedState & ConnectedDispatch, any> {
 

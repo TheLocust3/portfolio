@@ -1,8 +1,8 @@
 import Redux, { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 
-import { StoreState } from '../../../types/store_state';
-import { articleRequests } from '../../actions/article_actions';
+import { StoreState } from '../../../types/store-state';
+import { articleRequests } from '../../actions/article-actions';
 import Article from "../../../api/articles";
 import Edit from '../../components/articles/Edit';
 

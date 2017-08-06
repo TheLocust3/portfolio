@@ -1,7 +1,7 @@
 import Redux, { combineReducers } from 'redux';
 
-import articleReducer from './article_reducer';
-import { StoreState } from '../../types/store_state';
+import articleReducer from './article-reducer';
+import { StoreState } from '../../types/store-state';
 
 const reducer: Redux.Reducer<StoreState> = combineReducers({
     articles: articleReducer
