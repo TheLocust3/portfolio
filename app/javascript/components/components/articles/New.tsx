@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Article from "../../../api/articles";
 import { ConnectedState } from '../../containers/articles/NewContainer';
 import Form from './Form'
 
@@ -7,7 +8,7 @@ class New extends React.Component<ConnectedState, any> {
 
     renderForm(): JSX.Element {
         return (
-            <Form article={this.props.article} />
+            <Form article={new Article()} />
         )
     }
 

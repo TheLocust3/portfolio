@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import $ from 'jquery';
 import ApiObject from './api';
 
@@ -8,8 +9,8 @@ export default class Article extends ApiObject {
     constructor(id: number, title: string, text: string) {
         super(id);
 
-        this._title = title;
-        this._text = text
+        this._title = _.isEmpty(title) ? '' : title;
+        this._text = _.isEmpty(text) ? '' : text;
     }
 
     static all(): Promise<Article[]> {
