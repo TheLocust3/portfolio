@@ -2,6 +2,7 @@ import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
 import { ConnectedState, ConnectedDispatch } from '../../containers/articles/EditContainer';
+import Form from "./Form";
 
 class Edit extends React.Component<ConnectedState & ConnectedDispatch & RouteComponentProps, any> {
 
@@ -13,10 +14,19 @@ class Edit extends React.Component<ConnectedState & ConnectedDispatch & RouteCom
         this.props.getArticle(this.props.match.params['id']);
     }
 
+    renderForm(): JSX.Element {
+        if (!this.props.isReady) return;
+
+        return (
+            <Form article={this.props.article} />
+        )
+    }
+
     render(): JSX.Element {
         return (
             <div>
-                Edit Article: {this.props.match.params['id']}
+                <h1>Edit Article</h1>
+                {this.renderForm()}
             </div>
         );
     }
