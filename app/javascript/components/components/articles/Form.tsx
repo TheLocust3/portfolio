@@ -15,7 +15,7 @@ class Form extends React.Component<Props, State> {
     constructor(props) {
         super(props);
 
-        this.state = { article: new Article() };
+        this.state = { article: this.props.article };
 
         this.onTitleChange = this.onTitleChange.bind(this);
         this.onTextChange = this.onTextChange.bind(this);
