@@ -6,7 +6,7 @@ export default class Article extends ApiObject {
     private _title: string;
     private _text: string;
 
-    constructor(id: number, title: string, text: string) {
+    constructor(id?: number, title?: string, text?: string) {
         super(id);
 
         this._title = _.isEmpty(title) ? '' : title;

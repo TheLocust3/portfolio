@@ -3,7 +3,6 @@ import React from 'react';
 import Article from '../../../api/articles'
 
 interface Props {
-    isReady: boolean;
     article: Article;
 }
 
