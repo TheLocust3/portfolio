@@ -11,7 +11,9 @@ import ArticlesIndex from '../components/containers/articles/IndexContainer';
 import ArticlesNew from '../components/containers/articles/NewContainer';
 import ArticlesEdit from '../components/containers/articles/EditContainer';
 import ArticlesShow from '../components/containers/articles/ShowContainer';
-import PortfolioIndex from '../components/containers/portfolio/IndexContainer';
+import PortfolioIndex from '../components/components/portfolio/Index';
+import IntelEmulatorSpotlight from '../components/components/portfolio/IntelEmulatorSpotlight';
+import GameboyEmulatorSpotlight from '../components/components/portfolio/GameboyEmulatorSpotlight';
 
 const store: Redux.Store<StoreState> = createStore<StoreState>(reducer, applyMiddleware(thunkMiddleware));
 
@@ -28,6 +30,8 @@ class Base extends React.Component {
                         <Route exact path="/articles/new" component={ArticlesNew} />
 
                         <Route exact path="/portfolio" component={PortfolioIndex} />
+                        <Route exact path="/portfolio/intel_8080_emulator" component={IntelEmulatorSpotlight} />
+                        <Route exact path="/portfolio/gameboy_emulator" component={GameboyEmulatorSpotlight} />
                     </div>
                 </Router>
             </Provider>
