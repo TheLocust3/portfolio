@@ -6,11 +6,12 @@ import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 
 import reducer from '../components/reducers/root-reducer';
+import { StoreState } from "../types/store-state";
 import ArticlesIndex from '../components/containers/articles/IndexContainer';
 import ArticlesNew from '../components/containers/articles/NewContainer';
 import ArticlesEdit from '../components/containers/articles/EditContainer';
 import ArticlesShow from '../components/containers/articles/ShowContainer';
-import { StoreState } from "../types/store-state";
+import PortfolioIndex from '../components/containers/portfolio/IndexContainer';
 
 const store: Redux.Store<StoreState> = createStore<StoreState>(reducer, applyMiddleware(thunkMiddleware));
 
@@ -25,6 +26,8 @@ class Base extends React.Component {
                         <Route exact path="/articles/:id([0-9]+)" component={ArticlesShow} />
                         <Route exact path="/articles/:id/edit" component={ArticlesEdit} />
                         <Route exact path="/articles/new" component={ArticlesNew} />
+
+                        <Route exact path="/portfolio" component={PortfolioIndex} />
                     </div>
                 </Router>
             </Provider>
