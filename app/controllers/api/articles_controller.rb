@@ -1,5 +1,7 @@
 class Api::ArticlesController < Api::ApiController
 
+  before_action :authenticate_admin!, only: [ :create, :update ]
+
   def index
     render :json => Article.all
   end
