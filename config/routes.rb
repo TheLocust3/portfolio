@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  namespace :api do
-    devise_for :admin, controllers: { sessions: 'api/admin/sessions' }, only: :session
+  root to: 'root#index'
 
+  devise_for :admin, path: 'api/admin', controllers: { sessions: 'api/admin/sessions' }, only: :session
+
+  namespace :api do
     resources :articles, only: [:index, :show, :create, :update]
   end
 

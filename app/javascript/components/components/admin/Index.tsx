@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ConnectedState, ConnectedDispatch } from '../../containers/admin/IndexContainer';
+import Admin from '../../../api/admin'
 
 export default class Index extends React.Component<ConnectedState & ConnectedDispatch, any> {
 

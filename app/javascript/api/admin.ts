@@ -25,9 +25,9 @@ export default class Admin extends ApiObject {
 
     static signIn(email: string, password: string): Promise<Admin> {
         return new Promise((resolve, reject) => {
-            $.ajax(`/api/admin/`, {
+            $.ajax(`/api/admin/sign_in`, {
                 type: 'post',
-                data: { email: email, password: password },
+                data: { admin: { email: email, password: password } },
                 success: resolve,
                 error: reject
             });
@@ -36,9 +36,9 @@ export default class Admin extends ApiObject {
         });
     }
 
-    signOut(): Promise<any> {
+    static signOut(): Promise<any> {
         return new Promise((resolve, reject) => {
-            $.ajax(`/api/admin/`, {
+            $.ajax(`/api/admin/sign_out`, {
                 type: 'delete',
                 success: resolve,
                 error: reject
