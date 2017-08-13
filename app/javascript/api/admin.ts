@@ -23,6 +23,29 @@ export default class Admin extends ApiObject {
         });
     }
 
+    static signIn(email: string, password: string): Promise<Admin> {
+        return new Promise((resolve, reject) => {
+            $.ajax(`/api/admin/`, {
+                type: 'post',
+                data: { email: email, password: password },
+                success: resolve,
+                error: reject
+            });
+        }).then((response: any) => {
+            return new Admin(response.id, response.email);
+        });
+    }
+
+    signOut(): Promise<any> {
+        return new Promise((resolve, reject) => {
+            $.ajax(`/api/admin/`, {
+                type: 'delete',
+                success: resolve,
+                error: reject
+            });
+        })
+    }
+
     save(): Promise<any> {
         console.log("Cannot save Admin object!");
         return new Promise((resolve, reject) => {

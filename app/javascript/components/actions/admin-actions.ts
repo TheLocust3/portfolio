@@ -2,6 +2,7 @@ import Redux from 'redux';
 import { createActions } from 'redux-actions';
 
 import { StoreState } from "../../types/store-state";
+import Admin from "../../api/admin";
 
 export const adminActions = createActions({
     ADMIN: {
@@ -19,9 +20,9 @@ export const adminRequests = {
         return (dispatch: Redux.Dispatch<StoreState>) => {
             dispatch(adminActions.admin.currentAdmin.request);
 
-            // Article.get(id).then((article: Article) => {
-            //     dispatch(adminActions.admin.currentAdmin.receive(admin));
-            // })
+            Admin.currentAdmin().then((admin: Admin) => {
+                dispatch(adminActions.admin.currentAdmin.receive(admin));
+            })
         }
     }
 };
