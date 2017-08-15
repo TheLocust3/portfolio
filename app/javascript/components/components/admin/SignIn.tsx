@@ -3,7 +3,7 @@ import React from 'react';
 import { ConnectedState, ConnectedDispatch } from '../../containers/admin/IndexContainer';
 import Admin from '../../../api/admin'
 
-export default class Index extends React.Component<ConnectedState & ConnectedDispatch, any> {
+export default class SignIn extends React.Component<ConnectedState & ConnectedDispatch, any> {
 
     constructor(props) {
         super(props);
@@ -11,6 +11,7 @@ export default class Index extends React.Component<ConnectedState & ConnectedDis
         this.state = { email: '', password: '' };
 
         this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     }
 
     onChange(event) {
@@ -33,10 +34,10 @@ export default class Index extends React.Component<ConnectedState & ConnectedDis
                 <h1>Sign In</h1>
                 <form onSubmit={this.onSubmit}>
                     Email:
-                    <input type="email" onChange={this.onChange} /><br /><br />
+                    <input type="email" name="email" onChange={this.onChange} /><br /><br />
 
                     Password
-                    <input type="password" onChange={this.onChange} /><br /><br />
+                    <input type="password" name="password" onChange={this.onChange} /><br /><br />
 
                     <button>Submit</button>
                 </form>

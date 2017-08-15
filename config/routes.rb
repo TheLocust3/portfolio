@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :articles, only: [:index, :show, :create, :update]
+
+    get 'current_admin', :to => 'admin/admin#get_current_admin'
   end
 
   get '*path', to: 'root#index'
