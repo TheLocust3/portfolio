@@ -17,8 +17,16 @@ export default class Admin extends ApiObject {
 
     static currentAdmin(): Promise<Admin> {
         return new Promise((resolve, reject) => {
-
+            $.ajax(`/api/current_admin`, {
+                type: 'get',
+                success: resolve,
+                error: reject
+            });
         }).then((response: any) => {
+            if (_.isNull(response)) {
+                return null
+            }
+
             return new Admin(response.id, response.email);
         });
     }
