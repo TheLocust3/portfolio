@@ -6,10 +6,10 @@ import { ConnectedState, ConnectedDispatch } from '../../containers/articles/Sho
 class Show extends React.Component<ConnectedState & ConnectedDispatch & RouteComponentProps, any> {
 
     constructor(props) {
-        super(props)
+        super(props);
     }
 
-    componentWillMount(): void {
+    componentWillMount() {
         this.props.getArticle();
     }
 
