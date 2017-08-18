@@ -5,11 +5,11 @@ import Article from "../../../api/articles";
 import New from '../../components/articles/New';
 
 export interface ConnectedState {
-    article: Article;
+    articles: Article[];
 }
 
 const mapStateToProps = (state: StoreState): ConnectedState => ({
-    article: state.articles.article
+    articles: state.articles.articles
 });
 
 export default connect(mapStateToProps)(New);

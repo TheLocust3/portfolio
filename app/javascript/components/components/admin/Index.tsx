@@ -41,7 +41,8 @@ export default class Index extends React.Component<ConnectedState & ConnectedDis
         if (!this.props.isAdminReady) return null;
 
         if (_.isNull(this.props.admin)) {
-            window.location.href = '/admin/sign_in'
+            window.location.href = '/admin/sign_in';
+            return null;
         }
 
         return (

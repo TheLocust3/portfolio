@@ -8,7 +8,7 @@ import Edit from '../../components/articles/Edit';
 
 export interface ConnectedState {
     isReady: boolean;
-    article: Article;
+    articles: Article[];
 }
 
 export interface ConnectedDispatch {
@@ -17,7 +17,7 @@ export interface ConnectedDispatch {
 
 const mapStateToProps = (state: StoreState): ConnectedState => ({
     isReady: state.articles.isReady,
-    article: state.articles.article
+    articles: state.articles.articles
 });
 
 const mapDispatchToProps = (dispatch: Redux.Dispatch<StoreState>, props: RouteComponentProps): ConnectedDispatch => ({

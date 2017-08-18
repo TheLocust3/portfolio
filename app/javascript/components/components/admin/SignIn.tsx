@@ -36,7 +36,7 @@ export default class SignIn extends React.Component<ConnectedState & ConnectedDi
                     Email:
                     <input type="email" name="email" onChange={this.onChange} /><br /><br />
 
-                    Password
+                    Password:
                     <input type="password" name="password" onChange={this.onChange} /><br /><br />
 
                     <button>Submit</button>

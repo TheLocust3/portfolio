@@ -4,7 +4,7 @@ import { handleActions } from 'redux-actions';
 import { ArticleStoreState } from '../../types/store-state';
 import { articleActions } from '../actions/article-actions';
 
-const defaultState: ArticleStoreState = { isReady: false, articles: [], article: null };
+const defaultState: ArticleStoreState = { isReady: false, articles: [] };
 
 const reducer: Redux.Reducer<ArticleStoreState> = handleActions({
     [articleActions.articles.collection.request.toString()]: (state: ArticleStoreState) => ({
@@ -20,7 +20,7 @@ const reducer: Redux.Reducer<ArticleStoreState> = handleActions({
     }),
     [articleActions.articles.member.receive.toString()]: (state: ArticleStoreState, action: any) => ({
         isReady: true,
-        article: action.payload.article
+        articles: [action.payload.article] // TODO: don't replace the entire thing
     })
 }, defaultState);
 

@@ -14,5 +14,4 @@ export interface AdminStoreState {
 export interface ArticleStoreState {
     isReady: boolean;
     articles: Article[];
-    article: Article;
 }
