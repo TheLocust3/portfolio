@@ -6,6 +6,10 @@ import { ConnectedState, ConnectedDispatch } from '../../containers/admin/IndexC
 
 export default class Index extends React.Component<ConnectedState & ConnectedDispatch, any> {
 
+    constructor(props) {
+        super(props);
+    }
+
     componentWillMount(): void {
         this.props.getCurrentAdmin();
         this.props.getAllArticles();

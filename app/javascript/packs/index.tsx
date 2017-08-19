@@ -24,6 +24,10 @@ const store: Redux.Store<StoreState> = createStore<StoreState>(reducer, applyMid
 
 class Base extends React.Component {
 
+    constructor(props) {
+        super(props)
+    }
+
     render(): JSX.Element {
         return (
             <Provider store={store}>
@@ -47,9 +51,7 @@ class Base extends React.Component {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    ReactDOM.render(
-        <Base />,
-        document.body.appendChild(document.createElement('div')),
-    )
-});
+ReactDOM.render(
+    <Base />,
+    document.getElementById('root')
+);
