@@ -7,6 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import { store } from './constants';
 
 import Index from './containers/Index';
+import NotFound from './containers/NotFound';
 
 // Always start navigation at the top of the page
 const ScrollToTop = () => {
@@ -26,6 +27,8 @@ class Base extends React.Component {
 
                             <Switch>
                                 <Route exact path="/" component={Index} />
+
+                                <Route component={NotFound} />
                             </Switch>
                         </div>
                     </Router>
