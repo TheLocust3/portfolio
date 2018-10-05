@@ -1,12 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
+
 import * as serviceWorker from './serviceWorker';
+import { store } from './constants';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import Index from './containers/Index';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
+// Always start navigation at the top of the page
+const ScrollToTop = () => {
+    window.scrollTo(0, 0);
+
+    return null;
+};
+
+class Base extends React.Component {
+    render() {
+        return (
+            <Provider store={store}>
+                <div>
+                    <Router>
+                        <div>
+                            <Route component={ScrollToTop} />
+
+                            <Switch>
+                                <Route exact path="/" component={Index} />
+                            </Switch>
+                        </div>
+                    </Router>
+                </div>
+            </Provider>
+        );
+    }
+}
+
+ReactDOM.render(<Base />, document.getElementById('root'));
+
 serviceWorker.unregister();
