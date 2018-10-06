@@ -1,11 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var passport = require('passport');
 
-router.get('/', (req, res, next) => {
-    res.json({
-        email: 'jake.kinsella@gmail.com',
-        name: 'Jake Kinsella'
-    });
+router.get('/', passport.authenticate('jwt', { session: false }), (req, res, next) => {
+    res.json(req.user);
 });
 
 module.exports = router;

@@ -1,25 +1,17 @@
 var express = require('express');
 var router = express.Router();
-var jwt = require('jsonwebtoken');
+var User = require('../models/user');
 
-router.post('/login', function(req, res) {
-    if (req.body.name && req.body.password) {
-        var name = req.body.name;
-        var password = req.body.password;
-    }
-    // usually this would be a database call:
-    var user = users[_.findIndex(users, { name: name })];
+router.post('/login', (req, res) => {
+    var user = User.find({ email: req.body.email });
     if (!user) {
-        res.status(401).json({ message: 'no such user found' });
+        res.status(401).json({ message: 'Incorrect email or password' });
     }
 
-    if (user.password === req.body.password) {
-        var payload = { id: user.id };
-        var token = jwt.sign(payload, jwtOptions.secretOrKey);
-
-        res.json({ message: 'ok', token: token });
+    if (user.validPassword(req.body.password)) {
+        res.json({ message: 'success', token: user.generateToken() });
     } else {
-        res.status(401).json({ message: 'passwords did not match' });
+        res.status(401).json({ message: 'Incorrect email or password' });
     }
 });
 
