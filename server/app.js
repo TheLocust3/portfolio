@@ -2,8 +2,11 @@ var createError = require('http-errors');
 var express = require('express');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose');
+var passport = require('passport');
 
-var usersRouter = require('./routes/api/users');
+var configDB = require('./config/database.js');
+var strategy = require('./config/passport.js');
 
 var app = express();
 const port = 3001;
@@ -13,15 +16,24 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+mongoose.connect(configDB.url);
+
+app.use(passport.initialize());
+passport.use(strategy);
+
+var usersRouter = require('./routes/api/users');
+var authRouter = require('./routes/api/auth');
+
+app.use('/auth', authRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
     next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
