@@ -11,14 +11,14 @@ var jwtOptions = {};
 jwtOptions.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 jwtOptions.secretOrKey = secrets.jwtSecret;
 
-var strategy = new JwtStrategy(jwtOptions, function(jwt_payload, next) {
-    console.log('payload received', jwt_payload);
+var strategy = new JwtStrategy(jwtOptions, function(jwtPayload, next) {
+    console.log('payload received', jwtPayload);
 
-    User.find({ id: jwt_payload.id }, (err, user) => {
-        if (_.isEmpty(user)) {
+    User.find({ _id: jwtPayload.id }, (err, users) => {
+        if (_.isEmpty(users)) {
             next(null, false);
         } else {
-            next(null, user);
+            next(null, users[0]);
         }
     });
 });

@@ -1,3 +1,5 @@
+import AuthApi from '../api/auth-api';
+
 export const REQUEST_CURRENT_USER = 'REQUEST_CURRENT_USER';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 
@@ -18,10 +20,9 @@ export function fetchCurrentUser() {
     return function(dispatch) {
         dispatch(requestCurrentUserAction());
 
-        fetch('/users')
-            .then((res) => res.json())
-            .then((data) => {
-                dispatch(receiveCurrentUserAction(data));
+        AuthApi.getCurrentUser()
+            .then((response) => {
+                dispatch(receiveCurrentUserAction(response.body));
             })
             .catch(() => {
                 dispatch(receiveCurrentUserAction({}));
