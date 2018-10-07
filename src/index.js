@@ -6,6 +6,8 @@ import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import { store, history } from './constants';
 
+import Navbar from './containers/common/Navbar';
+
 import NotFound from './containers/NotFound';
 import AppRoutes from './routes/AppRoutes';
 import AdminRoutes from './routes/AdminRoutes';
@@ -24,6 +26,8 @@ class Base extends React.Component {
                 <div>
                     <Router history={history}>
                         <div>
+                            <Navbar />
+
                             <Route component={ScrollToTop} />
 
                             <Switch>
