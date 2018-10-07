@@ -6,9 +6,9 @@ import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import { store, history } from './constants';
 
-import Index from './containers/Index';
-import SignIn from './containers/SignIn';
 import NotFound from './containers/NotFound';
+import AppRoutes from './routes/AppRoutes';
+import AdminRoutes from './routes/AdminRoutes';
 
 // Always start navigation at the top of the page
 const ScrollToTop = () => {
@@ -27,8 +27,9 @@ class Base extends React.Component {
                             <Route component={ScrollToTop} />
 
                             <Switch>
-                                <Route exact path="/" component={Index} />
-                                <Route exact path="/sign-in" component={SignIn} />
+                                <Route path="/admin" component={AdminRoutes} />
+
+                                <Route path="/" component={AppRoutes} />
 
                                 <Route component={NotFound} />
                             </Switch>

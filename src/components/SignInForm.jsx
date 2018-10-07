@@ -22,7 +22,7 @@ class SignInForm extends React.Component {
 
         AuthApi.signIn(this.state.email, this.state.password)
             .then((response) => {
-                history.push('/');
+                history.push('/admin');
             })
             .catch((response) => {
                 if (response.status === 401) {
