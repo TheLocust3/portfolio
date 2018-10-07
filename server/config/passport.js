@@ -1,3 +1,4 @@
+var _ = require('lodash');
 var passportJWT = require('passport-jwt');
 
 var User = require('../models/user');
@@ -13,12 +14,13 @@ jwtOptions.secretOrKey = secrets.jwtSecret;
 var strategy = new JwtStrategy(jwtOptions, function(jwt_payload, next) {
     console.log('payload received', jwt_payload);
 
-    var user = User.find({ id: jwt_payload.id });
-    if (user) {
-        next(null, user);
-    } else {
-        next(null, false);
-    }
+    User.find({ id: jwt_payload.id }, (err, user) => {
+        if (_.isEmpty(user)) {
+            next(null, false);
+        } else {
+            next(null, user);
+        }
+    });
 });
 
 module.exports = strategy;

@@ -1,8 +1,13 @@
+var mongoose = require('mongoose');
+
 var User = require('../models/user');
+var configDB = require('./database.js');
+
+mongoose.connect(configDB.url);
 
 var admin = new User();
 
-admin.local.email = 'jake.kinsella@gmail.com';
-admin.local.password = newUser.generateHash('password');
+admin.email = 'jake.kinsella@gmail.com';
+admin.password = admin.generateHash('password');
 
 admin.save();

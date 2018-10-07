@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import * as serviceWorker from './serviceWorker';
-import { store } from './constants';
+import { store, history } from './constants';
 
 import Index from './containers/Index';
+import SignIn from './containers/SignIn';
 import NotFound from './containers/NotFound';
 
 // Always start navigation at the top of the page
@@ -21,12 +22,13 @@ class Base extends React.Component {
         return (
             <Provider store={store}>
                 <div>
-                    <Router>
+                    <Router history={history}>
                         <div>
                             <Route component={ScrollToTop} />
 
                             <Switch>
                                 <Route exact path="/" component={Index} />
+                                <Route exact path="/sign-in" component={SignIn} />
 
                                 <Route component={NotFound} />
                             </Switch>

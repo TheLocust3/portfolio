@@ -4,7 +4,6 @@
     "private": true,
     "dependencies": {
         "lodash": "^4.17.11",
-        "material-components-web": "^0.40.0",
         "prop-types": "^15.6.2",
         "query-string": "^6.1.0",
         "react": "^16.5.2",
@@ -14,7 +13,8 @@
         "react-scripts": "1.1.5",
         "redux": "^4.0.0",
         "redux-actions": "^2.6.1",
-        "redux-thunk": "^2.3.0"
+        "redux-thunk": "^2.3.0",
+        "react-material-components-web": "git+https://github.com/TheLocust3/react-material-components-web.git"
     },
     "scripts": {
         "start": "react-scripts start",
