@@ -1,16 +1,12 @@
 import React from 'react';
-import styled from 'react-emotion';
 import { Text } from 'react-material-components-web';
 
-let Panel = styled('div')`
-    color: white;
-    background-color: #424242;
-`;
+import Panel from '../Panel';
 
 class CandidateXYZPanel extends React.Component {
     render() {
         return (
-            <Panel>
+            <Panel backgroundColor="#673ab7">
                 <Text type="headline3">candidateXYZ</Text>
             </Panel>
         );
