@@ -1,25 +1,43 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import styled, { css } from 'react-emotion';
+
+import NavbarLink from './NavbarLink';
+
+let NavbarDiv = styled('div')`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+
+    padding-top: 3%;
+
+    color: white;
+    font-size: 20px;
+`;
+
+let solidNavbar = css`
+    position: relative;
+    padding-top: 3%;
+`;
 
 class Navbar extends React.Component {
     render() {
-        let solidNavbar = this.props.solidNavbar ? 'navbar-solid' : '';
-
         return (
-            <div className={`navbar ${solidNavbar}`}>
-                <Link className="mdc-typography--headline6 navbar-link" to="/">
+            <NavbarDiv className={this.props.solidNavbar ? solidNavbar : ''}>
+                <NavbarLink to="/" solid={this.props.solidNavbar}>
                     Home
-                </Link>
+                </NavbarLink>
 
-                <Link className="mdc-typography--headline6 navbar-link" to="/projects">
+                <NavbarLink to="/projects" solid={this.props.solidNavbar}>
                     Projects
-                </Link>
+                </NavbarLink>
 
-                <Link className="mdc-typography--headline6 navbar-link" to="/blog">
+                <NavbarLink to="/blog" solid={this.props.solidNavbar}>
                     Blog
-                </Link>
-            </div>
+                </NavbarLink>
+            </NavbarDiv>
         );
     }
 }
