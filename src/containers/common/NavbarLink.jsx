@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { css } from 'react-emotion';
 
+import { colors } from '../../constants';
+
 let navbarLink = css`
     margin-left: 3%;
 
@@ -16,10 +18,10 @@ let navbarLink = css`
 `;
 
 let navbarLinkSolid = css`
-    color: #212121;
+    color: ${colors.fontBlack};
 
     &:hover {
-        color: #333333;
+        color: ${colors.linkBlackHover};
     }
 `;
 
@@ -36,7 +38,7 @@ class NavbarLink extends React.Component {
 }
 
 NavbarLink.propTypes = {
-    to: PropTypes.string,
+    to: PropTypes.string.isRequired,
     solid: PropTypes.bool,
     children: PropTypes.any
 };

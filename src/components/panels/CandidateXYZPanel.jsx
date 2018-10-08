@@ -1,14 +1,18 @@
 import React from 'react';
+import styled from 'react-emotion';
 import { Text } from 'react-material-components-web';
 
-import Common from '../common/Common';
+let Panel = styled('div')`
+    color: white;
+    background-color: #424242;
+`;
 
 class CandidateXYZPanel extends React.Component {
     render() {
         return (
-            <Common>
+            <Panel>
                 <Text type="headline3">candidateXYZ</Text>
-            </Common>
+            </Panel>
         );
     }
 }

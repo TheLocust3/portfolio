@@ -7,3 +7,5 @@ import reducer from './reducers/root-reducer';
 export const store = createStore(reducer, applyMiddleware(thunkMiddleware));
 
 export let history = createBrowserHistory();
+
+export let colors = { textBlack: '#212121', linkBlackHover: '#333333' };

@@ -6,6 +6,7 @@ import { store, history } from './constants';
 import './global-styles';
 
 import Navbar from './containers/common/Navbar';
+import Footer from './components/common/Footer';
 
 import NotFound from './containers/NotFound';
 import AppRoutes from './routes/AppRoutes';
@@ -36,6 +37,8 @@ class App extends React.Component {
 
                                 <Route component={NotFound} />
                             </Switch>
+
+                            <Footer />
                         </div>
                     </Router>
                 </div>
