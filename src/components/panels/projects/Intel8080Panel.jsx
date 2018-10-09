@@ -6,7 +6,7 @@ import Panel from '../Panel';
 class Intel8080Panel extends React.Component {
     render() {
         return (
-            <Panel backgroundColor="#9e9e9e">
+            <Panel backgroundColor="#55286F">
                 <Text type="headline3">Intel 8080 Emulator</Text>
             </Panel>
         );

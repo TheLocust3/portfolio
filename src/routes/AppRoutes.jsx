@@ -11,6 +11,9 @@ class AppRoutes extends React.Component {
                 <Route exact path="/sign-in" component={SignIn} />
 
                 <Route exact path="/" component={Index} />
+                <Route exact path="/about" component={Index} />
+                <Route exact path="/projects" component={Index} />
+                <Route exact path="/experience" component={Index} />
             </Switch>
         );
     }

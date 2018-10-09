@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import React from 'react';
 import { connect } from 'react-redux';
 
@@ -20,6 +21,31 @@ class Index extends React.Component {
     componentWillMount() {
         this.props.dispatch(setTitle('Home'));
         this.props.dispatch(setSolidNavbar(false));
+    }
+
+    componentDidUpdate() {
+        if (this.props.match.path === '/about') {
+            $('html, body').animate(
+                {
+                    scrollTop: $(window).height()
+                },
+                500
+            );
+        } else if (this.props.match.path === '/projects') {
+            $('html, body').animate(
+                {
+                    scrollTop: $(window).height() * 1.7
+                },
+                750
+            );
+        } else if (this.props.match.path === '/experience') {
+            $('html, body').animate(
+                {
+                    scrollTop: $(window).height() * 3.8
+                },
+                1000
+            );
+        }
     }
 
     render() {

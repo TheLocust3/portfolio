@@ -8,7 +8,7 @@ import Panel from '../Panel';
 class TallaPanel extends React.Component {
     render() {
         return (
-            <Panel color={colors.textBlack} backgroundColor="#eeeeee">
+            <Panel color={colors.textBlack} backgroundColor="#B6F9C9">
                 <Text type="headline3">Talla</Text>
             </Panel>
         );

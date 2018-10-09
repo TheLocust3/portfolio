@@ -8,7 +8,7 @@ import Panel from '../Panel';
 class NutonianPanel extends React.Component {
     render() {
         return (
-            <Panel color={colors.textBlack} backgroundColor="#eeeeee">
+            <Panel color={colors.textBlack} backgroundColor="#7DD181">
                 <Text type="headline3">Nutonian</Text>
             </Panel>
         );
