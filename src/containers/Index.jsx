@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 import { setTitle, setSolidNavbar } from '../actions/global-actions';
 
+import ScrollUp from '../components/common/ScrollUp';
+
 import SplashScreen from '../components/SplashScreen';
 import AboutPanel from '../components/panels/AboutPanel';
 
@@ -65,6 +67,8 @@ class Index extends React.Component {
                 <TallaPanel />
                 <NutonianPanel />
                 <CloudHealthPanel />
+
+                <ScrollUp />
             </div>
         );
     }

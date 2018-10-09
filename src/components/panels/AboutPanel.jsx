@@ -40,7 +40,7 @@ class AboutPanel extends React.Component {
                     <br />
 
                     <CircleImage>
-                        <img src="/jake.png" className={image} />
+                        <img src="/jake.png" alt="Jake" className={image} />
                     </CircleImage>
                     <br />
 
