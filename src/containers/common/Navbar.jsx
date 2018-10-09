@@ -30,6 +30,10 @@ class Navbar extends React.Component {
                     Home
                 </NavbarLink>
 
+                <NavbarLink to="/about" solid={this.props.solidNavbar}>
+                    About
+                </NavbarLink>
+
                 <NavbarLink to="/projects" solid={this.props.solidNavbar}>
                     Projects
                 </NavbarLink>
