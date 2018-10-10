@@ -33,6 +33,10 @@ class ScrollUp extends React.Component {
         $(window).scroll(() => this.onScroll());
     }
 
+    componentWillUnmount() {
+        $(window).off('scroll');
+    }
+
     onScroll() {
         if ($(window).scrollTop() > $(window).height() * 0.5) {
             this.setState({

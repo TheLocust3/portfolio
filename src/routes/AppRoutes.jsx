@@ -2,6 +2,8 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Index from '../containers/Index';
+import Projects from '../containers/Projects';
+import Experience from '../containers/Experience';
 import SignIn from '../containers/SignIn';
 
 class AppRoutes extends React.Component {
@@ -12,8 +14,8 @@ class AppRoutes extends React.Component {
 
                 <Route exact path="/" component={Index} />
                 <Route exact path="/about" component={Index} />
-                <Route exact path="/projects" component={Index} />
-                <Route exact path="/experience" component={Index} />
+                <Route exact path="/projects" component={Projects} />
+                <Route exact path="/experience" component={Experience} />
             </Switch>
         );
     }

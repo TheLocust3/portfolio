@@ -6,7 +6,7 @@ let Panel = styled('div')`
     color: ${(props) => (_.isEmpty(props.color) ? 'black' : props.color)};
     background-color: ${(props) => props.backgroundColor};
 
-    height: 95vh;
+    height: 70vh;
     padding: 20px;
 `;
 

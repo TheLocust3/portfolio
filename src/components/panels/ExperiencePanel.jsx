@@ -73,7 +73,7 @@ class ExperiencePanel extends React.Component {
                         <br />
 
                         <Link to="/projects" className={moreLink}>
-                            <Text type="body1">More of my projects</Text>
+                            <Text type="body1">More of my experience</Text>
                         </Link>
                     </Text>
                 </ContentContainer>

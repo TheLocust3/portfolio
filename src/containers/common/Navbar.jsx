@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styled, { css } from 'react-emotion';
 
+import { colors } from '../../constants';
+
 import NavbarLink from './NavbarLink';
 
 let NavbarDiv = styled('div')`
@@ -19,6 +21,8 @@ let NavbarDiv = styled('div')`
 
 let solidNavbar = css`
     position: relative;
+    color: ${colors.textBlack};
+
     padding-top: 3%;
 `;
 
@@ -28,10 +32,6 @@ class Navbar extends React.Component {
             <NavbarDiv className={this.props.solidNavbar ? solidNavbar : ''}>
                 <NavbarLink to="/" solid={this.props.solidNavbar}>
                     Home
-                </NavbarLink>
-
-                <NavbarLink to="/about" solid={this.props.solidNavbar}>
-                    About
                 </NavbarLink>
 
                 <NavbarLink to="/projects" solid={this.props.solidNavbar}>
