@@ -3,16 +3,9 @@ import styled, { css } from 'react-emotion';
 import { Text } from 'react-material-components-web';
 
 import Content from '../common/Content';
+import Panel from './Panel';
 
-let Panel = styled('div')`
-    position: relative;
-
-    min-height: 60vh;
-    padding-top: 20px;
-    padding-bottom: 20px;
-`;
-
-let CircleImage = styled('div')`
+let RoundedImage = styled('div')`
     position: relative;
     overflow: hidden;
 
@@ -39,9 +32,9 @@ class AboutPanel extends React.Component {
                     <br />
                     <br />
 
-                    <CircleImage>
+                    <RoundedImage>
                         <img src="/jake.png" alt="Jake" className={image} />
-                    </CircleImage>
+                    </RoundedImage>
                     <br />
 
                     <Content margin="30%" style={{ marginTop: '0', marginBottom: '0' }}>
