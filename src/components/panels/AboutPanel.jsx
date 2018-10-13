@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'react-emotion';
-import { Text } from 'react-material-components-web';
 
+import Text from '../common/Text';
 import Content from '../common/Content';
 import Panel from './Panel';
 
@@ -38,12 +38,11 @@ class AboutPanel extends React.Component {
                     <br />
 
                     <Content margin="30%" style={{ marginTop: '0', marginBottom: '0' }}>
-                        <Text type="body1">
+                        <Text type="body2" serif>
                             Software developer since elementary school, and entrepreneur, with a passion for building technology. CTO & Founder of
                             candidateXYZ, making running for office available to everyone.
                         </Text>
                     </Content>
-                    <br />
                 </center>
             </Panel>
         );

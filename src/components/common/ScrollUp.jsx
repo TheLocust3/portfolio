@@ -19,6 +19,7 @@ let ScrollContainer = styled('div')`
 
     &:hover {
         cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.6);
     }
 `;
 
