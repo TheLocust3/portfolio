@@ -27,8 +27,12 @@ class AboutPanel extends React.Component {
     render() {
         return (
             <Panel>
+                <br />
+
                 <center>
-                    <Text type="headline2">About Me</Text>
+                    <Text type="headline4" serif header>
+                        About Me
+                    </Text>
                     <br />
                     <br />
 

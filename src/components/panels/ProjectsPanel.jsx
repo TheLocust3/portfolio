@@ -4,6 +4,7 @@ import { Button } from 'react-material-components-web';
 
 import { history, colors } from '../../constants';
 
+import Project from './Project';
 import SideMargin from '../common/SideMargin';
 import Text from '../common/Text';
 import Panel from './Panel';
@@ -11,13 +12,8 @@ import Panel from './Panel';
 let ContentContainer = styled('div')`
     margin-top: 5vh;
 
-    padding-left: 20vw;
-    padding-right: 20vw;
-`;
-
-let Project = styled('div')`
-    margin-top: 7.5vh;
-    margin-bottom: 7.5vh;
+    padding-left: 17.5vw;
+    padding-right: 17.5vw;
 `;
 
 let moreButton = css`
@@ -33,12 +29,14 @@ class ProjectsPanel extends React.Component {
         return (
             <Panel>
                 <center>
-                    <Text type="headline2">Selected Projects</Text>
+                    <Text type="headline4" serif header>
+                        Selected Projects
+                    </Text>
                 </center>
 
                 <ContentContainer>
                     <Project>
-                        <Text type="headline4" serif>
+                        <Text type="headline5" serif header>
                             candidateXYZ
                         </Text>
                         <br />
@@ -53,7 +51,7 @@ class ProjectsPanel extends React.Component {
                     </Project>
 
                     <Project>
-                        <Text type="headline4" serif>
+                        <Text type="headline5" serif header>
                             Intel 8080 Emulator
                         </Text>
                         <br />
@@ -68,7 +66,7 @@ class ProjectsPanel extends React.Component {
                     </Project>
 
                     <Project>
-                        <Text type="headline4" serif>
+                        <Text type="headline5" serif header>
                             Ti NSpire Gameboy Emulator
                         </Text>
                         <br />
@@ -81,6 +79,9 @@ class ProjectsPanel extends React.Component {
                             </SideMargin>
                         </Text>
                     </Project>
+                    <br />
+                    <br />
+                    <br />
 
                     <Button className={moreButton} onClick={() => history.push('/projects')}>
                         <Text type="body2" serif>

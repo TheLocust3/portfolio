@@ -9,7 +9,7 @@ var configDB = require('./config/database.js');
 var strategy = require('./config/passport.js');
 
 var app = express();
-const port = 3001;
+const port = 2001;
 
 app.use(logger('dev'));
 app.use(express.json());

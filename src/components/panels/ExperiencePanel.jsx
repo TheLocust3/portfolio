@@ -1,31 +1,16 @@
 import React from 'react';
-import styled, { css } from 'react-emotion';
-import { Button } from 'react-material-components-web';
-
-import { history, colors } from '../../constants';
+import styled from 'react-emotion';
 
 import SideMargin from '../common/SideMargin';
 import Text from '../common/Text';
 import Panel from './Panel';
+import Project from './Project';
 
 let ContentContainer = styled('div')`
     margin-top: 5vh;
 
-    padding-left: 20vw;
-    padding-right: 20vw;
-`;
-
-let Project = styled('div')`
-    margin-top: 7.5vh;
-    margin-bottom: 7.5vh;
-`;
-
-let moreButton = css`
-    width: 100%;
-
-    background-color: #e0e0e0 !important;
-    color: ${colors.textBlack} !important;
-    text-transform: none;
+    padding-left: 17.5vw;
+    padding-right: 17.5vw;
 `;
 
 class ExperiencePanel extends React.Component {
@@ -33,12 +18,14 @@ class ExperiencePanel extends React.Component {
         return (
             <Panel>
                 <center>
-                    <Text type="headline2">Selected Professional Experience</Text>
+                    <Text type="headline4" serif header>
+                        Selected Professional Experience
+                    </Text>
                 </center>
 
                 <ContentContainer>
                     <Project>
-                        <Text type="headline4" serif>
+                        <Text type="headline5" serif header>
                             Talla
                         </Text>
                         <br />
@@ -53,7 +40,7 @@ class ExperiencePanel extends React.Component {
                     </Project>
 
                     <Project>
-                        <Text type="headline4" serif>
+                        <Text type="headline5" serif header>
                             Nutonian
                         </Text>
                         <br />
@@ -68,7 +55,7 @@ class ExperiencePanel extends React.Component {
                     </Project>
 
                     <Project>
-                        <Text type="headline4" serif>
+                        <Text type="headline5" serif header>
                             CloudHealth Technologies
                         </Text>
                         <br />
@@ -81,12 +68,6 @@ class ExperiencePanel extends React.Component {
                             </SideMargin>
                         </Text>
                     </Project>
-
-                    <Button className={moreButton} onClick={() => history.push('/experience')}>
-                        <Text type="body2" serif>
-                            See more professional experience
-                        </Text>
-                    </Button>
                 </ContentContainer>
             </Panel>
         );

@@ -35,11 +35,11 @@ class Footer extends React.Component {
                         <Icon icon="envelope" size={28} />
                     </a>
 
-                    <a to="https://github.com/TheLocust3">
+                    <a href="https://github.com/TheLocust3">
                         <Icon icon="github" size={28} brand />
                     </a>
 
-                    <a to="https://www.linkedin.com/in/jake-kinsella/">
+                    <a href="https://www.linkedin.com/in/jake-kinsella/">
                         <Icon icon="linkedin-in" size={28} brand />
                     </a>
                 </IconRow>
