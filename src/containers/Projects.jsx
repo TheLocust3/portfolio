@@ -11,6 +11,7 @@ import ScrollUp from '../components/common/ScrollUp';
 import CandidateXYZ from '../components/projects/CandidateXYZ';
 import Intel8080 from '../components/projects/Intel8080';
 import GameboyEmulator from '../components/projects/GameboyEmulator';
+import PongAimbot from '../components/projects/PongAimbot';
 
 class Projects extends React.Component {
     componentWillMount() {
@@ -44,6 +45,10 @@ class Projects extends React.Component {
 
                 <div id="3">
                     <GameboyEmulator />
+                </div>
+
+                <div>
+                    <PongAimbot />
                 </div>
 
                 <ScrollUp />

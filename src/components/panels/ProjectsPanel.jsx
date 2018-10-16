@@ -43,9 +43,10 @@ class ProjectsPanel extends React.Component {
 
                         <Text type="body2" serif>
                             <SideMargin margin="3%">
-                                Soluta necessitatibus nostrum iste dolorem ullam ducimus eos reiciendis. Distinctio voluptatem totam quaerat soluta.
-                                Explicabo eaque mollitia nulla id et sit. Dolorem quod et ea tenetur modi non. Eius temporibus assumenda ut
-                                voluptatibus et consequatur a.
+                                Building during the summer of my senior year, candidateXYZ is web application design to make it easy for everyone to
+                                run for office, no matter your experience, connections, or finiancial situation. Allows candidates create an official
+                                Candidate Committee, keep track of their finiances (receipts, expenditures, liabilities), and generate monthly
+                                campaign finiance reports.
                             </SideMargin>
                         </Text>
                     </Project>
@@ -58,9 +59,8 @@ class ProjectsPanel extends React.Component {
 
                         <Text type="body2" serif>
                             <SideMargin margin="3%">
-                                Soluta necessitatibus nostrum iste dolorem ullam ducimus eos reiciendis. Distinctio voluptatem totam quaerat soluta.
-                                Explicabo eaque mollitia nulla id et sit. Dolorem quod et ea tenetur modi non. Eius temporibus assumenda ut
-                                voluptatibus et consequatur a.
+                                Built during my Junior year of high school after my first attempt at building a Gameboy emulator. Emulates the pure
+                                Intel 8080 CPU based off of the original specification. Fully tested instruction set and CPU interrupts.
                             </SideMargin>
                         </Text>
                     </Project>
@@ -73,9 +73,9 @@ class ProjectsPanel extends React.Component {
 
                         <Text type="body2" serif>
                             <SideMargin margin="3%">
-                                Soluta necessitatibus nostrum iste dolorem ullam ducimus eos reiciendis. Distinctio voluptatem totam quaerat soluta.
-                                Explicabo eaque mollitia nulla id et sit. Dolorem quod et ea tenetur modi non. Eius temporibus assumenda ut
-                                voluptatibus et consequatur a.
+                                My first attempt at writing an emulator back in Sophmore year of high school. Designed to be run on a common graphing
+                                calculator (the Ti-NSpire CX CAS) and allow users to play Gameboy Classic games. Never got the graphics working but
+                                implemented the full CPU instruction set and interrupts.
                             </SideMargin>
                         </Text>
                     </Project>

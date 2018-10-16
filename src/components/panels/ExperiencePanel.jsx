@@ -32,9 +32,9 @@ class ExperiencePanel extends React.Component {
 
                         <Text type="body2" serif>
                             <SideMargin margin="3%">
-                                Soluta necessitatibus nostrum iste dolorem ullam ducimus eos reiciendis. Distinctio voluptatem totam quaerat soluta.
-                                Explicabo eaque mollitia nulla id et sit. Dolorem quod et ea tenetur modi non. Eius temporibus assumenda ut
-                                voluptatibus et consequatur a.
+                                My internship during the summer before my senior year of high school. Talla is a company that develops an extensible
+                                Slackbot that acts as a general purpose office manager. While there I built out a data annotation web app that would
+                                allow them to rapidly collect data from Slack and have it annotated by humans.
                             </SideMargin>
                         </Text>
                     </Project>
@@ -47,9 +47,9 @@ class ExperiencePanel extends React.Component {
 
                         <Text type="body2" serif>
                             <SideMargin margin="3%">
-                                Soluta necessitatibus nostrum iste dolorem ullam ducimus eos reiciendis. Distinctio voluptatem totam quaerat soluta.
-                                Explicabo eaque mollitia nulla id et sit. Dolorem quod et ea tenetur modi non. Eius temporibus assumenda ut
-                                voluptatibus et consequatur a.
+                                During the summer before my junior year of high school, I interned at Nutonian. Nutonian was (recently aquired by
+                                DataRobot) a general purpose Machine Learning company. While there I was a QA engineer, developing their first
+                                performance suite of tests for their api and maintaining a large number of Selenium tests.
                             </SideMargin>
                         </Text>
                     </Project>
@@ -62,9 +62,9 @@ class ExperiencePanel extends React.Component {
 
                         <Text type="body2" serif>
                             <SideMargin margin="3%">
-                                Soluta necessitatibus nostrum iste dolorem ullam ducimus eos reiciendis. Distinctio voluptatem totam quaerat soluta.
-                                Explicabo eaque mollitia nulla id et sit. Dolorem quod et ea tenetur modi non. Eius temporibus assumenda ut
-                                voluptatibus et consequatur a.
+                                During the summers before my freshman and sophomore year of high school, I interned at CloudHealth Tech, a cloud
+                                management company whose product optimized your cloud infrastructure. During my time there, I was part of the
+                                development team and built out features and fixed bugs for them.
                             </SideMargin>
                         </Text>
                     </Project>
