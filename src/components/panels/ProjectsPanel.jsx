@@ -35,7 +35,7 @@ class ProjectsPanel extends React.Component {
                 </center>
 
                 <ContentContainer>
-                    <Project to="/projects">
+                    <Project to="/projects?scroll=1">
                         <Text type="headline5" serif header>
                             candidateXYZ
                         </Text>
@@ -50,7 +50,7 @@ class ProjectsPanel extends React.Component {
                         </Text>
                     </Project>
 
-                    <Project to="/projects">
+                    <Project to="/projects?scroll=2">
                         <Text type="headline5" serif header>
                             Intel 8080 Emulator
                         </Text>
@@ -65,7 +65,7 @@ class ProjectsPanel extends React.Component {
                         </Text>
                     </Project>
 
-                    <Project to="/projects">
+                    <Project to="/projects?scroll=3">
                         <Text type="headline5" serif header>
                             Ti NSpire Gameboy Emulator
                         </Text>

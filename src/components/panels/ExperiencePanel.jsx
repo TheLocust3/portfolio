@@ -24,7 +24,7 @@ class ExperiencePanel extends React.Component {
                 </center>
 
                 <ContentContainer>
-                    <Project to="/experience">
+                    <Project to="/experience?scroll=1">
                         <Text type="headline5" serif header>
                             Talla
                         </Text>
@@ -39,7 +39,7 @@ class ExperiencePanel extends React.Component {
                         </Text>
                     </Project>
 
-                    <Project to="/experience">
+                    <Project to="/experience?scroll=2">
                         <Text type="headline5" serif header>
                             Nutonian
                         </Text>
@@ -54,7 +54,7 @@ class ExperiencePanel extends React.Component {
                         </Text>
                     </Project>
 
-                    <Project to="/experience">
+                    <Project to="/experience?scroll=3">
                         <Text type="headline5" serif header>
                             CloudHealth Technologies
                         </Text>

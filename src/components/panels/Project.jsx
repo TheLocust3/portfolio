@@ -45,6 +45,7 @@ let arrowClass = css`
     transition: opacity 250ms;
 
     opacity: 0;
+    color: ${colors.linkBlackHover};
 `;
 
 class Project extends React.Component {
