@@ -22,6 +22,10 @@ let ProjectContainer = styled('div')`
 
     cursor: pointer;
 
+    -webkit-transition: background-color 150ms linear;
+    -ms-transition: background-color 150ms linear;
+    transition: background-color 150ms linear;
+
     &:hover {
         background-color: rgba(0, 0, 0, 0.025);
     }
@@ -42,6 +46,7 @@ let arrowClass = css`
     transform: translate(0%, -50%);
 
     -webkit-transition: opacity 250ms;
+    -ms-transition: opacity 250ms;
     transition: opacity 250ms;
 
     opacity: 0;

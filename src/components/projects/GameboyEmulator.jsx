@@ -1,13 +1,22 @@
 import React from 'react';
-import styled from 'react-emotion';
+import styled, { css } from 'react-emotion';
 
 import Text from '../common/Text';
 
 let Container = styled('div')`
     position: relative;
 
-    height: 70vh;
+    min-height: 70vh;
     padding: 20px;
+`;
+
+let imageClass = css`
+    width: 50%;
+
+    float: right;
+
+    margin-left: 40px;
+    margin-bottom: 20px;
 `;
 
 class GameboyEmulator extends React.Component {
@@ -17,8 +26,11 @@ class GameboyEmulator extends React.Component {
                 <Text type="headline4" serif header>
                     Ti-Nspire Gameboy Emulator
                 </Text>
+                <br />
 
                 <Text type="body1" serif>
+                    <img className={imageClass} src="/candidatexyz.png" />
+
                     <p>
                         Quis illo laborum sed consectetur. Veniam est corrupti ea ut provident. Ipsum sit rem saepe earum deleniti eligendi saepe. Aut
                         aut ipsa voluptatibus et nesciunt quia laudantium. Et autem ipsum totam nulla. Sunt est explicabo nostrum neque.

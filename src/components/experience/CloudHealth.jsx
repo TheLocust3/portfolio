@@ -1,13 +1,22 @@
 import React from 'react';
-import styled from 'react-emotion';
+import styled, { css } from 'react-emotion';
 
 import Text from '../common/Text';
 
 let Container = styled('div')`
     position: relative;
 
-    height: 70vh;
+    min-height: 70vh;
     padding: 20px;
+`;
+
+let imageClass = css`
+    width: 20%;
+
+    float: left;
+
+    margin-right: 40px;
+    margin-bottom: 20px;
 `;
 
 class CloudHealth extends React.Component {
@@ -19,6 +28,8 @@ class CloudHealth extends React.Component {
                 </Text>
 
                 <Text type="body1" serif>
+                    <img className={imageClass} src="/talla.png" />
+
                     <p>
                         Quis illo laborum sed consectetur. Veniam est corrupti ea ut provident. Ipsum sit rem saepe earum deleniti eligendi saepe. Aut
                         aut ipsa voluptatibus et nesciunt quia laudantium. Et autem ipsum totam nulla. Sunt est explicabo nostrum neque.
