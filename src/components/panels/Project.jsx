@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { css } from 'react-emotion';
 
 import { colors } from '../../constants';
 
 import MaterialIcon from '../common/MaterialIcon';
+import UnstyledLink from '../common/UnstyledLink';
 
 let ProjectContainer = styled('div')`
     position: relative;
@@ -47,14 +49,23 @@ let arrowClass = css`
 
 class Project extends React.Component {
     render() {
-        return (
-            <ProjectContainer>
-                {this.props.children}
+        let { to, children, ...props } = this.props;
 
-                <MaterialIcon icon="arrow_forward" className={arrowClass} />
-            </ProjectContainer>
+        return (
+            <UnstyledLink to={to}>
+                <ProjectContainer {...props}>
+                    {children}
+
+                    <MaterialIcon icon="arrow_forward" className={arrowClass} />
+                </ProjectContainer>
+            </UnstyledLink>
         );
     }
 }
+
+Project.propTypes = {
+    to: PropTypes.string.isRequired,
+    children: PropTypes.any
+};
 
 export default Project;

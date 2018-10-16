@@ -1,22 +1,27 @@
 import React from 'react';
-import styled from 'react-emotion';
+import { css } from 'react-emotion';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-let unstyledLink = styled('div')`
-    margin-top: 5vh;
+import { colors } from '../../constants';
 
-    padding-left: 20vw;
-    padding-right: 20vw;
+let unstyledLink = css`
+    color: ${colors.textBlack};
+    text-decoration: none;
+
+    &:hover {
+        color: ${colors.textBlack};
+    }
 `;
-
 
 class UnstyledLink extends React.Component {
     render() {
-        let { className, children, ...props }
+        let { className, children, ...props } = this.props;
 
         return (
-            <Link className={`${unstyledLink} ${this.props.className}`} {...props}>{this.props.children}</Link>
+            <Link className={`${unstyledLink} ${this.props.className}`} {...props}>
+                {this.props.children}
+            </Link>
         );
     }
 }
@@ -26,4 +31,4 @@ UnstyledLink.propTypes = {
     children: PropTypes.any
 };
 
-export default UnstyledLink
+export default UnstyledLink;

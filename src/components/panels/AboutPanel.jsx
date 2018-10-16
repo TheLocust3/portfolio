@@ -11,7 +11,7 @@ let RoundedImage = styled('div')`
 
     height: 35vh;
     width: 30vh;
-    border-radius: 5%;
+    border-radius: 3%;
 `;
 
 let image = css`
