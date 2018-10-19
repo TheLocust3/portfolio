@@ -7,6 +7,7 @@ import queryString from 'query-string';
 import { setTitle, setSolidNavbar } from '../actions/global-actions';
 
 import Content from '../components/common/Content';
+import FadeIn from '../components/common/FadeIn';
 import ScrollUp from '../components/common/ScrollUp';
 import Talla from '../components/experience/Talla';
 import Nutonian from '../components/experience/Nutonian';
@@ -33,21 +34,23 @@ class Experience extends React.Component {
 
     render() {
         return (
-            <Content>
-                <div id="1">
-                    <Talla />
-                </div>
+            <FadeIn>
+                <Content>
+                    <div id="1">
+                        <Talla />
+                    </div>
 
-                <div id="2">
-                    <Nutonian />
-                </div>
+                    <div id="2">
+                        <Nutonian />
+                    </div>
 
-                <div id="3">
-                    <CloudHealth />
-                </div>
+                    <div id="3">
+                        <CloudHealth />
+                    </div>
 
-                <ScrollUp />
-            </Content>
+                    <ScrollUp />
+                </Content>
+            </FadeIn>
         );
     }
 }

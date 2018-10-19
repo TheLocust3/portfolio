@@ -5,6 +5,7 @@ import { setTitle, setSolidNavbar } from '../actions/global-actions';
 
 import ScrollUp from '../components/common/ScrollUp';
 
+import FadeIn from '../components/common/FadeIn';
 import SplashScreen from '../components/SplashScreen';
 import AboutPanel from '../components/panels/AboutPanel';
 
@@ -19,7 +20,7 @@ class Index extends React.Component {
 
     render() {
         return (
-            <div>
+            <FadeIn>
                 <SplashScreen />
 
                 <AboutPanel />
@@ -27,7 +28,7 @@ class Index extends React.Component {
                 <ExperiencePanel />
 
                 <ScrollUp />
-            </div>
+            </FadeIn>
         );
     }
 }

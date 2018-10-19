@@ -123,7 +123,7 @@ class ProjectsPanel extends React.Component {
 }
 
 ProjectsPanel.propTypes = {
-    all: PropTypes.boolean
+    all: PropTypes.bool
 };
 
 export default ProjectsPanel;

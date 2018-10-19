@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { setTitle, setSolidNavbar } from '../actions/global-actions';
 
 import Content from '../components/common/Content';
+import FadeIn from '../components/common/FadeIn';
 import ProjectsPanel from '../components/panels/ProjectsPanel';
 
 class Projects extends React.Component {
@@ -14,9 +15,11 @@ class Projects extends React.Component {
 
     render() {
         return (
-            <Content>
-                <ProjectsPanel all />
-            </Content>
+            <FadeIn>
+                <Content>
+                    <ProjectsPanel all />
+                </Content>
+            </FadeIn>
         );
     }
 }

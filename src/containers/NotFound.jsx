@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 
 import { setTitle, setSolidNavbar } from '../actions/global-actions';
 
+import Content from '../components/common/Content';
+import FadeIn from '../components/common/FadeIn';
+
 class NotFound extends React.Component {
     componentWillMount() {
         this.props.dispatch(setTitle('Not Found'));
@@ -10,7 +13,11 @@ class NotFound extends React.Component {
     }
 
     render() {
-        return <div className="content">404 Not Found!</div>;
+        return (
+            <FadeIn>
+                <Content>404 Not Found!</Content>
+            </FadeIn>
+        );
     }
 }
 

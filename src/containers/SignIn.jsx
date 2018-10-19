@@ -4,6 +4,7 @@ import { Text, MDCAutoInit } from 'react-material-components-web';
 
 import { setTitle, setSolidNavbar } from '../actions/global-actions';
 
+import Content from '../components/common/Content';
 import SignInForm from '../components/SignInForm';
 
 class SignIn extends React.Component {
@@ -14,14 +15,14 @@ class SignIn extends React.Component {
 
     render() {
         return (
-            <div className="content">
+            <Content>
                 <Text type="headline2">Sign In</Text>
                 <br />
 
                 <SignInForm />
 
                 <MDCAutoInit />
-            </div>
+            </Content>
         );
     }
 }
