@@ -1,14 +1,11 @@
 import React from 'react';
-import styled, { css } from 'react-emotion';
+import { css } from 'react-emotion';
+import { connect } from 'react-redux';
 
-import Text from '../common/Text';
+import { setTitle, setSolidNavbar } from '../../actions/global-actions';
 
-let Container = styled('div')`
-    position: relative;
-
-    min-height: 70vh;
-    padding: 20px;
-`;
+import Text from '../../components/common/Text';
+import Content from '../../components/common/Content';
 
 let imageClass = css`
     width: 50%;
@@ -19,12 +16,17 @@ let imageClass = css`
     margin-bottom: 20px;
 `;
 
-class CandidateXYZ extends React.Component {
+class PongAimbot extends React.Component {
+    componentWillMount() {
+        this.props.dispatch(setTitle('candidateXYZ'));
+        this.props.dispatch(setSolidNavbar(true));
+    }
+
     render() {
         return (
-            <Container>
+            <Content>
                 <Text type="headline4" serif header>
-                    candidateXYZ
+                    3D Pong Aimbot
                 </Text>
                 <br />
 
@@ -58,9 +60,9 @@ class CandidateXYZ extends React.Component {
                         tempore. Totam illo ea labore ut ipsum omnis quis. Aperiam aut sunt voluptas.
                     </p>
                 </Text>
-            </Container>
+            </Content>
         );
     }
 }
 
-export default CandidateXYZ;
+export default connect()(PongAimbot);

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { css } from 'react-emotion';
 import { Button } from 'react-material-components-web';
 
@@ -25,6 +26,40 @@ let moreButton = css`
 `;
 
 class ProjectsPanel extends React.Component {
+    renderRest() {
+        if (!this.props.all) {
+            return (
+                <div>
+                    <br />
+                    <br />
+
+                    <Button className={moreButton} onClick={() => history.push('/projects')}>
+                        <Text type="body2" serif>
+                            See more projects
+                        </Text>
+                    </Button>
+                </div>
+            );
+        }
+
+        return (
+            <Project to="/projects/pong-aimbot">
+                <Text type="headline5" serif header>
+                    3D Pong Aimbot
+                </Text>
+                <br />
+
+                <Text type="body2" serif>
+                    <SideMargin margin="3%">
+                        My first attempt at writing an emulator back in Sophmore year of high school. Designed to be run on a common graphing
+                        calculator (the Ti-NSpire CX CAS) and allow users to play Gameboy Classic games. Never got the graphics working but
+                        implemented the full CPU instruction set and interrupts.
+                    </SideMargin>
+                </Text>
+            </Project>
+        );
+    }
+
     render() {
         return (
             <Panel>
@@ -35,7 +70,7 @@ class ProjectsPanel extends React.Component {
                 </center>
 
                 <ContentContainer>
-                    <Project to="/projects?scroll=1">
+                    <Project to="/projects/candidatexyz">
                         <Text type="headline5" serif header>
                             candidateXYZ
                         </Text>
@@ -51,7 +86,7 @@ class ProjectsPanel extends React.Component {
                         </Text>
                     </Project>
 
-                    <Project to="/projects?scroll=2">
+                    <Project to="/projects/intel8080">
                         <Text type="headline5" serif header>
                             Intel 8080 Emulator
                         </Text>
@@ -65,7 +100,7 @@ class ProjectsPanel extends React.Component {
                         </Text>
                     </Project>
 
-                    <Project to="/projects?scroll=3">
+                    <Project to="/projects/gameboy-emulator">
                         <Text type="headline5" serif header>
                             Ti NSpire Gameboy Emulator
                         </Text>
@@ -79,19 +114,16 @@ class ProjectsPanel extends React.Component {
                             </SideMargin>
                         </Text>
                     </Project>
-                    <br />
-                    <br />
-                    <br />
 
-                    <Button className={moreButton} onClick={() => history.push('/projects')}>
-                        <Text type="body2" serif>
-                            See more projects
-                        </Text>
-                    </Button>
+                    {this.renderRest()}
                 </ContentContainer>
             </Panel>
         );
     }
 }
+
+ProjectsPanel.propTypes = {
+    all: PropTypes.boolean
+};
 
 export default ProjectsPanel;

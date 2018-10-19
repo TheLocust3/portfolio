@@ -1,30 +1,32 @@
 import React from 'react';
-import styled, { css } from 'react-emotion';
+import { css } from 'react-emotion';
+import { connect } from 'react-redux';
 
-import Text from '../common/Text';
+import { setTitle, setSolidNavbar } from '../../actions/global-actions';
 
-let Container = styled('div')`
-    position: relative;
-
-    min-height: 70vh;
-    padding: 20px;
-`;
+import Text from '../../components/common/Text';
+import Content from '../../components/common/Content';
 
 let imageClass = css`
     width: 50%;
 
-    float: left;
+    float: right;
 
-    margin-right: 40px;
+    margin-left: 40px;
     margin-bottom: 20px;
 `;
 
-class Intel8080 extends React.Component {
+class CandidateXYZ extends React.Component {
+    componentWillMount() {
+        this.props.dispatch(setTitle('candidateXYZ'));
+        this.props.dispatch(setSolidNavbar(true));
+    }
+
     render() {
         return (
-            <Container>
+            <Content>
                 <Text type="headline4" serif header>
-                    Intel 8080 Emulator
+                    candidateXYZ
                 </Text>
                 <br />
 
@@ -58,9 +60,9 @@ class Intel8080 extends React.Component {
                         tempore. Totam illo ea labore ut ipsum omnis quis. Aperiam aut sunt voluptas.
                     </p>
                 </Text>
-            </Container>
+            </Content>
         );
     }
 }
 
-export default Intel8080;
+export default connect()(CandidateXYZ);
