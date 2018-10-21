@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import styled from 'react-emotion';
 
 let FadeIn = styled('div')`

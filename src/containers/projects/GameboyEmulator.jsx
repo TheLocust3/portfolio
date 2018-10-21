@@ -33,7 +33,7 @@ class GameboyEmulator extends React.Component {
                     <br />
 
                     <Text type="body1" serif>
-                        <img className={imageClass} src="/candidatexyz.png" />
+                        <img className={imageClass} src="/candidatexyz.png" alt="Gameboy Emulator" />
 
                         <p>
                             Quis illo laborum sed consectetur. Veniam est corrupti ea ut provident. Ipsum sit rem saepe earum deleniti eligendi saepe.
