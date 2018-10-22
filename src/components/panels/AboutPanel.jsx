@@ -9,9 +9,9 @@ let RoundedImage = styled('div')`
     position: relative;
     overflow: hidden;
 
-    height: 35vh;
-    width: 30vh;
-    border-radius: 3%;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
 `;
 
 let image = css`
@@ -31,7 +31,7 @@ class AboutPanel extends React.Component {
 
                 <center>
                     <Text type="headline4" header>
-                        About Me
+                        About Jake
                     </Text>
                     <br />
                     <br />
@@ -43,8 +43,8 @@ class AboutPanel extends React.Component {
 
                     <Content margin="30%" style={{ marginTop: '0', marginBottom: '0' }}>
                         <Text type="body2">
-                            Software developer since elementary school, and entrepreneur, with a passion for building technology. Currently a Freshman
-                            Computer Science student at Northeastern.
+                            I'm a software developer, and entrepreneur, with a passion for building technology. Currently a Freshman Computer Science
+                            student at Northeastern.
                         </Text>
                     </Content>
                 </center>

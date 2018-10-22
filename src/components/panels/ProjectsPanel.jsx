@@ -18,7 +18,7 @@ let ContentContainer = styled('div')`
 `;
 
 let moreButton = css`
-    width: 100%;
+    width: 80%;
 
     background-color: #e0e0e0 !important;
     color: ${colors.textBlack} !important;
@@ -29,14 +29,14 @@ class ProjectsPanel extends React.Component {
     renderRest() {
         if (!this.props.all) {
             return (
-                <div>
+                <center>
                     <br />
                     <br />
 
                     <Button className={moreButton} onClick={() => history.push('/projects')}>
                         <Text type="body2">See more projects</Text>
                     </Button>
-                </div>
+                </center>
             );
         }
 

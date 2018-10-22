@@ -22,9 +22,13 @@ class Index extends React.Component {
         return (
             <FadeIn>
                 <SplashScreen src="/images/splash.jpeg" header="Jake Kinsella" subtitle="Developer, and aspiring entrepreneur." />
+                <br />
 
                 <AboutPanel />
+
                 <ProjectsPanel />
+                <br />
+
                 <ExperiencePanel />
 
                 <ScrollUp />
