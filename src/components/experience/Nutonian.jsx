@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'react-emotion';
 
+import { MAX_MOBILE_WIDTH } from '../../constants';
 import Text from '../common/Text';
 
 let Container = styled('div')`
@@ -17,6 +18,11 @@ let imageClass = css`
 
     margin-right: 40px;
     margin-bottom: 20px;
+
+    @media (max-width: ${MAX_MOBILE_WIDTH}) {
+        width: 90%;
+        margin: 5%;
+    }
 `;
 
 class Nutonian extends React.Component {

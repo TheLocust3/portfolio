@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'react-emotion';
 
+import { MAX_MOBILE_WIDTH } from '../../constants';
+
 import SideMargin from '../common/SideMargin';
 import Text from '../common/Text';
 import Panel from './Panel';
@@ -11,6 +13,11 @@ let ContentContainer = styled('div')`
 
     padding-left: 17.5vw;
     padding-right: 17.5vw;
+
+    @media (max-width: ${MAX_MOBILE_WIDTH}) {
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
 `;
 
 class ExperiencePanel extends React.Component {
@@ -31,7 +38,7 @@ class ExperiencePanel extends React.Component {
                         <br />
 
                         <Text type="body2">
-                            <SideMargin margin="3%">
+                            <SideMargin margin={3}>
                                 My internship during the summer before my senior year of high school. Talla is a company that develops an extensible
                                 Slackbot that acts as a general purpose office manager. While there I built out a data annotation web app that would
                                 allow them to rapidly collect data from Slack and have it annotated by humans.
@@ -46,7 +53,7 @@ class ExperiencePanel extends React.Component {
                         <br />
 
                         <Text type="body2">
-                            <SideMargin margin="3%">
+                            <SideMargin margin={3}>
                                 During the summer before my junior year of high school, I interned at Nutonian. Nutonian was (recently aquired by
                                 DataRobot) a general purpose Machine Learning company. While there I was a QA engineer, developing their first
                                 performance suite of tests for their api and maintaining a large number of Selenium tests.
@@ -61,7 +68,7 @@ class ExperiencePanel extends React.Component {
                         <br />
 
                         <Text type="body2">
-                            <SideMargin margin="3%">
+                            <SideMargin margin={3}>
                                 During the summers before my freshman and sophomore year of high school, I interned at CloudHealth Tech, a cloud
                                 management company whose product optimized your cloud infrastructure. During my time there, I was part of the
                                 development team and built out features and fixed bugs for them.

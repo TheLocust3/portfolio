@@ -1,5 +1,7 @@
 import _ from 'lodash';
-import styled from 'react-emotion';
+import styled, { css } from 'react-emotion';
+
+import { MAX_MOBILE_WIDTH } from '../../constants';
 
 let Panel = styled('div')`
     position: relative;
@@ -9,6 +11,12 @@ let Panel = styled('div')`
     min-height: 50vh;
     padding: 20px;
     margin-bottom: 5vh;
+
+    @media (max-width: ${MAX_MOBILE_WIDTH}) {
+        padding: 0;
+
+        margin-bottom: 2.5vh;
+    }
 `;
 
 export default Panel;

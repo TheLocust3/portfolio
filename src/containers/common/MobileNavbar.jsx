@@ -1,11 +1,8 @@
-import $ from 'jquery';
 import React from 'react';
 import { connect } from 'react-redux';
 import { css } from 'react-emotion';
 import { Link } from 'react-router-dom';
 import { MDCTemporaryDrawer } from '@material/drawer';
-
-import { MAX_MOBILE_WIDTH } from '../../constants';
 
 import Text from '../../components/common/Text';
 import UnstyledLink from '../../components/common/UnstyledLink';
@@ -19,30 +16,6 @@ let navbarClass = css`
 `;
 
 class MobileNavbar extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = { lastRenderedWidth: $(document).width() };
-    }
-
-    updateDimensions() {
-        let width = $(document).width();
-        if (
-            (this.state.lastRenderedWidth > MAX_MOBILE_WIDTH && width < MAX_MOBILE_WIDTH) ||
-            (this.state.lastRenderedWidth < MAX_MOBILE_WIDTH && width > MAX_MOBILE_WIDTH)
-        ) {
-            this.setState({
-                lastRenderedWidth: width
-            });
-
-            this.forceUpdate();
-        }
-    }
-
-    componentDidMount() {
-        window.addEventListener('resize', () => this.updateDimensions());
-    }
-
     onMenuClick(event) {
         event.preventDefault();
 

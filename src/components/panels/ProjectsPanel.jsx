@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'react-emotion';
 import { Button } from 'react-material-components-web';
 
-import { history, colors } from '../../constants';
+import { history, colors, MAX_MOBILE_WIDTH } from '../../constants';
 
 import Project from './Project';
 import SideMargin from '../common/SideMargin';
@@ -15,6 +15,17 @@ let ContentContainer = styled('div')`
 
     padding-left: 17.5vw;
     padding-right: 17.5vw;
+
+    @media (max-width: ${MAX_MOBILE_WIDTH}) {
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+`;
+
+let titleClass = css`
+    @media (max-width: ${MAX_MOBILE_WIDTH}) {
+        margin-top: 25%;
+    }
 `;
 
 let moreButton = css`
@@ -48,7 +59,7 @@ class ProjectsPanel extends React.Component {
                 <br />
 
                 <Text type="body2">
-                    <SideMargin margin="3%">
+                    <SideMargin margin={3}>
                         My first attempt at writing an emulator back in Sophmore year of high school. Designed to be run on a common graphing
                         calculator (the Ti-NSpire CX CAS) and allow users to play Gameboy Classic games. Never got the graphics working but
                         implemented the full CPU instruction set and interrupts.
@@ -62,7 +73,7 @@ class ProjectsPanel extends React.Component {
         return (
             <Panel>
                 <center>
-                    <Text type="headline4" header>
+                    <Text className={titleClass} type="headline4" header>
                         Selected Projects
                     </Text>
                 </center>
@@ -75,7 +86,7 @@ class ProjectsPanel extends React.Component {
                         <br />
 
                         <Text type="body2">
-                            <SideMargin margin="3%">
+                            <SideMargin margin={3}>
                                 Created during the summer of my senior year, candidateXYZ is web application design to make it easy for everyone to
                                 run for office, no matter your experience, connections, or finiancial situation. Allows candidates create an official
                                 Candidate Committee, keep track of their finiances (receipts, expenditures, liabilities), and generate monthly
@@ -91,7 +102,7 @@ class ProjectsPanel extends React.Component {
                         <br />
 
                         <Text type="body2">
-                            <SideMargin margin="3%">
+                            <SideMargin margin={3}>
                                 Built during my Junior year of high school after my first attempt at building a Gameboy emulator. Emulates the pure
                                 Intel 8080 CPU based off of the original specification. Fully tested instruction set and CPU interrupts.
                             </SideMargin>
@@ -105,7 +116,7 @@ class ProjectsPanel extends React.Component {
                         <br />
 
                         <Text type="body2">
-                            <SideMargin margin="3%">
+                            <SideMargin margin={3}>
                                 My first attempt at writing an emulator back in Sophmore year of high school. Designed to be run on a common graphing
                                 calculator (the Ti-NSpire CX CAS) and allow users to play Gameboy Classic games. Never got the graphics working but
                                 implemented the full CPU instruction set and interrupts.

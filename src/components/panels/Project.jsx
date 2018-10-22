@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'react-emotion';
 
-import { colors } from '../../constants';
+import { colors, MAX_MOBILE_WIDTH } from '../../constants';
 
 import MaterialIcon from '../common/MaterialIcon';
 import UnstyledLink from '../common/UnstyledLink';
@@ -36,6 +36,12 @@ let ProjectContainer = styled('div')`
 
     &:hover i {
         opacity: 1;
+    }
+
+    @media (max-width: ${MAX_MOBILE_WIDTH}) {
+        padding: 20px;
+        padding-top: 2.5vh;
+        padding-bottom: 2.5vh;
     }
 `;
 

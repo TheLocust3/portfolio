@@ -1,10 +1,12 @@
+import $ from 'jquery';
 import React from 'react';
 import { connect } from 'react-redux';
 import styled, { css } from 'react-emotion';
 
-import { colors } from '../../constants';
+import { colors, MAX_MOBILE_WIDTH_NUMBER } from '../../constants';
 
 import NavbarLink from './NavbarLink';
+import MobileNavbar from './MobileNavbar';
 
 let NavbarDiv = styled('div')`
     position: absolute;
@@ -27,22 +29,53 @@ let solidNavbar = css`
 `;
 
 class Navbar extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { lastRenderedWidth: $(document).width() };
+    }
+
+    updateDimensions() {
+        let width = $(document).width();
+
+        if (
+            (this.state.lastRenderedWidth > MAX_MOBILE_WIDTH_NUMBER && width < MAX_MOBILE_WIDTH_NUMBER) ||
+            (this.state.lastRenderedWidth < MAX_MOBILE_WIDTH_NUMBER && width > MAX_MOBILE_WIDTH_NUMBER)
+        ) {
+            this.setState({
+                lastRenderedWidth: width
+            });
+
+            this.forceUpdate();
+        }
+    }
+
+    componentDidMount() {
+        window.addEventListener('resize', () => this.updateDimensions());
+    }
+
     render() {
-        return (
-            <NavbarDiv className={this.props.solidNavbar ? solidNavbar : ''}>
-                <NavbarLink to="/" solid={this.props.solidNavbar}>
-                    Home
-                </NavbarLink>
+        if (this.state.lastRenderedWidth > MAX_MOBILE_WIDTH_NUMBER) {
+            return (
+                <div>
+                    <NavbarDiv className={this.props.solidNavbar ? solidNavbar : ''}>
+                        <NavbarLink to="/" solid={this.props.solidNavbar}>
+                            Home
+                        </NavbarLink>
 
-                <NavbarLink to="/projects" solid={this.props.solidNavbar}>
-                    Projects
-                </NavbarLink>
+                        <NavbarLink to="/projects" solid={this.props.solidNavbar}>
+                            Projects
+                        </NavbarLink>
 
-                <NavbarLink to="/experience" solid={this.props.solidNavbar}>
-                    Experience
-                </NavbarLink>
-            </NavbarDiv>
-        );
+                        <NavbarLink to="/experience" solid={this.props.solidNavbar}>
+                            Experience
+                        </NavbarLink>
+                    </NavbarDiv>
+                </div>
+            );
+        } else {
+            return <MobileNavbar />;
+        }
     }
 }
 

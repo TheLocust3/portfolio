@@ -1,5 +1,7 @@
 import { injectGlobal } from 'emotion';
 
+import { MAX_MOBILE_WIDTH } from './constants';
+
 injectGlobal`
     body {
         margin: 0;
@@ -33,5 +35,11 @@ injectGlobal`
     .mdc-typography--body2 {
         font-family: "Trebuchet MS", Arial, sans-serif;
         font-weight: 300;
+    }
+
+    .mdc-typography--headline1 {
+        @media (max-width: ${MAX_MOBILE_WIDTH}) {
+            font-size: 72px;
+        }
     }
 `;

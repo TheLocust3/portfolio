@@ -1,24 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { css } from 'react-emotion';
 
 import { setTitle, setSolidNavbar } from '../../actions/global-actions';
 
 import Text from '../../components/common/Text';
 import Content from '../../components/common/Content';
 import FadeIn from '../../components/common/FadeIn';
+import ProjectImage from './ProjectImage';
 import SplashScreen from '../../components/SplashScreen';
-
-let imageClass = css`
-    height: 300px;
-
-    float: right;
-
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-`;
 
 class GameboyEmulator extends React.Component {
     componentWillMount() {
@@ -33,7 +22,7 @@ class GameboyEmulator extends React.Component {
 
                 <Content>
                     <Text type="body1">
-                        <img className={imageClass} src="/images/projects/gameboy_specs.png" alt="Gameboy Specs" />
+                        <ProjectImage src="/images/projects/gameboy_specs.png" alt="Gameboy Specs" />
 
                         <p>
                             Quis illo laborum sed consectetur. Veniam est corrupti ea ut provident. Ipsum sit rem saepe earum deleniti eligendi saepe.

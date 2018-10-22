@@ -3,7 +3,9 @@ import _ from 'lodash';
 import React from 'react';
 import { connect } from 'react-redux';
 import queryString from 'query-string';
+import styled from 'react-emotion';
 
+import { MAX_MOBILE_WIDTH } from '../constants';
 import { setTitle, setSolidNavbar } from '../actions/global-actions';
 
 import Content from '../components/common/Content';
@@ -12,6 +14,12 @@ import ScrollUp from '../components/common/ScrollUp';
 import Talla from '../components/experience/Talla';
 import Nutonian from '../components/experience/Nutonian';
 import CloudHealth from '../components/experience/CloudHealth';
+
+let Spacer = styled('div')`
+    @media (max-width: ${MAX_MOBILE_WIDTH}) {
+        margin-top: 25%;
+    }
+`;
 
 class Experience extends React.Component {
     componentWillMount() {
@@ -36,6 +44,8 @@ class Experience extends React.Component {
         return (
             <FadeIn>
                 <Content>
+                    <Spacer />
+
                     <div id="1">
                         <Talla />
                     </div>
