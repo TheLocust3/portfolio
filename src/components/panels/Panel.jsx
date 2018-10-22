@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import styled, { css } from 'react-emotion';
+import styled from 'react-emotion';
 
 import { MAX_MOBILE_WIDTH } from '../../constants';
 

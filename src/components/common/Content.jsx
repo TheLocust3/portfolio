@@ -8,14 +8,13 @@ let Content = styled('div')`
 
     margin-top: 5%;
     margin-bottom: 5%;
-    margin-left: ${(props) => (_.isEmpty(props.margin) ? '5%' : `${props.margin}%`)};
-    margin-right: ${(props) => (_.isEmpty(props.margin) ? '5%' : `${props.margin}%`)};
+    margin-left: ${(props) => (_.isUndefined(props.margin) ? '5%' : `${props.margin}%`)};
+    margin-right: ${(props) => (_.isUndefined(props.margin) ? '5%' : `${props.margin}%`)};
 
     @media (max-width: ${MAX_MOBILE_WIDTH}) {
         margin-top: 5%;
-
-        margin-left: ${(props) => (_.isEmpty(props.margin) ? '2.5%' : `${props.margin / 2}%`)};
-        margin-right: ${(props) => (_.isEmpty(props.margin) ? '2.5%' : `${props.margin / 2}%`)};
+        margin-left: ${(props) => (_.isUndefined(props.margin) ? '2.5%' : `${props.margin / 2}%`)};
+        margin-right: ${(props) => (_.isUndefined(props.margin) ? '2.5%' : `${props.margin / 2}%`)};
     }
 `;
 

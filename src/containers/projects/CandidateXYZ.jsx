@@ -22,12 +22,12 @@ class CandidateXYZ extends React.Component {
 
                 <Content>
                     <Text type="body1">
-                        <ProjectImage src="/images/projects/candidatexyz_finance.png" alt="candidateXYZ Finance" />
-
                         <p>
                             Quis illo laborum sed consectetur. Veniam est corrupti ea ut provident. Ipsum sit rem saepe earum deleniti eligendi saepe.
                             Aut aut ipsa voluptatibus et nesciunt quia laudantium. Et autem ipsum totam nulla. Sunt est explicabo nostrum neque.
                         </p>
+
+                        <ProjectImage src="/images/projects/candidatexyz_finance.png" alt="candidateXYZ Finance" />
 
                         <p>
                             Consequatur reprehenderit quisquam qui quia praesentium dolor corporis fugit. Facere porro rerum aut aut earum quas velit
