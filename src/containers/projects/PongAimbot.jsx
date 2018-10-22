@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { css } from 'react-emotion';
 
 import { setTitle, setSolidNavbar } from '../../actions/global-actions';
 
@@ -7,6 +8,17 @@ import Text from '../../components/common/Text';
 import Content from '../../components/common/Content';
 import FadeIn from '../../components/common/FadeIn';
 import SplashScreen from '../../components/SplashScreen';
+
+let imageClass = css`
+    width: 450px;
+
+    float: right;
+
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+`;
 
 class PongAimbot extends React.Component {
     componentWillMount() {
@@ -21,6 +33,8 @@ class PongAimbot extends React.Component {
 
                 <Content>
                     <Text type="body1">
+                        <img className={imageClass} src="/images/projects/pong.png" alt="3D Pong" />
+
                         <p>
                             Quis illo laborum sed consectetur. Veniam est corrupti ea ut provident. Ipsum sit rem saepe earum deleniti eligendi saepe.
                             Aut aut ipsa voluptatibus et nesciunt quia laudantium. Et autem ipsum totam nulla. Sunt est explicabo nostrum neque.
