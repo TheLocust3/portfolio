@@ -16,9 +16,9 @@ class Projects extends React.Component {
     render() {
         return (
             <FadeIn>
-                <Content>
-                    <ProjectsPanel all />
-                </Content>
+                <br />
+                <br />
+                <ProjectsPanel all />
             </FadeIn>
         );
     }

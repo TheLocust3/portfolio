@@ -60,9 +60,9 @@ class ProjectsPanel extends React.Component {
 
                 <Text type="body2">
                     <SideMargin margin={3}>
-                        My first attempt at writing an emulator back in Sophmore year of high school. Designed to be run on a common graphing
-                        calculator (the Ti-NSpire CX CAS) and allow users to play Gameboy Classic games. Never got the graphics working but
-                        implemented the full CPU instruction set and interrupts.
+                        Written at the end of my sophomore year of high school in a competition with my close friend. This program is made to play a
+                        version of 3D Pong automatically and get to as high a level as possible. It involved hundreds of lines of optimizations and
+                        parallel processing techniques to predict where the ball would be going and move the paddle.
                     </SideMargin>
                 </Text>
             </Project>
@@ -103,7 +103,7 @@ class ProjectsPanel extends React.Component {
 
                         <Text type="body2">
                             <SideMargin margin={3}>
-                                Built during my Junior year of high school after my first attempt at building a Gameboy emulator. Emulates the pure
+                                Built during my junior year of high school after my first attempt at building a Gameboy emulator. Emulates the pure
                                 Intel 8080 CPU based off of the original specification. Fully tested instruction set and CPU interrupts.
                             </SideMargin>
                         </Text>

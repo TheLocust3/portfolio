@@ -23,32 +23,38 @@ class Intel8080 extends React.Component {
                 <Content>
                     <Text type="body1">
                         <p>
-                            Quis illo laborum sed consectetur. Veniam est corrupti ea ut provident. Ipsum sit rem saepe earum deleniti eligendi saepe.
-                            Aut aut ipsa voluptatibus et nesciunt quia laudantium. Et autem ipsum totam nulla. Sunt est explicabo nostrum neque.
+                            During my sophmore year of high school, I started to be interested in emulators through my project to create a Gameboy
+                            Classic emulator for my calculator (a project that can be found on this site). This project inspired me to step by and
+                            work on a more common and well defined CPU to try to emulate it properly and get a handle on the organization of
+                            emulators.
                         </p>
 
                         <ProjectImage src="/images/projects/intel8080_code.png" alt="Intel 8080 Code" />
 
                         <p>
-                            Consequatur reprehenderit quisquam qui quia praesentium dolor corporis fugit. Facere porro rerum aut aut earum quas velit
-                            qui. Dolorum aut dolores sed. Doloribus voluptatum eum assumenda ut ut vel. Cum ea debitis quam sapiente illo nemo. Id
-                            praesentium voluptas sed modi.
+                            I got the idea to pursue an emulator of the Intel 8080 chip by reading the book Code: The Hidden Language of Computer
+                            Hardware and Software, in which the author describes the inner workings of the 8080. The elegance of its insides inspired
+                            me to pull up the Intel manual and read more about the opcodes and registers. Through this, I decided that I wanted to
+                            give emulating this CPU a shot.
                         </p>
 
                         <p>
-                            Occaecati aut reprehenderit repudiandae. Sed totam suscipit placeat fugiat nulla quo quibusdam fugiat. Ad incidunt dolores
-                            nam exercitationem. In suscipit aliquid aut velit consequatur magnam est. Itaque aut aut voluptas.
+                            So after reading through the manual repeatedly, I felt confident enough to tackle actually writing the code. To do this I
+                            decided that I wanted to write it in C, simply so that I had more experience in the language. I started off by writing the
+                            main loop and basic registers and immediately decided that for each module and opcode that I wrote, I would write multiple
+                            tests. This was a huge lesson that I learned from my last attempt at writing an emulator which quickly got out of hand
+                            with bugs and unreadable code.
                         </p>
 
                         <p>
-                            Nemo sunt quam minus minima ut. Facilis aut possimus qui dolor quos. Aut voluptatem et tempore placeat esse. Possimus
-                            dolor soluta quas est quidem. Molestiae sit rerum dolores ratione corrupti aut iure.
+                            In the end, I had implemented all the opcodes in the 8080, the registers, and added the ability to register new
+                            interrupts, making this emulator complete. The only piece that I didn't implement was the clock speed which would involve
+                            slowing the program down so that the opcodes would be run at the proper times.
                         </p>
 
                         <p>
-                            Sit similique et id ut architecto assumenda delectus. Et aspernatur veniam cumque ut reprehenderit voluptatem consequatur
-                            itaque. Quisquam accusantium alias id fugit ad iure voluptas. Dignissimos voluptatem minima voluptas laudantium aliquam
-                            omnis tempore. Totam illo ea labore ut ipsum omnis quis. Aperiam aut sunt voluptas.
+                            Through this project I learned a load hard skills like C and proper testing, but I also came away with a lot of soft
+                            skills like proper code organization and writing a project so that it can scale to thousands more lines of code.
                         </p>
                     </Text>
                 </Content>
