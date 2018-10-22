@@ -28,7 +28,7 @@ class Talla extends React.Component {
                 </Text>
 
                 <Text type="body1">
-                    <img className={imageClass} src="/talla.png" alt="Talla" />
+                    <img className={imageClass} src="/images/talla.png" alt="Talla" />
 
                     <p>
                         Quis illo laborum sed consectetur. Veniam est corrupti ea ut provident. Ipsum sit rem saepe earum deleniti eligendi saepe. Aut

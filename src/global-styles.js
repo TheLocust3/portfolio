@@ -31,7 +31,7 @@ injectGlobal`
     .mdc-typography--headline6,
     .mdc-typography--body1,
     .mdc-typography--body2 {
-        font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+        font-family: "Trebuchet MS", Arial, sans-serif;
         font-weight: 300;
     }
 `;

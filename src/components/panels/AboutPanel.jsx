@@ -37,7 +37,7 @@ class AboutPanel extends React.Component {
                     <br />
 
                     <RoundedImage>
-                        <img src="/jake.png" alt="Jake" className={image} />
+                        <img src="/images/jake.png" alt="Jake" className={image} />
                     </RoundedImage>
                     <br />
 

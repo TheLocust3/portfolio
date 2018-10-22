@@ -21,7 +21,7 @@ class Index extends React.Component {
     render() {
         return (
             <FadeIn>
-                <SplashScreen />
+                <SplashScreen src="/images/splash.jpeg" header="Jake Kinsella" subtitle="Developer, and aspiring entrepreneur." />
 
                 <AboutPanel />
                 <ProjectsPanel />
