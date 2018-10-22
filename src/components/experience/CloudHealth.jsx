@@ -23,11 +23,11 @@ class CloudHealth extends React.Component {
     render() {
         return (
             <Container>
-                <Text type="headline4" serif header>
+                <Text type="headline4" header>
                     CloudHealth Technologies
                 </Text>
 
-                <Text type="body1" serif>
+                <Text type="body1">
                     <img className={imageClass} src="/talla.png" alt="CloudHealth Tech" />
 
                     <p>

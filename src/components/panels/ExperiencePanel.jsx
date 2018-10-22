@@ -18,19 +18,19 @@ class ExperiencePanel extends React.Component {
         return (
             <Panel>
                 <center>
-                    <Text type="headline4" serif header>
-                        Selected Professional Experience
+                    <Text type="headline4" header>
+                        Professional Experience
                     </Text>
                 </center>
 
                 <ContentContainer>
                     <Project to="/experience?scroll=1">
-                        <Text type="headline5" serif header>
+                        <Text type="headline5" header>
                             Talla
                         </Text>
                         <br />
 
-                        <Text type="body2" serif>
+                        <Text type="body2">
                             <SideMargin margin="3%">
                                 My internship during the summer before my senior year of high school. Talla is a company that develops an extensible
                                 Slackbot that acts as a general purpose office manager. While there I built out a data annotation web app that would
@@ -40,12 +40,12 @@ class ExperiencePanel extends React.Component {
                     </Project>
 
                     <Project to="/experience?scroll=2">
-                        <Text type="headline5" serif header>
+                        <Text type="headline5" header>
                             Nutonian
                         </Text>
                         <br />
 
-                        <Text type="body2" serif>
+                        <Text type="body2">
                             <SideMargin margin="3%">
                                 During the summer before my junior year of high school, I interned at Nutonian. Nutonian was (recently aquired by
                                 DataRobot) a general purpose Machine Learning company. While there I was a QA engineer, developing their first
@@ -55,12 +55,12 @@ class ExperiencePanel extends React.Component {
                     </Project>
 
                     <Project to="/experience?scroll=3">
-                        <Text type="headline5" serif header>
+                        <Text type="headline5" header>
                             CloudHealth Technologies
                         </Text>
                         <br />
 
-                        <Text type="body2" serif>
+                        <Text type="body2">
                             <SideMargin margin="3%">
                                 During the summers before my freshman and sophomore year of high school, I interned at CloudHealth Tech, a cloud
                                 management company whose product optimized your cloud infrastructure. During my time there, I was part of the

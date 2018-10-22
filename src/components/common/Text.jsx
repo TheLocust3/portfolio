@@ -4,22 +4,31 @@ import PropTypes from 'prop-types';
 import { css } from 'react-emotion';
 import { Text } from 'react-material-components-web';
 
-let headerSerifClass = css`
+import { colors } from '../../constants';
+
+let textClass = css`
+    color: ${colors.textBlack};
+`;
+
+let headerClass = css`
     text-transform: uppercase;
 `;
 
-let serifClass = css`
-    font-family: Josefin Sans, sans-serif;
+let bodyClass = css`
+    color: ${colors.textBlackLighter};
 `;
 
 class StyledText extends React.Component {
     render() {
-        let { serif, header, className, children, ...props } = this.props;
-
-        let headerClass = header && serif ? headerSerifClass : '';
+        let { header, type, className, children, ...props } = this.props;
 
         return (
-            <Text className={`${_.isEmpty(className) ? '' : className} ${serif ? serifClass : ''} ${headerClass}`} {...props}>
+            <Text
+                type={type}
+                className={`${_.isEmpty(className) ? '' : className} ${textClass} ${_.includes(type, 'body') ? bodyClass : ''} ${
+                    header ? headerClass : ''
+                }`}
+                {...props}>
                 {children}
             </Text>
         );
@@ -27,7 +36,7 @@ class StyledText extends React.Component {
 }
 
 StyledText.propTypes = {
-    serif: PropTypes.bool,
+    type: PropTypes.string,
     header: PropTypes.bool,
     className: PropTypes.string,
     children: PropTypes.any

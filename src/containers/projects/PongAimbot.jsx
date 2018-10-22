@@ -27,12 +27,12 @@ class PongAimbot extends React.Component {
         return (
             <FadeIn>
                 <Content>
-                    <Text type="headline4" serif header>
+                    <Text type="headline4" header>
                         3D Pong Aimbot
                     </Text>
                     <br />
 
-                    <Text type="body1" serif>
+                    <Text type="body1">
                         <img className={imageClass} src="/candidatexyz.png" alt="3D Pong Aimbot" />
 
                         <p>

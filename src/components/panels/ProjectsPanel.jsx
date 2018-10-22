@@ -34,9 +34,7 @@ class ProjectsPanel extends React.Component {
                     <br />
 
                     <Button className={moreButton} onClick={() => history.push('/projects')}>
-                        <Text type="body2" serif>
-                            See more projects
-                        </Text>
+                        <Text type="body2">See more projects</Text>
                     </Button>
                 </div>
             );
@@ -44,12 +42,12 @@ class ProjectsPanel extends React.Component {
 
         return (
             <Project to="/projects/pong-aimbot">
-                <Text type="headline5" serif header>
+                <Text type="headline5" header>
                     3D Pong Aimbot
                 </Text>
                 <br />
 
-                <Text type="body2" serif>
+                <Text type="body2">
                     <SideMargin margin="3%">
                         My first attempt at writing an emulator back in Sophmore year of high school. Designed to be run on a common graphing
                         calculator (the Ti-NSpire CX CAS) and allow users to play Gameboy Classic games. Never got the graphics working but
@@ -64,19 +62,19 @@ class ProjectsPanel extends React.Component {
         return (
             <Panel>
                 <center>
-                    <Text type="headline4" serif header>
+                    <Text type="headline4" header>
                         Selected Projects
                     </Text>
                 </center>
 
                 <ContentContainer>
                     <Project to="/projects/candidatexyz">
-                        <Text type="headline5" serif header>
+                        <Text type="headline5" header>
                             candidateXYZ
                         </Text>
                         <br />
 
-                        <Text type="body2" serif>
+                        <Text type="body2">
                             <SideMargin margin="3%">
                                 Building during the summer of my senior year, candidateXYZ is web application design to make it easy for everyone to
                                 run for office, no matter your experience, connections, or finiancial situation. Allows candidates create an official
@@ -87,12 +85,12 @@ class ProjectsPanel extends React.Component {
                     </Project>
 
                     <Project to="/projects/intel8080">
-                        <Text type="headline5" serif header>
+                        <Text type="headline5" header>
                             Intel 8080 Emulator
                         </Text>
                         <br />
 
-                        <Text type="body2" serif>
+                        <Text type="body2">
                             <SideMargin margin="3%">
                                 Built during my Junior year of high school after my first attempt at building a Gameboy emulator. Emulates the pure
                                 Intel 8080 CPU based off of the original specification. Fully tested instruction set and CPU interrupts.
@@ -101,12 +99,12 @@ class ProjectsPanel extends React.Component {
                     </Project>
 
                     <Project to="/projects/gameboy-emulator">
-                        <Text type="headline5" serif header>
+                        <Text type="headline5" header>
                             Ti NSpire Gameboy Emulator
                         </Text>
                         <br />
 
-                        <Text type="body2" serif>
+                        <Text type="body2">
                             <SideMargin margin="3%">
                                 My first attempt at writing an emulator back in Sophmore year of high school. Designed to be run on a common graphing
                                 calculator (the Ti-NSpire CX CAS) and allow users to play Gameboy Classic games. Never got the graphics working but

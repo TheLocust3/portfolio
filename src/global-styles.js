@@ -6,7 +6,6 @@ injectGlobal`
         padding: 0;
         width: 100%;
         height: 100%;
-        font-family: 'Noto Sans', sans-serif;
         position: relative;
     }
 
@@ -32,6 +31,7 @@ injectGlobal`
     .mdc-typography--headline6,
     .mdc-typography--body1,
     .mdc-typography--body2 {
+        font-family: Futura, "Trebuchet MS", Arial, sans-serif;
         font-weight: 300;
     }
 `;

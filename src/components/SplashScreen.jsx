@@ -1,12 +1,15 @@
 import React from 'react';
-import styled from 'react-emotion';
+import styled, { css } from 'react-emotion';
 import { Parallax, Background } from 'react-parallax';
-import { Text } from 'react-material-components-web';
+
+import Text from '../components/common/Text';
 
 let Header = styled('div')`
     margin-top: 30vh;
     margin-left: 4%;
+`;
 
+let headerClass = css`
     color: white;
 `;
 
@@ -24,10 +27,14 @@ class SplashScreen extends React.Component {
                 </Background>
 
                 <Header>
-                    <Text type="headline1">Jake Kinsella</Text>
+                    <Text className={headerClass} type="headline1" header>
+                        Jake Kinsella
+                    </Text>
 
                     <HeaderSubtitle>
-                        <Text type="headline5">Developer, and aspiring entrepreneur.</Text>
+                        <Text className={headerClass} type="headline5">
+                            Developer, and aspiring entrepreneur.
+                        </Text>
                     </HeaderSubtitle>
                 </Header>
             </Parallax>

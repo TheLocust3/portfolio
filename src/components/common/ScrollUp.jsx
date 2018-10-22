@@ -9,7 +9,7 @@ let ScrollContainer = styled('div')`
     position: fixed;
     bottom: 40px;
     right: 40px;
-    border-radius: 7.5%;
+    border-radius: 5%;
 
     width: 40px;
     height: 50px;

@@ -23,11 +23,11 @@ class Talla extends React.Component {
     render() {
         return (
             <Container>
-                <Text type="headline4" serif header>
+                <Text type="headline4" header>
                     Talla
                 </Text>
 
-                <Text type="body1" serif>
+                <Text type="body1">
                     <img className={imageClass} src="/talla.png" alt="Talla" />
 
                     <p>

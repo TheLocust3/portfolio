@@ -27,12 +27,12 @@ class Intel8080 extends React.Component {
         return (
             <FadeIn>
                 <Content>
-                    <Text type="headline4" serif header>
+                    <Text type="headline4" header>
                         Intel 8080
                     </Text>
                     <br />
 
-                    <Text type="body1" serif>
+                    <Text type="body1">
                         <img className={imageClass} src="/candidatexyz.png" alt="Intel 8080" />
 
                         <p>

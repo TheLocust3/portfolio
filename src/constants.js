@@ -8,4 +8,4 @@ export const store = createStore(reducer, applyMiddleware(thunkMiddleware));
 
 export let history = createBrowserHistory();
 
-export let colors = { textBlack: '#212121', linkBlackHover: '#333333', borderGray: '#9E9E9E' };
+export let colors = { textBlack: '#444', textBlackLighter: '#555', linkBlackHover: '#666', borderGray: '#9E9E9E' };

@@ -30,7 +30,7 @@ class AboutPanel extends React.Component {
                 <br />
 
                 <center>
-                    <Text type="headline4" serif header>
+                    <Text type="headline4" header>
                         About Me
                     </Text>
                     <br />
@@ -42,7 +42,7 @@ class AboutPanel extends React.Component {
                     <br />
 
                     <Content margin="30%" style={{ marginTop: '0', marginBottom: '0' }}>
-                        <Text type="body2" serif>
+                        <Text type="body2">
                             Software developer since elementary school, and entrepreneur, with a passion for building technology. Currently a Freshman
                             Computer Science student at Northeastern.
                         </Text>

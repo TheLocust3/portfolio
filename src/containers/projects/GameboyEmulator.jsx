@@ -27,12 +27,12 @@ class GameboyEmulator extends React.Component {
         return (
             <FadeIn>
                 <Content>
-                    <Text type="headline4" serif header>
+                    <Text type="headline4" header>
                         Gameboy Emulator
                     </Text>
                     <br />
 
-                    <Text type="body1" serif>
+                    <Text type="body1">
                         <img className={imageClass} src="/candidatexyz.png" alt="Gameboy Emulator" />
 
                         <p>
