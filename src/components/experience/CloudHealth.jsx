@@ -11,10 +11,12 @@ let Container = styled('div')`
 `;
 
 let imageClass = css`
-    width: 20%;
+    width: 500px;
 
-    float: left;
+    float: right;
 
+    margin-top: 30px;
+    margin-left: 20px;
     margin-right: 40px;
     margin-bottom: 20px;
 `;
@@ -23,12 +25,13 @@ class CloudHealth extends React.Component {
     render() {
         return (
             <Container>
-                <Text type="headline4" header>
-                    CloudHealth Technologies
+                <Text type="headline3" header>
+                    CloudHealth Tech
                 </Text>
+                <br />
 
                 <Text type="body1">
-                    <img className={imageClass} src="/images/talla.png" alt="CloudHealth Tech" />
+                    <img className={imageClass} src="/images/cloudhealth.svg" alt="CloudHealth Tech" />
 
                     <p>
                         Quis illo laborum sed consectetur. Veniam est corrupti ea ut provident. Ipsum sit rem saepe earum deleniti eligendi saepe. Aut

@@ -16,7 +16,7 @@ class GameboyEmulator extends React.Component {
     render() {
         return (
             <FadeIn>
-                <SplashScreen src="/images/splash.jpeg" alt="Gameboy Emulator" header="Gameboy Emulator" height="60vh" />
+                <SplashScreen src="/images/gameboyemulator.jpeg" alt="Gameboy Emulator" header="Gameboy Emulator" height="60vh" />
 
                 <Content>
                     <Text type="body1">

@@ -24,7 +24,7 @@ class AppRoutes extends React.Component {
                 <Route exact path="/projects/candidatexyz" component={CandidateXYZ} />
                 <Route exact path="/projects/intel8080" component={Intel8080} />
                 <Route exact path="/projects/gameboy-emulator" component={GameboyEmulator} />
-                <Route exact path="/projects/poing-aimbot" component={PongAimbot} />
+                <Route exact path="/projects/pong-aimbot" component={PongAimbot} />
             </Switch>
         );
     }

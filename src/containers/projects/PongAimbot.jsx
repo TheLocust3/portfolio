@@ -16,7 +16,7 @@ class PongAimbot extends React.Component {
     render() {
         return (
             <FadeIn>
-                <SplashScreen src="/images/splash.jpeg" alt="3D Pong Aimbot" header="3D Pong Aimbot" height="60vh" />
+                <SplashScreen src="/images/pongaimbot.jpeg" alt="3D Pong Aimbot" header="3D Pong Aimbot" height="60vh" />
 
                 <Content>
                     <Text type="body1">

@@ -16,7 +16,7 @@ class Intel8080 extends React.Component {
     render() {
         return (
             <FadeIn>
-                <SplashScreen src="/images/splash.jpeg" alt="Intel 8080 Emulator" header="Intel 8080 Emulator" height="60vh" />
+                <SplashScreen src="/images/intel8080.jpeg" alt="Intel 8080 Emulator" header="Intel 8080 Emulator" height="60vh" />
 
                 <Content>
                     <Text type="body1">
