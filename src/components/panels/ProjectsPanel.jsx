@@ -76,7 +76,7 @@ class ProjectsPanel extends React.Component {
 
                         <Text type="body2">
                             <SideMargin margin="3%">
-                                Building during the summer of my senior year, candidateXYZ is web application design to make it easy for everyone to
+                                Created during the summer of my senior year, candidateXYZ is web application design to make it easy for everyone to
                                 run for office, no matter your experience, connections, or finiancial situation. Allows candidates create an official
                                 Candidate Committee, keep track of their finiances (receipts, expenditures, liabilities), and generate monthly
                                 campaign finiance reports.
