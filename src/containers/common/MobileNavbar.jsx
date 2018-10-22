@@ -8,6 +8,8 @@ import Text from '../../components/common/Text';
 import UnstyledLink from '../../components/common/UnstyledLink';
 
 let titleClass = css`
+    font-family: 'Source Code Pro', monospace;
+
     color: white;
 `;
 

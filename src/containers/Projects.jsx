@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 import { setTitle, setSolidNavbar } from '../actions/global-actions';
 
-import Content from '../components/common/Content';
 import FadeIn from '../components/common/FadeIn';
 import ProjectsPanel from '../components/panels/ProjectsPanel';
 

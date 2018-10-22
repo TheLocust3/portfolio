@@ -74,7 +74,7 @@ class ProjectsPanel extends React.Component {
             <Panel>
                 <center>
                     <Text className={titleClass} type="headline4" header>
-                        Selected Projects
+                        {this.props.all ? 'My Projects' : 'Selected Projects'}
                     </Text>
                 </center>
 

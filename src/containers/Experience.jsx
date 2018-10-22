@@ -11,6 +11,7 @@ import { setTitle, setSolidNavbar } from '../actions/global-actions';
 import Content from '../components/common/Content';
 import FadeIn from '../components/common/FadeIn';
 import ScrollUp from '../components/common/ScrollUp';
+import Team4761 from '../components/experience/Team4761';
 import Talla from '../components/experience/Talla';
 import Nutonian from '../components/experience/Nutonian';
 import CloudHealth from '../components/experience/CloudHealth';
@@ -47,14 +48,18 @@ class Experience extends React.Component {
                     <Spacer />
 
                     <div id="1">
-                        <Talla />
+                        <Team4761 />
                     </div>
 
                     <div id="2">
-                        <Nutonian />
+                        <Talla />
                     </div>
 
                     <div id="3">
+                        <Nutonian />
+                    </div>
+
+                    <div id="4">
                         <CloudHealth />
                     </div>
 
