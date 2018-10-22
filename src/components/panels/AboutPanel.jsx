@@ -31,7 +31,7 @@ class AboutPanel extends React.Component {
 
                 <center>
                     <Text type="headline4" header>
-                        About Jake
+                        About Me
                     </Text>
                     <br />
                     <br />

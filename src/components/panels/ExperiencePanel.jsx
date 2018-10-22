@@ -56,7 +56,7 @@ class ExperiencePanel extends React.Component {
 
                     <Project to="/experience?scroll=3">
                         <Text type="headline5" header>
-                            CloudHealth Technologies
+                            CloudHealth Tech
                         </Text>
                         <br />
 
