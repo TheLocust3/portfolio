@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { setTitle } from '../../actions/global-actions';
+import { setTitle, setSolidNavbar } from '../../actions/global-actions';
 
 import Text from '../../components/common/Text';
 import Content from '../../components/common/Content';
@@ -11,6 +11,7 @@ import SplashScreen from '../../components/SplashScreen';
 class GameboyEmulator extends React.Component {
     componentWillMount() {
         this.props.dispatch(setTitle('candidateXYZ'));
+        this.props.dispatch(setSolidNavbar(false));
     }
 
     render() {

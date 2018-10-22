@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { setTitle } from '../../actions/global-actions';
+import { setTitle, setSolidNavbar } from '../../actions/global-actions';
 
 import Text from '../../components/common/Text';
 import Content from '../../components/common/Content';
@@ -11,12 +11,13 @@ import SplashScreen from '../../components/SplashScreen';
 class CandidateXYZ extends React.Component {
     componentWillMount() {
         this.props.dispatch(setTitle('candidateXYZ'));
+        this.props.dispatch(setSolidNavbar(false));
     }
 
     render() {
         return (
             <FadeIn>
-                <SplashScreen src="/images/splash.jpeg" alt="candidateXYZ" header="candidateXYZ" height="60vh" />
+                <SplashScreen src="/images/candidatexyz.jpeg" alt="candidateXYZ" header="candidateXYZ" height="60vh" />
 
                 <Content>
                     <Text type="body1">
