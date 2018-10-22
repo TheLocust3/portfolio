@@ -60,9 +60,9 @@ class ProjectsPanel extends React.Component {
 
                 <Text type="body2">
                     <SideMargin margin={3}>
-                        Written at the end of my sophomore year of high school in a competition with my close friend. This program is made to play a
-                        version of 3D Pong automatically and get to as high a level as possible. It involved hundreds of lines of optimizations and
-                        parallel processing techniques to predict where the ball would be going and move the paddle.
+                        Written during my freshman year of high school in a competition with my close friend. This program is made to play a version
+                        of 3D Pong automatically and get to as high a level as possible. It involved hundreds of lines of optimizations and parallel
+                        processing techniques to predict where the ball would be going and move the paddle.
                     </SideMargin>
                 </Text>
             </Project>

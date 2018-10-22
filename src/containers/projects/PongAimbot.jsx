@@ -23,32 +23,33 @@ class PongAimbot extends React.Component {
                 <Content>
                     <Text type="body1">
                         <p>
-                            Quis illo laborum sed consectetur. Veniam est corrupti ea ut provident. Ipsum sit rem saepe earum deleniti eligendi saepe.
-                            Aut aut ipsa voluptatibus et nesciunt quia laudantium. Et autem ipsum totam nulla. Sunt est explicabo nostrum neque.
+                            The idea for this started while we were procrastinating writing code for my high school's robotics team (and not studying
+                            for my first midterms ever) during my freshman year. The whole Programming Team was sitting around playing this incredibly
+                            hard 3D Pong game when my friend and I realized that we could write an aimbot that played it for us.
                         </p>
 
                         <ProjectImage src="/images/projects/pong.png" alt="3D Pong" />
 
                         <p>
-                            Consequatur reprehenderit quisquam qui quia praesentium dolor corporis fugit. Facere porro rerum aut aut earum quas velit
-                            qui. Dolorum aut dolores sed. Doloribus voluptatum eum assumenda ut ut vel. Cum ea debitis quam sapiente illo nemo. Id
-                            praesentium voluptas sed modi.
+                            We were naturally very competitive, so we decided to set it up as a competition, so we both got to work. I realized that
+                            the best way to go about it would be to simply track the ball and move the cursor to match. It sounds simple, it wasn't.
                         </p>
 
                         <p>
-                            Occaecati aut reprehenderit repudiandae. Sed totam suscipit placeat fugiat nulla quo quibusdam fugiat. Ad incidunt dolores
-                            nam exercitationem. In suscipit aliquid aut velit consequatur magnam est. Itaque aut aut voluptas.
+                            My first thought was to track the ball by accessing its location with Javascript, unfortunately, it was a Flash game, so I
+                            moved onto my next option of tracking it using some vision processing.
                         </p>
 
                         <p>
-                            Nemo sunt quam minus minima ut. Facilis aut possimus qui dolor quos. Aut voluptatem et tempore placeat esse. Possimus
-                            dolor soluta quas est quidem. Molestiae sit rerum dolores ratione corrupti aut iure.
+                            In the end, this involved me repeatedly taking screenshots through Java, processing only certain bits of the image, and
+                            looking for the ball in four different quadrants, all being processed concurrently. This required many hours of tweaking
+                            and optimizing my code until it could finally be my friend's aimbot.
                         </p>
 
                         <p>
-                            Sit similique et id ut architecto assumenda delectus. Et aspernatur veniam cumque ut reprehenderit voluptatem consequatur
-                            itaque. Quisquam accusantium alias id fugit ad iure voluptas. Dignissimos voluptatem minima voluptas laudantium aliquam
-                            omnis tempore. Totam illo ea labore ut ipsum omnis quis. Aperiam aut sunt voluptas.
+                            While this program was somewhat simple looking back, it was foundational to the programming I am today. I learned many
+                            hard skills like becoming very fluent in Java and learning about computer vision processing techniques. I also learned
+                            many soft skills like optimization and how to get as much performance out of a system through small tweaks.
                         </p>
                     </Text>
                 </Content>
