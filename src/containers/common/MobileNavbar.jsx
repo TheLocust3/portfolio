@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { css } from 'react-emotion';
 import { Link } from 'react-router-dom';
-import { MDCTemporaryDrawer } from '@material/drawer';
+import { MDCTemporaryDrawer } from '@material/drawer/dist/mdc.drawer';
 
 import Text from '../../components/common/Text';
 import UnstyledLink from '../../components/common/UnstyledLink';

@@ -1,5 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
+const path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
@@ -24,8 +25,14 @@ passport.use(strategy);
 var usersRouter = require('./routes/api/users');
 var authRouter = require('./routes/api/auth');
 
-app.use('/auth', authRouter);
-app.use('/users', usersRouter);
+app.use(express.static(path.join(__dirname, '../build')));
+
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, '../build', 'index.html'));
+});
+
+app.use('/api/auth', authRouter);
+app.use('/api/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
