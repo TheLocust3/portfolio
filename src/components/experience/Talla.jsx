@@ -40,30 +40,25 @@ class Talla extends React.Component {
                     <img className={imageClass} src="/images/talla.png" alt="Talla" />
 
                     <p>
-                        Quis illo laborum sed consectetur. Veniam est corrupti ea ut provident. Ipsum sit rem saepe earum deleniti eligendi saepe. Aut
-                        aut ipsa voluptatibus et nesciunt quia laudantium. Et autem ipsum totam nulla. Sunt est explicabo nostrum neque.
+                        I joined Talla during the summer between my junior and senior years of high school. Talla is company that builds intelligent
+                        Slackbots to manage common HR tasks.
                     </p>
 
                     <p>
-                        Consequatur reprehenderit quisquam qui quia praesentium dolor corporis fugit. Facere porro rerum aut aut earum quas velit qui.
-                        Dolorum aut dolores sed. Doloribus voluptatum eum assumenda ut ut vel. Cum ea debitis quam sapiente illo nemo. Id praesentium
-                        voluptas sed modi.
+                        When on the team, I was given the project to built out a data annotation platform that would allow them to import Slack
+                        conversations and rate whether Talla's (their chatbot) response was correct or not and what it should be. This allowed their
+                        data scientists to rapidly improve their product and allowed them to outsource data annotation to those outside the company,
+                        speeding up the rate at which they could build their product.
                     </p>
 
                     <p>
-                        Occaecati aut reprehenderit repudiandae. Sed totam suscipit placeat fugiat nulla quo quibusdam fugiat. Ad incidunt dolores nam
-                        exercitationem. In suscipit aliquid aut velit consequatur magnam est. Itaque aut aut voluptas.
+                        On the team I participated in their full Agile process, and was a full developer participating in all their meetings. This
+                        gave me great insight into how a small startup of around 20 people worked.
                     </p>
 
                     <p>
-                        Nemo sunt quam minus minima ut. Facilis aut possimus qui dolor quos. Aut voluptatem et tempore placeat esse. Possimus dolor
-                        soluta quas est quidem. Molestiae sit rerum dolores ratione corrupti aut iure.
-                    </p>
-
-                    <p>
-                        Sit similique et id ut architecto assumenda delectus. Et aspernatur veniam cumque ut reprehenderit voluptatem consequatur
-                        itaque. Quisquam accusantium alias id fugit ad iure voluptas. Dignissimos voluptatem minima voluptas laudantium aliquam omnis
-                        tempore. Totam illo ea labore ut ipsum omnis quis. Aperiam aut sunt voluptas.
+                        While there I learned React/modern Javascript web development, how to work with AWS and to make it scalable with Terraform,
+                        and to build full webapps with Ruby on Rails.
                     </p>
                 </Text>
             </Container>

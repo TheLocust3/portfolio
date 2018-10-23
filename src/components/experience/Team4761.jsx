@@ -40,30 +40,35 @@ class Team4761 extends React.Component {
                     <img className={imageClass} src="/images/robockets.png" alt="Talla" />
 
                     <p>
-                        Quis illo laborum sed consectetur. Veniam est corrupti ea ut provident. Ipsum sit rem saepe earum deleniti eligendi saepe. Aut
-                        aut ipsa voluptatibus et nesciunt quia laudantium. Et autem ipsum totam nulla. Sunt est explicabo nostrum neque.
+                        I joined my local robotics team during my freshman year of high school. We were FRC Team 4761, the Robockets (named after our
+                        school mascot, the Rocket). As a team, we were part of FIRST Robotics Competition, and every year, they'd release a huge
+                        challenge and field that would take up entire school gyms. After they revealed the game, we'd have six weeks to build a robot
+                        and attempt to win the competition.
                     </p>
 
                     <p>
-                        Consequatur reprehenderit quisquam qui quia praesentium dolor corporis fugit. Facere porro rerum aut aut earum quas velit qui.
-                        Dolorum aut dolores sed. Doloribus voluptatum eum assumenda ut ut vel. Cum ea debitis quam sapiente illo nemo. Id praesentium
-                        voluptas sed modi.
+                        I joined the team as a programmer and quickly worked through the ranks. After programming the robot the first year, I became
+                        the Programming team lead, and brought Scrum which I had learned at my internships, to the team. We divided our schedule into
+                        Sprints and had daily standups. In the end of that season, we went to Worlds, the massive final robotics competition with over
+                        five hundred teams.
                     </p>
 
                     <p>
-                        Occaecati aut reprehenderit repudiandae. Sed totam suscipit placeat fugiat nulla quo quibusdam fugiat. Ad incidunt dolores nam
-                        exercitationem. In suscipit aliquid aut velit consequatur magnam est. Itaque aut aut voluptas.
+                        After my sophomore year, I was promoted to Technical Project Manager. In that role, I worked as a manager, creating schedules,
+                        running daily standups, and keeping the team on track. This roles was incredibily valuable for me because it gave me a wide
+                        understanding of what it takes to build a robot and run a team.
                     </p>
 
                     <p>
-                        Nemo sunt quam minus minima ut. Facilis aut possimus qui dolor quos. Aut voluptatem et tempore placeat esse. Possimus dolor
-                        soluta quas est quidem. Molestiae sit rerum dolores ratione corrupti aut iure.
+                        Finally in my senior year, I was elected Technical President. As Tech President, I oversaw the team as a whole and worked as
+                        the Project manager. We faced significant challenges that year with many conflicts between the team leadership and our adult
+                        mentors, but in the end it taught me a ton about managing up and working through difficult personal issues with people.
                     </p>
 
                     <p>
-                        Sit similique et id ut architecto assumenda delectus. Et aspernatur veniam cumque ut reprehenderit voluptatem consequatur
-                        itaque. Quisquam accusantium alias id fugit ad iure voluptas. Dignissimos voluptatem minima voluptas laudantium aliquam omnis
-                        tempore. Totam illo ea labore ut ipsum omnis quis. Aperiam aut sunt voluptas.
+                        My time on the robotics team has shaped the person I am today. Through the good times and the bad, I grew as a programmer, a
+                        leader, and a person. I learned how to work on a large project with a group of 50 people and in the end, how to manage those
+                        50 people and keep them motivated. The robotics team changed me in ways I'll never forget.
                     </p>
                 </Text>
             </Container>

@@ -38,19 +38,20 @@ class Nutonian extends React.Component {
                     <img className={imageClass} src="/images/nutonian.png" alt="Nutonian" />
 
                     <p>
-                        Quis illo laborum sed consectetur. Veniam est corrupti ea ut provident. Ipsum sit rem saepe earum deleniti eligendi saepe. Aut
-                        aut ipsa voluptatibus et nesciunt quia laudantium. Et autem ipsum totam nulla. Sunt est explicabo nostrum neque.
+                        I worked at Nutonian during the summer before my sophomore year of highschool. There I worked as a QA engineer, and one of
+                        their only QA developers. As a result I got a full view into how QA and DevOps worked.
                     </p>
 
                     <p>
-                        Consequatur reprehenderit quisquam qui quia praesentium dolor corporis fugit. Facere porro rerum aut aut earum quas velit qui.
-                        Dolorum aut dolores sed. Doloribus voluptatum eum assumenda ut ut vel. Cum ea debitis quam sapiente illo nemo. Id praesentium
-                        voluptas sed modi.
+                        As a QA developer, I built their performance testing suite which allowed them to track their API performance over time and
+                        make sure no one change suddenly bloated the API. I also maintained many fully automated Selenium tests, learning how to
+                        develop strong automated browser tests and testable websites.
                     </p>
 
                     <p>
-                        Occaecati aut reprehenderit repudiandae. Sed totam suscipit placeat fugiat nulla quo quibusdam fugiat. Ad incidunt dolores nam
-                        exercitationem. In suscipit aliquid aut velit consequatur magnam est. Itaque aut aut voluptas.
+                        The major hard skills I learned there were Python+PyTest, Selenium, and code testing. I learned even more soft skills like
+                        testing a major projects, getting familiar with an entire product's codebase in a short amount of time, and how to write good,
+                        testable code.
                     </p>
 
                     <p>
