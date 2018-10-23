@@ -8,7 +8,6 @@ import './global-styles';
 import Navbar from './containers/common/Navbar';
 import Footer from './components/common/Footer';
 
-import NotFound from './containers/NotFound';
 import AppRoutes from './routes/AppRoutes';
 import AdminRoutes from './routes/AdminRoutes';
 
@@ -34,8 +33,6 @@ class App extends React.Component {
                                 <Route path="/admin" component={AdminRoutes} />
 
                                 <Route path="/" component={AppRoutes} />
-
-                                <Route component={NotFound} />
                             </Switch>
 
                             <Footer />

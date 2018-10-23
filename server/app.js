@@ -1,3 +1,4 @@
+var compression = require('compression');
 var createError = require('http-errors');
 var express = require('express');
 const path = require('path');
@@ -13,6 +14,7 @@ var app = express();
 const port = 2001;
 
 app.use(logger('dev'));
+app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -41,12 +43,16 @@ app.use((req, res, next) => {
 
 // error handler
 app.use((err, req, res, next) => {
-    res.locals.message = err.message;
-    res.locals.error = req.app.get('env') === 'development' ? err : {};
-    console.log(err);
+    if (req.app.get('env') === 'development') {
+        res.locals.message = err.message;
+        res.locals.error = req.app.get('env') === 'development' ? err : {};
+        console.log(err);
 
-    res.status(err.status || 500);
-    res.json({ status: 'error' });
+        res.status(err.status || 500);
+        res.json({ status: 'error' });
+    } else {
+        res.sendFile(path.join(__dirname, '../build', 'index.html'));
+    }
 });
 
 app.listen(port, () => console.log(`Portfolio api server listening on port ${port}!`));
