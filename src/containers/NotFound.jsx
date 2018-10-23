@@ -18,8 +18,10 @@ class NotFound extends React.Component {
             <FadeIn>
                 <Content>
                     <br />
+
                     <Text type="headline3">Page Not Found</Text>
                     <br />
+
                     <Text type="body1">You've managed to find a page that doesn't exist!</Text>
                 </Content>
             </FadeIn>
