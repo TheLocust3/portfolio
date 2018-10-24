@@ -14,6 +14,10 @@ data "aws_acm_certificate" "certificate" {
   domain = "www.jakekinsella.com"
 }
 
+variable "key" {
+  default = "portfolio"
+}
+
 data "aws_ami" "image" {
   filter {
     name   = "image-id"
@@ -111,6 +115,7 @@ resource "aws_instance" "instance" {
   ami                    = "${data.aws_ami.image.id}"
   instance_type          = "t2.micro"
   vpc_security_group_ids = ["${aws_security_group.security_group.id}"]
+  key_name               = "${var.key}"
 
   tags {
     Name = "portfolio"
