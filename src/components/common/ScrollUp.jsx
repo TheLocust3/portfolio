@@ -39,7 +39,7 @@ class ScrollUp extends React.Component {
     }
 
     onScroll() {
-        if ($(window).scrollTop() > $(window).height() * 0.5) {
+        if ($(window).scrollTop() > $(window).height()) {
             this.setState({
                 shown: true
             });
