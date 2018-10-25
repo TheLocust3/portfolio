@@ -3,11 +3,13 @@ Description=server - run nodejs server
 After=network.target
 
 [Service]
+User=www-data
 Environment=NODE_ENV=production
 WorkingDirectory=/home/ubuntu/server
 TimeoutStartSec=300
 
-ExecStart=/bin/node server/app.js
+ExecStart=/usr/local/bin/node server/app.js
+ExecStop=/bin/rm /home/ubuntu/socket/server.sock
 
 [Install]
 WantedBy=default.target

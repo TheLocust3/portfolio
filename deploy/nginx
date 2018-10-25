@@ -1,5 +1,5 @@
 upstream app {
-    server unix:/home/ubuntu/server.sock fail_timeout=0;
+    server unix:/home/ubuntu/socket/server.sock fail_timeout=0;
 }
 
 server {

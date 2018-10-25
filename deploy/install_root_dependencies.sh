@@ -2,8 +2,6 @@
 
 set -e
 
-cd /home/ubuntu
-
 sudo apt-get update
 
 # install npm and updated version of nodejs

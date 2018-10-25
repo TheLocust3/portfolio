@@ -1,3 +1,4 @@
+var compression = require('compression');
 var express = require('express');
 const path = require('path');
 var cookieParser = require('cookie-parser');
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(favicon(path.join(__dirname, '../public/favicon.ico')));
+app.use(compression());
 
 // mongoose.connect(configDB.url);
 
@@ -46,7 +48,7 @@ app.use((err, req, res, next) => {
 });
 
 if (app.get('env') === 'production') {
-    app.listen('/home/ubuntu/server.sock', () => console.log(`Portfolio api server listening on port ${port}!`));
+    app.listen('/home/ubuntu/socket/server.sock', () => console.log(`Portfolio api server listening on port ${port}!`));
 } else {
     app.listen(port, () => console.log(`Portfolio api server listening on port ${port}!`));
 }
