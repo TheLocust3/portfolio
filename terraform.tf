@@ -110,6 +110,7 @@ resource "aws_instance" "instance" {
   ami                    = "${data.aws_ami.image.id}"
   instance_type          = "t2.micro"
   vpc_security_group_ids = ["${aws_security_group.security_group.id}"]
+  iam_instance_profile   = "${aws_iam_instance_profile.ec2-profile.name}"
   key_name               = "${var.key}"
 
   tags {
