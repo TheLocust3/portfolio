@@ -1,0 +1,13 @@
+[Unit]
+Description=server - run nodejs server
+After=network.target
+
+[Service]
+Environment=NODE_ENV=production
+WorkingDirectory=/home/ubuntu/server
+TimeoutStartSec=300
+
+ExecStart=/bin/node server/app.js
+
+[Install]
+WantedBy=default.target

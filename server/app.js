@@ -45,4 +45,8 @@ app.use((err, req, res, next) => {
     res.json({ status: 'error' });
 });
 
-app.listen(port, () => console.log(`Portfolio api server listening on port ${port}!`));
+if (app.get('env') === 'production') {
+    app.listen('/home/ubuntu/server.sock', () => console.log(`Portfolio api server listening on port ${port}!`));
+} else {
+    app.listen(port, () => console.log(`Portfolio api server listening on port ${port}!`));
+}

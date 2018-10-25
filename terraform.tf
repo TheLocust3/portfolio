@@ -19,12 +19,7 @@ variable "key" {
 }
 
 data "aws_ami" "image" {
-  filter {
-    name   = "image-id"
-    values = ["ami-0ac019f4fcb7cb7e6"]
-  }
-
-  # name_regex  = "portfolio"
+  name_regex  = "portfolio"
   most_recent = true
 }
 
