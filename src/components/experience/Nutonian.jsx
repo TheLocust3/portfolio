@@ -53,17 +53,6 @@ class Nutonian extends React.Component {
                         testing a major projects, getting familiar with an entire product's codebase in a short amount of time, and how to write good,
                         testable code.
                     </p>
-
-                    <p>
-                        Nemo sunt quam minus minima ut. Facilis aut possimus qui dolor quos. Aut voluptatem et tempore placeat esse. Possimus dolor
-                        soluta quas est quidem. Molestiae sit rerum dolores ratione corrupti aut iure.
-                    </p>
-
-                    <p>
-                        Sit similique et id ut architecto assumenda delectus. Et aspernatur veniam cumque ut reprehenderit voluptatem consequatur
-                        itaque. Quisquam accusantium alias id fugit ad iure voluptas. Dignissimos voluptatem minima voluptas laudantium aliquam omnis
-                        tempore. Totam illo ea labore ut ipsum omnis quis. Aperiam aut sunt voluptas.
-                    </p>
                 </Text>
             </Container>
         );
