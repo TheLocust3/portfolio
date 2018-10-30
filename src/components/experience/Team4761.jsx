@@ -55,7 +55,7 @@ class Team4761 extends React.Component {
 
                     <p>
                         After my sophomore year, I was promoted to Technical Project Manager. In that role, I worked as a manager, creating schedules,
-                        running daily standups, and keeping the team on track. This roles was incredibily valuable for me because it gave me a wide
+                        running daily standups, and keeping the team on track. This role was incredibily valuable for me because it gave me a wide
                         understanding of what it takes to build a robot and run a team.
                     </p>
 

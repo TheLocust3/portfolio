@@ -18,4 +18,4 @@ sudo chmod -R 777 /home/ubuntu/server/
 
 mkdir -p /home/ubuntu/socket
 sudo chown www-data /home/ubuntu/socket
-sudo  chmod g+rxs /home/ubuntu/socket
+sudo chmod g+rxs /home/ubuntu/socket

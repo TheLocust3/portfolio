@@ -9,8 +9,8 @@ let RoundedImage = styled('div')`
     position: relative;
     overflow: hidden;
 
-    height: 250px;
-    width: 250px;
+    height: 225px;
+    width: 225px;
     border-radius: 50%;
 `;
 
@@ -20,7 +20,8 @@ let image = css`
     left: 50%;
     margin-right: -50%;
 
-    height: 40vh;
+    height: 300px;
+    width: auto;
 `;
 
 class AboutPanel extends React.Component {
