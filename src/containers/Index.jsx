@@ -24,7 +24,7 @@ class Index extends React.Component {
         <SplashScreen
           src="/images/splash.jpeg"
           header="Jake Kinsella"
-          subtitle="Developer, and aspiring entrepreneur."
+          subtitle="Developer and aspiring entrepreneur."
         />
         <br />
 
