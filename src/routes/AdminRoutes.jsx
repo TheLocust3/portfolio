@@ -9,29 +9,29 @@ import SignIn from '../containers/SignIn';
 import AdminDashboard from '../containers/AdminDashboard';
 
 class AdminRoutes extends React.Component {
-    componentWillMount() {
-        this.props.dispatch(fetchCurrentUser());
+  componentWillMount() {
+    this.props.dispatch(fetchCurrentUser());
+  }
+
+  render() {
+    if (!this.props.isReady) return null;
+
+    if (_.isEmpty(this.props.user)) {
+      return <SignIn />;
     }
 
-    render() {
-        if (!this.props.isReady) return null;
-
-        if (_.isEmpty(this.props.user)) {
-            return <SignIn />;
-        }
-
-        return (
-            <Switch>
-                <Route path="/" component={AdminDashboard} />
-            </Switch>
-        );
-    }
+    return (
+      <Switch>
+        <Route path="/" component={AdminDashboard} />
+      </Switch>
+    );
+  }
 }
 
 function mapStateToProps(state) {
-    return {
-        isReady: state.users.isReady,
-        user: state.users.currentUser
-    };
+  return {
+    isReady: state.users.isReady,
+    user: state.users.currentUser
+  };
 }
 export default connect(mapStateToProps)(AdminRoutes);

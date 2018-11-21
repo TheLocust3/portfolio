@@ -6,68 +6,70 @@ import Icon from './Icon';
 import MiddleCenter from './MiddleCenter';
 
 let ScrollContainer = styled('div')`
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    border-radius: 5%;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  border-radius: 5%;
 
-    width: 40px;
-    height: 50px;
+  width: 40px;
+  height: 50px;
 
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
 
-    &:hover {
-        cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.6);
-    }
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
 `;
 
 class ScrollUp extends React.Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = { shown: false };
-    }
+    this.state = { shown: false };
+  }
 
-    componentDidMount() {
-        $(window).scroll(() => this.onScroll());
-    }
+  componentDidMount() {
+    $(window).scroll(() => this.onScroll());
+  }
 
-    componentWillUnmount() {
-        $(window).off('scroll');
-    }
+  componentWillUnmount() {
+    $(window).off('scroll');
+  }
 
-    onScroll() {
-        if ($(window).scrollTop() > $(window).height()) {
-            this.setState({
-                shown: true
-            });
-        } else {
-            this.setState({
-                shown: false
-            });
-        }
+  onScroll() {
+    if ($(window).scrollTop() > $(window).height()) {
+      this.setState({
+        shown: true
+      });
+    } else {
+      this.setState({
+        shown: false
+      });
     }
+  }
 
-    onClick() {
-        $('html, body').animate(
-            {
-                scrollTop: 0
-            },
-            750
-        );
-    }
+  onClick() {
+    $('html, body').animate(
+      {
+        scrollTop: 0
+      },
+      750
+    );
+  }
 
-    render() {
-        return (
-            <ScrollContainer onClick={this.onClick.bind(this)} style={{ display: this.state.shown ? 'block' : 'none' }}>
-                <MiddleCenter>
-                    <Icon icon="arrow-up" />
-                </MiddleCenter>
-            </ScrollContainer>
-        );
-    }
+  render() {
+    return (
+      <ScrollContainer
+        onClick={this.onClick.bind(this)}
+        style={{ display: this.state.shown ? 'block' : 'none' }}>
+        <MiddleCenter>
+          <Icon icon="arrow-up" />
+        </MiddleCenter>
+      </ScrollContainer>
+    );
+  }
 }
 
 export default ScrollUp;

@@ -9,80 +9,80 @@ import NavbarLink from './NavbarLink';
 import MobileNavbar from './MobileNavbar';
 
 let NavbarDiv = styled('div')`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
 
-    padding-top: 3%;
+  padding-top: 3%;
 
-    color: white;
-    font-size: 20px;
+  color: white;
+  font-size: 20px;
 `;
 
 let solidNavbar = css`
-    position: relative;
-    color: ${colors.textBlack};
+  position: relative;
+  color: ${colors.textBlack};
 
-    padding-top: 3%;
+  padding-top: 3%;
 `;
 
 class Navbar extends React.Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = { lastRenderedWidth: $(document).width() };
+    this.state = { lastRenderedWidth: $(document).width() };
+  }
+
+  updateDimensions() {
+    let width = $(document).width();
+
+    if (
+      (this.state.lastRenderedWidth > MAX_MOBILE_WIDTH_NUMBER && width < MAX_MOBILE_WIDTH_NUMBER) ||
+      (this.state.lastRenderedWidth < MAX_MOBILE_WIDTH_NUMBER && width > MAX_MOBILE_WIDTH_NUMBER)
+    ) {
+      this.setState({
+        lastRenderedWidth: width
+      });
+
+      this.forceUpdate();
     }
+  }
 
-    updateDimensions() {
-        let width = $(document).width();
+  componentDidMount() {
+    window.addEventListener('resize', () => this.updateDimensions());
+  }
 
-        if (
-            (this.state.lastRenderedWidth > MAX_MOBILE_WIDTH_NUMBER && width < MAX_MOBILE_WIDTH_NUMBER) ||
-            (this.state.lastRenderedWidth < MAX_MOBILE_WIDTH_NUMBER && width > MAX_MOBILE_WIDTH_NUMBER)
-        ) {
-            this.setState({
-                lastRenderedWidth: width
-            });
+  render() {
+    if (this.state.lastRenderedWidth > MAX_MOBILE_WIDTH_NUMBER) {
+      return (
+        <div>
+          <NavbarDiv className={this.props.solidNavbar ? solidNavbar : ''}>
+            <NavbarLink to="/" solid={this.props.solidNavbar}>
+              Home
+            </NavbarLink>
 
-            this.forceUpdate();
-        }
+            <NavbarLink to="/projects" solid={this.props.solidNavbar}>
+              Projects
+            </NavbarLink>
+
+            <NavbarLink to="/experience" solid={this.props.solidNavbar}>
+              Experience
+            </NavbarLink>
+          </NavbarDiv>
+        </div>
+      );
+    } else {
+      return <MobileNavbar />;
     }
-
-    componentDidMount() {
-        window.addEventListener('resize', () => this.updateDimensions());
-    }
-
-    render() {
-        if (this.state.lastRenderedWidth > MAX_MOBILE_WIDTH_NUMBER) {
-            return (
-                <div>
-                    <NavbarDiv className={this.props.solidNavbar ? solidNavbar : ''}>
-                        <NavbarLink to="/" solid={this.props.solidNavbar}>
-                            Home
-                        </NavbarLink>
-
-                        <NavbarLink to="/projects" solid={this.props.solidNavbar}>
-                            Projects
-                        </NavbarLink>
-
-                        <NavbarLink to="/experience" solid={this.props.solidNavbar}>
-                            Experience
-                        </NavbarLink>
-                    </NavbarDiv>
-                </div>
-            );
-        } else {
-            return <MobileNavbar />;
-        }
-    }
+  }
 }
 
 function mapStateToProps(state) {
-    return {
-        solidNavbar: state.global.solidNavbar
-    };
+  return {
+    solidNavbar: state.global.solidNavbar
+  };
 }
 
 export default connect(mapStateToProps)(Navbar);

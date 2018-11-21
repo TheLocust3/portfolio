@@ -8,25 +8,25 @@ import Content from '../components/common/Content';
 import FadeIn from '../components/common/FadeIn';
 
 class NotFound extends React.Component {
-    componentWillMount() {
-        this.props.dispatch(setTitle('Not Found'));
-        this.props.dispatch(setSolidNavbar(true));
-    }
+  componentWillMount() {
+    this.props.dispatch(setTitle('Not Found'));
+    this.props.dispatch(setSolidNavbar(true));
+  }
 
-    render() {
-        return (
-            <FadeIn>
-                <Content>
-                    <br />
+  render() {
+    return (
+      <FadeIn>
+        <Content>
+          <br />
 
-                    <Text type="headline3">Page Not Found</Text>
-                    <br />
+          <Text type="headline3">Page Not Found</Text>
+          <br />
 
-                    <Text type="body1">You've managed to find a page that doesn't exist!</Text>
-                </Content>
-            </FadeIn>
-        );
-    }
+          <Text type="body1">You've managed to find a page that doesn't exist!</Text>
+        </Content>
+      </FadeIn>
+    );
+  }
 }
 
 export default connect()(NotFound);

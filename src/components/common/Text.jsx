@@ -7,39 +7,39 @@ import { Text } from 'react-material-components-web';
 import { colors } from '../../constants';
 
 let textClass = css`
-    color: ${colors.textBlack};
+  color: ${colors.textBlack};
 `;
 
 let headerClass = css`
-    text-transform: uppercase;
+  text-transform: uppercase;
 `;
 
 let bodyClass = css`
-    color: ${colors.textBlackLighter};
+  color: ${colors.textBlackLighter};
 `;
 
 class StyledText extends React.Component {
-    render() {
-        let { header, type, className, children, ...props } = this.props;
+  render() {
+    let { header, type, className, children, ...props } = this.props;
 
-        return (
-            <Text
-                type={type}
-                className={`${_.isEmpty(className) ? '' : className} ${textClass} ${_.includes(type, 'body') ? bodyClass : ''} ${
-                    header ? headerClass : ''
-                }`}
-                {...props}>
-                {children}
-            </Text>
-        );
-    }
+    return (
+      <Text
+        type={type}
+        className={`${_.isEmpty(className) ? '' : className} ${textClass} ${
+          _.includes(type, 'body') ? bodyClass : ''
+        } ${header ? headerClass : ''}`}
+        {...props}>
+        {children}
+      </Text>
+    );
+  }
 }
 
 StyledText.propTypes = {
-    type: PropTypes.string,
-    header: PropTypes.bool,
-    className: PropTypes.string,
-    children: PropTypes.any
+  type: PropTypes.string,
+  header: PropTypes.bool,
+  className: PropTypes.string,
+  children: PropTypes.any
 };
 
 export default StyledText;

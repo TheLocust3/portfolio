@@ -13,28 +13,32 @@ import ProjectsPanel from '../components/panels/ProjectsPanel';
 import ExperiencePanel from '../components/panels/ExperiencePanel';
 
 class Index extends React.Component {
-    componentWillMount() {
-        this.props.dispatch(setTitle('Home'));
-        this.props.dispatch(setSolidNavbar(false));
-    }
+  componentWillMount() {
+    this.props.dispatch(setTitle('Home'));
+    this.props.dispatch(setSolidNavbar(false));
+  }
 
-    render() {
-        return (
-            <FadeIn>
-                <SplashScreen src="/images/splash.jpeg" header="Jake Kinsella" subtitle="Developer, and aspiring entrepreneur." />
-                <br />
+  render() {
+    return (
+      <FadeIn>
+        <SplashScreen
+          src="/images/splash.jpeg"
+          header="Jake Kinsella"
+          subtitle="Developer, and aspiring entrepreneur."
+        />
+        <br />
 
-                <AboutPanel />
+        <AboutPanel />
 
-                <ProjectsPanel />
-                <br />
+        <ProjectsPanel />
+        <br />
 
-                <ExperiencePanel />
+        <ExperiencePanel />
 
-                <ScrollUp />
-            </FadeIn>
-        );
-    }
+        <ScrollUp />
+      </FadeIn>
+    );
+  }
 }
 
 export default connect()(Index);

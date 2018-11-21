@@ -7,20 +7,20 @@ import FadeIn from '../components/common/FadeIn';
 import ProjectsPanel from '../components/panels/ProjectsPanel';
 
 class Projects extends React.Component {
-    componentWillMount() {
-        this.props.dispatch(setTitle('candidateXYZ'));
-        this.props.dispatch(setSolidNavbar(true));
-    }
+  componentWillMount() {
+    this.props.dispatch(setTitle('candidateXYZ'));
+    this.props.dispatch(setSolidNavbar(true));
+  }
 
-    render() {
-        return (
-            <FadeIn>
-                <br />
-                <br />
-                <ProjectsPanel all />
-            </FadeIn>
-        );
-    }
+  render() {
+    return (
+      <FadeIn>
+        <br />
+        <br />
+        <ProjectsPanel all />
+      </FadeIn>
+    );
+  }
 }
 
 export default connect()(Projects);

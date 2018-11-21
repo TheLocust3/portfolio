@@ -7,51 +7,51 @@ import { colors } from '../../constants';
 import Icon from './Icon';
 
 let FooterOuter = styled('div')`
-    background-color: #f5f5f5;
-    text-align: center;
+  background-color: #f5f5f5;
+  text-align: center;
 `;
 
 let IconRow = styled('div')`
-    & a {
-        color: ${colors.textBlack};
+  & a {
+    color: ${colors.textBlack};
 
-        margin-right: 1%;
-        margin-left: 1%;
-    }
+    margin-right: 1%;
+    margin-left: 1%;
+  }
 
-    & a:hover {
-        color: ${colors.linkBlackHover};
-    }
+  & a:hover {
+    color: ${colors.linkBlackHover};
+  }
 `;
 
 class Footer extends React.Component {
-    render() {
-        return (
-            <FooterOuter>
-                <br />
+  render() {
+    return (
+      <FooterOuter>
+        <br />
 
-                <IconRow>
-                    <a href="mailto:jake.kinsella@gmail.com">
-                        <Icon icon="envelope" size={28} />
-                    </a>
+        <IconRow>
+          <a href="mailto:jake.kinsella@gmail.com">
+            <Icon icon="envelope" size={28} />
+          </a>
 
-                    <a href="https://github.com/TheLocust3">
-                        <Icon icon="github" size={28} brand />
-                    </a>
+          <a href="https://github.com/TheLocust3">
+            <Icon icon="github" size={28} brand />
+          </a>
 
-                    <a href="https://www.linkedin.com/in/jake-kinsella/">
-                        <Icon icon="linkedin-in" size={28} brand />
-                    </a>
-                </IconRow>
+          <a href="https://www.linkedin.com/in/jake-kinsella/">
+            <Icon icon="linkedin-in" size={28} brand />
+          </a>
+        </IconRow>
 
-                <br />
+        <br />
 
-                <Text type="body1">Jake Kinsella</Text>
+        <Text type="body1">Jake Kinsella</Text>
 
-                <br />
-            </FooterOuter>
-        );
-    }
+        <br />
+      </FooterOuter>
+    );
+  }
 }
 
 export default Footer;

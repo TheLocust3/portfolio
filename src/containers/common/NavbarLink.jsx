@@ -6,41 +6,43 @@ import { css } from 'react-emotion';
 import { colors } from '../../constants';
 
 let navbarLink = css`
-    margin-left: 3%;
+  margin-left: 3%;
 
-    cursor: pointer;
-    color: inherit;
-    text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
 
-    &:hover {
-        color: #cccccc;
-    }
+  &:hover {
+    color: #cccccc;
+  }
 `;
 
 let navbarLinkSolid = css`
-    color: ${colors.fontBlack};
+  color: ${colors.fontBlack};
 
-    &:hover {
-        color: ${colors.linkBlackHover};
-    }
+  &:hover {
+    color: ${colors.linkBlackHover};
+  }
 `;
 
 class NavbarLink extends React.Component {
-    render() {
-        let { to, solid, children } = this.props;
+  render() {
+    let { to, solid, children } = this.props;
 
-        return (
-            <Link className={`mdc-typography--headline6 ${navbarLink} ${solid ? navbarLinkSolid : ''}`} to={to}>
-                {children}
-            </Link>
-        );
-    }
+    return (
+      <Link
+        className={`mdc-typography--headline6 ${navbarLink} ${solid ? navbarLinkSolid : ''}`}
+        to={to}>
+        {children}
+      </Link>
+    );
+  }
 }
 
 NavbarLink.propTypes = {
-    to: PropTypes.string.isRequired,
-    solid: PropTypes.bool,
-    children: PropTypes.any
+  to: PropTypes.string.isRequired,
+  solid: PropTypes.bool,
+  children: PropTypes.any
 };
 
 export default NavbarLink;
