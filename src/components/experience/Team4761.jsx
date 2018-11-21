@@ -37,11 +37,11 @@ class Team4761 extends React.Component {
         <br />
 
         <Text type="body1">
+          <img className={imageClass} src="/images/robockets.png" alt="Talla" />
+
           <SideMargin margin="1%">
             <a href="https://robockets.weebly.com/">Website</a>
           </SideMargin>
-
-          <img className={imageClass} src="/images/robockets.png" alt="Talla" />
 
           <p>
             I joined my local robotics team during my freshman year of high school. We were FRC Team

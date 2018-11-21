@@ -35,11 +35,11 @@ class Nutonian extends React.Component {
         <br />
 
         <Text type="body1">
+          <img className={imageClass} src="/images/nutonian.png" alt="Nutonian" />
+
           <SideMargin margin="1%">
             <a href="https://www.nutonian.com/">Website</a>
           </SideMargin>
-
-          <img className={imageClass} src="/images/nutonian.png" alt="Nutonian" />
 
           <p>
             I worked at Nutonian during the summer before my sophomore year of highschool. There I

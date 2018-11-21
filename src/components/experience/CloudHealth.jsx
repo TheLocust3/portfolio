@@ -37,11 +37,11 @@ class CloudHealth extends React.Component {
         <br />
 
         <Text type="body1">
+          <img className={imageClass} src="/images/cloudhealth.svg" alt="CloudHealth Tech" />
+
           <SideMargin margin="1%">
             <a href="https://www.cloudhealthtech.com/">Website</a>
           </SideMargin>
-
-          <img className={imageClass} src="/images/cloudhealth.svg" alt="CloudHealth Tech" />
 
           <p>
             CloudHealth Technologies was my first software engineering job and I worked there for

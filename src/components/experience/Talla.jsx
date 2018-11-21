@@ -37,11 +37,11 @@ class Talla extends React.Component {
         <br />
 
         <Text type="body1">
+          <img className={imageClass} src="/images/talla.png" alt="Talla" />
+
           <SideMargin margin="1%">
             <a href="https://talla.com/">Website</a>
           </SideMargin>
-
-          <img className={imageClass} src="/images/talla.png" alt="Talla" />
 
           <p>
             I joined Talla during the summer between my junior and senior years of high school.
