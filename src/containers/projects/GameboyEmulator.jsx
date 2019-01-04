@@ -56,6 +56,7 @@ class GameboyEmulator extends React.Component {
                   src="/images/logos/sublime-text.png"
                   alt="Sublime Text"
                   href="https://www.sublimetext.com/"
+                  width="75px"
                 />
               </p>
             </center>

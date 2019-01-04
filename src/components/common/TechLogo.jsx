@@ -1,11 +1,20 @@
 import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from 'react-emotion';
+import styled, { css } from 'react-emotion';
 
-let aClassName = css`
+import Text from './Text';
+
+let outerClassName = css`
+  position: relative;
+  display: inline-block;
+
   margin-left: 1%;
   margin-right: 1%;
+
+  &:hover div {
+    opacity: 1;
+  }
 `;
 
 let imgClassName = css`
@@ -24,12 +33,56 @@ let imgClassName = css`
   }
 `;
 
+let tooltipClassName = css`
+  opacity: 0;
+  transition: all 0.5s ease;
+
+  position: absolute;
+  top: -30px;
+  transform: translate(-50%, 0%);
+  left: 50%;
+  margin-right: -50%;
+
+  height: 20px;
+
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  background-color: #191919;
+  border-radius: 3px;
+`;
+
+let Triangle = styled('div')`
+  width: 0;
+  height: 0;
+
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid black;
+`;
+
+let textClassName = css`
+  color: white;
+`;
+
 class TechLogo extends React.Component {
   render() {
     return (
-      <a className={aClassName} href={this.props.href}>
-        <img className={imgClassName} src={this.props.src} alt={this.props.alt} />
-      </a>
+      <div className={outerClassName}>
+        <a href={this.props.href}>
+          <img className={imgClassName} src={this.props.src} alt={this.props.alt} />
+        </a>
+
+        <div className={tooltipClassName} style={{ width: this.props.width }}>
+          <Text className={textClassName} type="caption">
+            {this.props.alt}
+          </Text>
+
+          <Triangle />
+        </div>
+      </div>
     );
   }
 }
@@ -37,7 +90,8 @@ class TechLogo extends React.Component {
 TechLogo.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired
+  href: PropTypes.string.isRequired,
+  width: PropTypes.string
 };
 
 export default TechLogo;

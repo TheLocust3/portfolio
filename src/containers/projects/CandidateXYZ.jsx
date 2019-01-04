@@ -51,9 +51,8 @@ class CandidateXYZ extends React.Component {
             </p>
 
             <br />
-            <br />
 
-            <center>
+            <center style={{ display: 'inline-block', width: '100%' }}>
               <Text type="headline6">Key Technologies</Text>
 
               <p>
@@ -61,11 +60,13 @@ class CandidateXYZ extends React.Component {
                   src="/images/logos/rails.png"
                   alt="Ruby on Rails"
                   href="https://rubyonrails.org/"
+                  width="80px"
                 />
                 <TechLogo
                   src="/images/logos/javascript.png"
                   alt="Javascript (Babel)"
                   href="https://babeljs.io/"
+                  width="105px"
                 />
                 <TechLogo src="/images/logos/react.png" alt="React" href="https://reactjs.org/" />
                 <TechLogo src="/images/logos/redux.png" alt="Redux" href="https://redux.js.org/" />
