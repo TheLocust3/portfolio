@@ -60,7 +60,7 @@ let Triangle = styled('div')`
 
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
-  border-top: 7px solid black;
+  border-top: 7px solid #191919;
 `;
 
 let textClassName = css`
