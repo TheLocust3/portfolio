@@ -36,24 +36,24 @@ class CandidateXYZ extends React.Component {
             <Text type="headline4">Overview</Text>
 
             <p>
-              CandidateXYZ is a web app created to make running for office attainable for everyone
-              overcoming a lack of experience, connections, and money. The app helps candidates set
-              up a campaign to run for office by forming a committee allowing them to raise money,
-              and streamlining the complex job of tracking a campaign’s expenses.
+              CandidateXYZ is a web app created to give everyone the opportunity to run for office
+              regardless of prior experience, connections, and money. The application helps
+              candidates set up a campaign to run for office by forming a committee allowing them to
+              raise money, and streamlining the complex job of tracking a campaign’s expenses.
             </p>
 
             <p>
-              With this information, we automatically generate campaign finance forms so that
+              With this information, it automatically generates campaign finance forms so that
               candidates can focus on campaigning for office rather than dealing with the complex
-              law surrounding running for office. The product also acts as a dashboard for their
-              campaign’s website, tracking engagement, volunteers, and managing email lists.
+              law surrounding running for office. The product also acts as a dashboard for a
+              campaign’s website by tracking engagement, volunteers, and managing email lists.
             </p>
 
             <Text type="headline6">Key Technologies</Text>
 
             <p>
               Ruby on Rails, Javascript (Babel), React, Redux, PostgreSQL, full stack of Amazon Web
-              Services (EC2, RDS, CodeDeploy, etc), Terraform
+              Services (EC2, RDS, CodeDeploy, etc), Terraform, VSCode
             </p>
 
             <br />
@@ -61,52 +61,53 @@ class CandidateXYZ extends React.Component {
             <Text type="headline4">Creation</Text>
 
             <p>
-              I began building candidateXYZ during the end of my senior year and spent the summer
-              working to build out my product and create a real business. My initial product idea
-              was to build a product like Wordpress or Squarespace but built for the needs of small
-              political campaigns. With this in mind I began building a generic candidate’s website
-              that would be easily modifiable by me.
+              I began building candidateXYZ near the end of my senior year with the vision of a
+              world where anyone could decide to run for office creating a wealth of new candidates
+              who cut across our current political divisions. My initial product idea was to build a
+              product like Wordpress or Squarespace but tailored for the needs of small political
+              campaigns. With this in mind I began building a generic candidate’s website that would
+              be easily modifiable by me.
             </p>
 
             <p>
               I sold this initial product to a local party committee in my area after meeting with
-              the chair-woman. With this done, I quickly moved on to making the website customizable
-              by the user. This is where I made my first mistake.
+              the chairwoman. With this done, I quickly moved on to making the website customizable
+              by the user.
             </p>
 
             <p>
               I invested significant amounts of time in building out a user friendly interface and
-              extensible backend to allow people with lower technical skills to customize the
-              website, but before I completed the final product, I started doing research and
-              realized that people simply didn’t want this product. I had refined my target market
-              to adults under the age of forty running for office, these adults were significantly
-              more tech-savvy and, as a result, gravitated towards established market players like
-              Squarespace.
+              extensible backend to allow people with lower technical skills to adjust the website
+              to their liking, but before I completed the final product, I started doing customer
+              research and realized that people simply didn’t want this product. I had initially
+              defined my target market as adults under the age of forty running for office, these
+              people were generally tech-savvy and, as a result, gravitated towards current
+              customizable solutions like Squarespace.
             </p>
 
             <p>
               After this realization, I scrapped my work on a Squarespace clone and pivoted to
-              focusing on the other side of making running office easier, the many laws candidates
-              must navigate through to run. After a few interviews, I was focused my target on the
-              initial paperwork involved in setting up a campaign and campaign finance reporting.
-              With this in mind, I built out a new MVP, restricting my product to candidates for
-              local office in Massachusetts.
+              focusing on the other side of making running office easier: the complex laws
+              candidates must navigate through. After a few interviews, I was focused my initial
+              product on the initial paperwork involved in setting up a campaign and campaign
+              finance reporting. With this in mind, I built out an MVP, restricting my product to
+              candidates for local office in Massachusetts.
             </p>
 
             <p>
-              After this product was built, I realized that I had made my second and fatal mistake.
-              With the new understanding I had of the market I was in, my product simply didn’t fill
-              a need in the market. Candidates weren’t being held back for running for office
-              because there was a lot of paperwork, nor were they being held back because they
-              couldn’t get people to run their campaign’s for them. They were be held back due to
-              social and commitment reasons. Simply put, running for office is exhausting, and my
-              product didn’t address this fatal flaw.
+              With the new understanding of the market I was in by building this product, I realized
+              my product simply didn’t fill a deep consumer need. Candidates weren’t being held back
+              for running for office because there was a lot of paperwork, nor were they being held
+              back because they couldn’t get people to run their campaign’s for them. They were be
+              held back due to social and commitment reasons. Simply put, running for office is
+              exhausting, and my product didn’t address this fatal issue.
             </p>
 
             <p>
-              By the end of this journey, my summer had ended. I was starting school at Northeastern
-              and I knew that I wouldn’t have the time to keep working on this while managing my
-              transition to college, so I gracefully shut the company down.
+              By the end of this journey, my summer had ended, and I was starting school at
+              Northeastern. I knew that I wouldn’t have the time to keep working on this while
+              managing my transition to college, so I shut down work on the company and left the
+              websites up for as long as there was money to do so.
             </p>
 
             <br />
@@ -115,13 +116,16 @@ class CandidateXYZ extends React.Component {
 
             <p>
               I learned a ton through the nearly half year that I worked on candidateXYZ. The
-              process of taking an entire field I wasn’t familiar with and rapidly learning about
-              and building a product for was incredibly instructive. My biggest downfall was simply
-              laying low and building my product rather than getting out in the field and talking to
-              my potential customers. While I might have failed to build a successful business, I
-              did build a bunch of important relationships in my community and learn the foundations
-              of the entrepreneurial process, a process I plan to apply with more success to my
-              startups in the future.
+              process of taking a field I wasn’t familiar with and rapidly learning about it through
+              building a product taught me a lot. My biggest downfall was that I laid low and built
+              my product for too long ignoring the valuable insights that would have come from real
+              conversations to my potential customers.
+            </p>
+
+            <p>
+              While I might have failed to build a successful business, I did build many important
+              relationships in my community and learned the foundations of the building a real
+              business, experience which I plan to take forward to my future endeavours.
             </p>
 
             <div>

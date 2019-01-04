@@ -32,43 +32,39 @@ class PongAimbot extends React.Component {
             <Text type="headline4">Overview</Text>
 
             <p>
-              A Java program built to play 3D pong for the user through detecting the location of
-              the ball and moving the paddle towards it as fast as possible.
+              A Java program built to play 3D pong for the user by detecting the location of the
+              ball and moving the paddle towards it as fast as possible.
             </p>
 
             <Text type="headline6">Key Technologies</Text>
 
-            <p>Java</p>
+            <p>Java, IntelliJ IDEA</p>
 
             <br />
 
             <Text type="headline4">Creation</Text>
 
             <p>
-              The idea for this started while my friend and I were procrastinating writing code for
-              my high school's robotics team (and not studying for my first midterms ever) during my
+              The idea for this project started while my friend and I were procrastinating writing
+              code for our high school robotics team (and also not studying for midterms) during my
               freshman year. The whole Programming Team was sitting around playing this incredibly
-              hard 3D Pong game when my friend and I realized that we could write an aimbot that
-              played it for us.
+              hard 3D Pong game when my friend and I realized that we could probably write an aimbot
+              that played it for us.
             </p>
 
             <p>
-              We were naturally very competitive, so we decided to set it up as a competition, so we
-              both got to work. I realized that the best way to go about it would be to simply track
-              the ball and move the cursor to match. It sounds simple, it wasn't.
-            </p>
-
-            <p>
-              My first thought was to track the ball by accessing its location with Javascript,
-              unfortunately, it was a Flash game, so I moved onto my next option of tracking it
-              using some vision processing.
+              Since we were very competitive, so we decided to set it up as a competition of who
+              could get to a higher difficulty level, so we both got to work. I realized that the
+              best way to go about it would be to simply track the ball and move the cursor to
+              match. While it would be simple using off the shelf libraries like OpenCV or other
+              vision tracking systems, I decided to get experience rolling my own system.
             </p>
 
             <p>
               In the end, this involved me repeatedly taking screenshots through Java, processing
-              only certain bits of the image, and looking for the ball in four different quadrants,
-              all being processed concurrently. This required many hours of tweaking and optimizing
-              my code until it could finally be my friend's aimbot.
+              only certain bits of the image, implementing all sorts of common vision techniques,
+              and concurrently processing pieces of the image. This required many hours of tweaking
+              and optimizing my code until it could finally beat my friend's aimbot.
             </p>
 
             <br />
@@ -77,10 +73,9 @@ class PongAimbot extends React.Component {
 
             <p>
               While this program was somewhat simple looking back, it was foundational to the
-              programming I am today. I learned many hard skills like becoming very fluent in Java
-              and learning about computer vision processing techniques. I also learned many soft
-              skills like optimization and how to get as much performance out of a system through
-              small tweaks.
+              programmer I am today. I learned many hard skills like fluency in Java and learning
+              about computer vision processing techniques. I also learned many soft skills like
+              optimization and how to get as much performance out of a system through small tweaks.
             </p>
 
             <a href="https://github.com/TheLocust3/Java-3D-Pong-Aimbot">GitHub</a>
