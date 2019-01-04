@@ -39,7 +39,7 @@ class CloudHealth extends React.Component {
         <Text type="body1">
           <img className={imageClass} src="/images/cloudhealth.svg" alt="CloudHealth Tech" />
 
-          <SideMargin margin="1%">
+          <SideMargin margin="0.5%">
             <a href="https://www.cloudhealthtech.com/">Website</a>
           </SideMargin>
 
@@ -61,6 +61,10 @@ class CloudHealth extends React.Component {
             sofware development techniques like Agile and Scrum. This experience has shaped me as a
             software developer.
           </p>
+          <br />
+
+          <Text type="headline6">Key Skills</Text>
+          <p>Ruby on Rails, Amazon Web Services, and MySQL</p>
         </Text>
       </Container>
     );

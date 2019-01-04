@@ -37,7 +37,7 @@ class Nutonian extends React.Component {
         <Text type="body1">
           <img className={imageClass} src="/images/nutonian.png" alt="Nutonian" />
 
-          <SideMargin margin="1%">
+          <SideMargin margin="0.5%">
             <a href="https://www.nutonian.com/">Website</a>
           </SideMargin>
 
@@ -60,6 +60,11 @@ class Nutonian extends React.Component {
             entire product's codebase in a short amount of time, and how to write good, testable
             code.
           </p>
+
+          <br />
+
+          <Text type="headline6">Key Skills</Text>
+          <p>Python, PyTest, Jenkins, Java, and Selenium</p>
         </Text>
       </Container>
     );

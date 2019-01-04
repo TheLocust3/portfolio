@@ -28,52 +28,100 @@ class CandidateXYZ extends React.Component {
 
         <Content>
           <Text type="body1">
-            <p>
-              CandidateXYZ is a web app created to make running for office attainable for everyone
-              overcoming a lack of experience, connections, and money. I began building it during
-              the end of my senior year and spent the summer trying to turn it into a company.
-            </p>
-
             <ProjectImage
               src="/images/projects/candidatexyz_finance.png"
               alt="candidateXYZ Finance"
             />
 
+            <Text type="headline4">Overview</Text>
+
             <p>
-              In the end, I turned it into an LLC and worked long hours trying to find customers for
-              it and develop the platform further. Over the summer I learned many lessons about
-              running a company (despite it just being myself), finding mentors and early adopters,
-              and building a winning product.
+              CandidateXYZ is a web app created to make running for office attainable for everyone
+              overcoming a lack of experience, connections, and money. The app helps candidates set
+              up a campaign to run for office by forming a committee allowing them to raise money,
+              and streamlining the complex job of tracking a campaign’s expenses.
             </p>
 
             <p>
-              CandidateXYZ tracked local candidate's finances, generating monthly financial reports
-              that were required to be reported to the government. It also managed email lists,
-              volunteers, and tracked website visitors. For my first customers, my goal was to build
-              them a custom website and integrate it directly with my platform.
+              With this information, we automatically generate campaign finance forms so that
+              candidates can focus on campaigning for office rather than dealing with the complex
+              law surrounding running for office. The product also acts as a dashboard for their
+              campaign’s website, tracking engagement, volunteers, and managing email lists.
+            </p>
+
+            <Text type="headline6">Key Technologies</Text>
+
+            <p>
+              Ruby on Rails, Javascript (Babel), React, Redux, PostgreSQL, full stack of Amazon Web
+              Services (EC2, RDS, CodeDeploy, etc), Terraform
+            </p>
+
+            <br />
+
+            <Text type="headline4">Creation</Text>
+
+            <p>
+              I began building candidateXYZ during the end of my senior year and spent the summer
+              working to build out my product and create a real business. My initial product idea
+              was to build a product like Wordpress or Squarespace but built for the needs of small
+              political campaigns. With this in mind I began building a generic candidate’s website
+              that would be easily modifiable by me.
             </p>
 
             <p>
-              After the summer, I decided to shut the company down because it had lost steam (and
-              college was keeping me incredibly busy). Looking back, I made two main mistakes.
-              First, I built a product to what I percieved to be issues in an industry I didn't know
-              without building it with my customers and learning from them.
+              I sold this initial product to a local party committee in my area after meeting with
+              the chair-woman. With this done, I quickly moved on to making the website customizable
+              by the user. This is where I made my first mistake.
             </p>
 
             <p>
-              This first mistake led straight into my second mistake which was that the laws and
-              paperwork around running for office aren't the things holding people back from running
-              for office. In fact, these tasks are generally not even done by the candidate (it is
-              mostly done by the Treasurer, a position that campaigns are required by law to fill).
+              I invested significant amounts of time in building out a user friendly interface and
+              extensible backend to allow people with lower technical skills to customize the
+              website, but before I completed the final product, I started doing research and
+              realized that people simply didn’t want this product. I had refined my target market
+              to adults under the age of forty running for office, these adults were significantly
+              more tech-savvy and, as a result, gravitated towards established market players like
+              Squarespace.
             </p>
 
             <p>
-              Despite this projects relative failure, I still learned a ton about programming and
-              general skills. A few of the hard skills I learned were React/modern web development,
-              scalable AWS infastructure (through Terraform), and writing a large Rails app. Even
-              better were the countless soft skills I gained over the summer like juggling hundreds
-              of different tasks, writing a huge app, managing customer relations, and microservice
-              architecture.
+              After this realization, I scrapped my work on a Squarespace clone and pivoted to
+              focusing on the other side of making running office easier, the many laws candidates
+              must navigate through to run. After a few interviews, I was focused my target on the
+              initial paperwork involved in setting up a campaign and campaign finance reporting.
+              With this in mind, I built out a new MVP, restricting my product to candidates for
+              local office in Massachusetts.
+            </p>
+
+            <p>
+              After this product was built, I realized that I had made my second and fatal mistake.
+              With the new understanding I had of the market I was in, my product simply didn’t fill
+              a need in the market. Candidates weren’t being held back for running for office
+              because there was a lot of paperwork, nor were they being held back because they
+              couldn’t get people to run their campaign’s for them. They were be held back due to
+              social and commitment reasons. Simply put, running for office is exhausting, and my
+              product didn’t address this fatal flaw.
+            </p>
+
+            <p>
+              By the end of this journey, my summer had ended. I was starting school at Northeastern
+              and I knew that I wouldn’t have the time to keep working on this while managing my
+              transition to college, so I gracefully shut the company down.
+            </p>
+
+            <br />
+
+            <Text type="headline4">Takeaways</Text>
+
+            <p>
+              I learned a ton through the nearly half year that I worked on candidateXYZ. The
+              process of taking an entire field I wasn’t familiar with and rapidly learning about
+              and building a product for was incredibly instructive. My biggest downfall was simply
+              laying low and building my product rather than getting out in the field and talking to
+              my potential customers. While I might have failed to build a successful business, I
+              did build a bunch of important relationships in my community and learn the foundations
+              of the entrepreneurial process, a process I plan to apply with more success to my
+              startups in the future.
             </p>
 
             <div>
@@ -81,7 +129,7 @@ class CandidateXYZ extends React.Component {
               <br />
               <br />
 
-              <Text type="headline6">GitHub</Text>
+              <Text type="headline6">GitHub Repos</Text>
 
               <SideMargin margin="1%">
                 <a href="https://github.com/TheLocust3/candidatexyz-app">candidateXYZ App</a>

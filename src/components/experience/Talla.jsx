@@ -39,7 +39,7 @@ class Talla extends React.Component {
         <Text type="body1">
           <img className={imageClass} src="/images/talla.png" alt="Talla" />
 
-          <SideMargin margin="1%">
+          <SideMargin margin="0.5%">
             <a href="https://talla.com/">Website</a>
           </SideMargin>
 
@@ -65,6 +65,14 @@ class Talla extends React.Component {
           <p>
             While there I learned React/modern Javascript web development, how to work with AWS and
             to make it scalable with Terraform, and to build full webapps with Ruby on Rails.
+          </p>
+
+          <br />
+
+          <Text type="headline6">Key Skills</Text>
+          <p>
+            React, Redux, Javascript (Babel), Webpack, PostgreSQL, Amazon Web Services, Terraform,
+            and Ruby on Rails.
           </p>
         </Text>
       </Container>

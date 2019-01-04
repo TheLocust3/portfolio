@@ -27,15 +27,30 @@ class PongAimbot extends React.Component {
 
         <Content>
           <Text type="body1">
+            <ProjectImage src="/images/projects/pong.png" alt="3D Pong" />
+
+            <Text type="headline4">Overview</Text>
+
             <p>
-              The idea for this started while we were procrastinating writing code for my high
-              school's robotics team (and not studying for my first midterms ever) during my
+              A Java program built to play 3D pong for the user through detecting the location of
+              the ball and moving the paddle towards it as fast as possible.
+            </p>
+
+            <Text type="headline6">Key Technologies</Text>
+
+            <p>Java</p>
+
+            <br />
+
+            <Text type="headline4">Creation</Text>
+
+            <p>
+              The idea for this started while my friend and I were procrastinating writing code for
+              my high school's robotics team (and not studying for my first midterms ever) during my
               freshman year. The whole Programming Team was sitting around playing this incredibly
               hard 3D Pong game when my friend and I realized that we could write an aimbot that
               played it for us.
             </p>
-
-            <ProjectImage src="/images/projects/pong.png" alt="3D Pong" />
 
             <p>
               We were naturally very competitive, so we decided to set it up as a competition, so we
@@ -55,6 +70,10 @@ class PongAimbot extends React.Component {
               all being processed concurrently. This required many hours of tweaking and optimizing
               my code until it could finally be my friend's aimbot.
             </p>
+
+            <br />
+
+            <Text type="headline4">Takeaways</Text>
 
             <p>
               While this program was somewhat simple looking back, it was foundational to the

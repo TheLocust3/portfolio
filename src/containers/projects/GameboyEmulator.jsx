@@ -27,6 +27,26 @@ class GameboyEmulator extends React.Component {
 
         <Content>
           <Text type="body1">
+            <ProjectImage src="/images/projects/gameboy_specs.png" alt="Gameboy Specs" />
+
+            <Text type="headline4">Overview</Text>
+
+            <p>
+              A Gameboy Classic emulator designed to be played on a Ti-NSpire CX CAS, a commonly
+              used graphing calculator for schoolwork. It emulated all the instructions, registers,
+              memory, interrupts, key bindings, and ran as fast as possible (the calculator simply
+              couldn’t run Lua at the full clock speed of the Gameboy). The only piece that was left
+              out was drawing the image onto the screen.
+            </p>
+
+            <Text type="headline6">Key Technologies</Text>
+
+            <p>Lua</p>
+
+            <br />
+
+            <Text type="headline4">Creation</Text>
+
             <p>
               During my sophomore year, I was just getting into larger scale serious programming
               projects (I had been programming since elementary school but never had taken on a
@@ -37,8 +57,6 @@ class GameboyEmulator extends React.Component {
               This was of course used by high schoolers to play Gameboy games through an available
               emulator.
             </p>
-
-            <ProjectImage src="/images/projects/gameboy_specs.png" alt="Gameboy Specs" />
 
             <p>
               The problem with this was that the exploits were patched every update and we'd have to
@@ -57,7 +75,7 @@ class GameboyEmulator extends React.Component {
 
             <p>
               To my surprise, it was simply sequential instructions to the CPU (which shouldn't be
-              very suprising but I was 15). This made me think (incorrectly, but still), that all I
+              very surprising but I was 15). This made me think (incorrectly, but still), that all I
               would have to do was simply implement run these commands and I would be able to play
               Mario.
             </p>
@@ -68,8 +86,12 @@ class GameboyEmulator extends React.Component {
               scrap it and start over because the program was becoming unwieldy. In the end, I
               managed to implement all the opcodes in the CPU and the interrupts but failed to get
               it to render the screen. This was mostly because the program became incredibly
-              unweildy, mainly due to the fact that it was never properly tested.
+              unwieldy, mainly due to the fact that it was never properly tested.
             </p>
+
+            <br />
+
+            <Text type="headline4">Takeaways</Text>
 
             <p>
               This project was the first thing that got be truly obsessed with programming at all

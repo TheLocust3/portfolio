@@ -27,15 +27,30 @@ class Intel8080 extends React.Component {
 
         <Content>
           <Text type="body1">
+            <ProjectImage src="/images/projects/intel8080_code.png" alt="Intel 8080 Code" />
+
+            <Text type="headline4">Overview</Text>
+
             <p>
-              During my sophmore year of high school, I started to be interested in emulators
+              An emulator for the Intel 8080 CPU, released in 1974. Emulates all the registers,
+              opcodes, and interrupt pins.
+            </p>
+
+            <Text type="headline6">Key Technologies</Text>
+
+            <p>C</p>
+
+            <br />
+
+            <Text type="headline4">Creation</Text>
+
+            <p>
+              During my sophomore year of high school, I started to be interested in emulators
               through my project to create a Gameboy Classic emulator for my calculator (a project
               that can be found on this site). This project inspired me to step by and work on a
               more common and well defined CPU to try to emulate it properly and get a handle on the
               organization of emulators.
             </p>
-
-            <ProjectImage src="/images/projects/intel8080_code.png" alt="Intel 8080 Code" />
 
             <p>
               I got the idea to pursue an emulator of the Intel 8080 chip by reading the book Code:
@@ -56,14 +71,18 @@ class Intel8080 extends React.Component {
             </p>
 
             <p>
-              In the end, I had implemented all the opcodes in the 8080, the registers, and added
-              the ability to register new interrupts, making this emulator complete. The only piece
-              that I didn't implement was the clock speed which would involve slowing the program
-              down so that the opcodes would be run at the proper times.
+              With the help of the 8080 manual and hours of staring at the CPU’s pin diagrams, I
+              completed my emulator, properly emulating everything on the CPU except limiting the
+              clock speed (a generally tedious exercise, having tried it before).
             </p>
 
+            <br />
+
+            <Text type="headline4">Takeaways</Text>
+
             <p>
-              Through this project I learned a load hard skills like C and proper testing, but I
+              Through this project I learned a load hard skills like C, proper testing, and, very
+              importantly, an understanding of assembly (despite it being from forty years ago). I
               also came away with a lot of soft skills like proper code organization and writing a
               project so that it can scale to thousands more lines of code.
             </p>

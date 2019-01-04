@@ -39,7 +39,7 @@ class Team4761 extends React.Component {
         <Text type="body1">
           <img className={imageClass} src="/images/robockets.png" alt="Talla" />
 
-          <SideMargin margin="1%">
+          <SideMargin margin="0.5%">
             <a href="https://robockets.weebly.com/">Website</a>
           </SideMargin>
 
