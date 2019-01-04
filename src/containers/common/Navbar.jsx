@@ -71,10 +71,7 @@ class Navbar extends React.Component {
               Experience
             </NavbarLink>
 
-            <NavbarLink
-              to="https://s3.amazonaws.com/jakekinsella-portfolio/Resume.pdf"
-              solid={this.props.solidNavbar}
-              externalLink>
+            <NavbarLink to="/Resume.pdf" solid={this.props.solidNavbar} externalLink>
               Resume
             </NavbarLink>
           </NavbarDiv>
