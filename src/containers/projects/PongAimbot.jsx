@@ -6,6 +6,7 @@ import { setTitle, setSolidNavbar } from '../../actions/global-actions';
 import Text from '../../components/common/Text';
 import Content from '../../components/common/Content';
 import FadeIn from '../../components/common/FadeIn';
+import TechLogo from '../../components/common/TechLogo';
 import ProjectImage from './ProjectImage';
 import SplashScreen from '../../components/SplashScreen';
 
@@ -36,9 +37,20 @@ class PongAimbot extends React.Component {
               ball and moving the paddle towards it as fast as possible.
             </p>
 
-            <Text type="headline6">Key Technologies</Text>
+            <br />
 
-            <p>Java, IntelliJ IDEA</p>
+            <center>
+              <Text type="headline6">Key Technologies</Text>
+
+              <p>
+                <TechLogo src="/images/logos/java.png" alt="Java" href="https://www.java.com/en/" />
+                <TechLogo
+                  src="/images/logos/intellij.png"
+                  alt="IntelliJ"
+                  href="https://www.jetbrains.com/idea/"
+                />
+              </p>
+            </center>
 
             <br />
 

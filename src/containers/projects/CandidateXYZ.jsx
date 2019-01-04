@@ -6,6 +6,7 @@ import { setTitle, setSolidNavbar } from '../../actions/global-actions';
 import Text from '../../components/common/Text';
 import Content from '../../components/common/Content';
 import FadeIn from '../../components/common/FadeIn';
+import TechLogo from '../../components/common/TechLogo';
 import ProjectImage from './ProjectImage';
 import SplashScreen from '../../components/SplashScreen';
 import SideMargin from '../../components/common/SideMargin';
@@ -49,12 +50,43 @@ class CandidateXYZ extends React.Component {
               campaign’s website by tracking engagement, volunteers, and managing email lists.
             </p>
 
-            <Text type="headline6">Key Technologies</Text>
+            <br />
+            <br />
 
-            <p>
-              Ruby on Rails, Javascript (Babel), React, Redux, PostgreSQL, full stack of Amazon Web
-              Services (EC2, RDS, CodeDeploy, etc), Terraform, VSCode
-            </p>
+            <center>
+              <Text type="headline6">Key Technologies</Text>
+
+              <p>
+                <TechLogo
+                  src="/images/logos/rails.png"
+                  alt="Ruby on Rails"
+                  href="https://rubyonrails.org/"
+                />
+                <TechLogo
+                  src="/images/logos/javascript.png"
+                  alt="Javascript (Babel)"
+                  href="https://babeljs.io/"
+                />
+                <TechLogo src="/images/logos/react.png" alt="React" href="https://reactjs.org/" />
+                <TechLogo src="/images/logos/redux.png" alt="Redux" href="https://redux.js.org/" />
+                <TechLogo
+                  src="/images/logos/postgresql.png"
+                  alt="PostgreSQL"
+                  href="https://www.postgresql.org/"
+                />
+                <TechLogo src="/images/logos/aws.png" alt="AWS" href="https://aws.amazon.com/" />
+                <TechLogo
+                  src="/images/logos/terraform.png"
+                  alt="Terraform"
+                  href="https://www.terraform.io/"
+                />
+                <TechLogo
+                  src="/images/logos/vscode.png"
+                  alt="VSCode"
+                  href="https://code.visualstudio.com/"
+                />
+              </p>
+            </center>
 
             <br />
 

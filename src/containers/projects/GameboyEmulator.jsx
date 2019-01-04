@@ -6,6 +6,7 @@ import { setTitle, setSolidNavbar } from '../../actions/global-actions';
 import Text from '../../components/common/Text';
 import Content from '../../components/common/Content';
 import FadeIn from '../../components/common/FadeIn';
+import TechLogo from '../../components/common/TechLogo';
 import ProjectImage from './ProjectImage';
 import SplashScreen from '../../components/SplashScreen';
 
@@ -39,9 +40,25 @@ class GameboyEmulator extends React.Component {
               out was drawing the image onto the screen.
             </p>
 
-            <Text type="headline6">Key Technologies</Text>
+            <br />
 
-            <p>Lua, Ruby, Sublime Text</p>
+            <center>
+              <Text type="headline6">Key Technologies</Text>
+
+              <p>
+                <TechLogo src="/images/logos/lua.png" alt="Lua" href="https://www.lua.org/" />
+                <TechLogo
+                  src="/images/logos/ruby.png"
+                  alt="Ruby"
+                  href="https://www.ruby-lang.org/en/"
+                />
+                <TechLogo
+                  src="/images/logos/sublime-text.png"
+                  alt="Sublime Text"
+                  href="https://www.sublimetext.com/"
+                />
+              </p>
+            </center>
 
             <br />
 

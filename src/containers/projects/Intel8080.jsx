@@ -6,6 +6,7 @@ import { setTitle, setSolidNavbar } from '../../actions/global-actions';
 import Text from '../../components/common/Text';
 import Content from '../../components/common/Content';
 import FadeIn from '../../components/common/FadeIn';
+import TechLogo from '../../components/common/TechLogo';
 import ProjectImage from './ProjectImage';
 import SplashScreen from '../../components/SplashScreen';
 
@@ -37,9 +38,24 @@ class Intel8080 extends React.Component {
               programs.
             </p>
 
-            <Text type="headline6">Key Technologies</Text>
+            <br />
 
-            <p>C, CLion</p>
+            <center>
+              <Text type="headline6">Key Technologies</Text>
+
+              <p>
+                <TechLogo
+                  src="/images/logos/c.png"
+                  alt="C"
+                  href="https://en.wikipedia.org/wiki/C_%28programming_language%29"
+                />
+                <TechLogo
+                  src="/images/logos/clion.png"
+                  alt="CLion"
+                  href="https://www.jetbrains.com/clion/"
+                />
+              </p>
+            </center>
 
             <br />
 
