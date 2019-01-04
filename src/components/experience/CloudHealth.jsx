@@ -63,7 +63,7 @@ class CloudHealth extends React.Component {
           </p>
           <br />
 
-          <Text type="headline6">Key Skills</Text>
+          <Text type="headline6">Key Technologies</Text>
           <p>Ruby on Rails, Amazon Web Services, and MySQL</p>
         </Text>
       </Container>

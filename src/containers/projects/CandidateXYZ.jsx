@@ -54,8 +54,9 @@ class CandidateXYZ extends React.Component {
 
             <center style={{ display: 'inline-block', width: '100%' }}>
               <Text type="headline6">Key Technologies</Text>
+              <br />
 
-              <p>
+              <div>
                 <TechLogo
                   src="/images/logos/rails.png"
                   alt="Ruby on Rails"
@@ -86,7 +87,7 @@ class CandidateXYZ extends React.Component {
                   alt="VSCode"
                   href="https://code.visualstudio.com/"
                 />
-              </p>
+              </div>
             </center>
 
             <br />

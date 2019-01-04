@@ -42,8 +42,9 @@ class Intel8080 extends React.Component {
 
             <center>
               <Text type="headline6">Key Technologies</Text>
+              <br />
 
-              <p>
+              <div>
                 <TechLogo
                   src="/images/logos/c.png"
                   alt="C"
@@ -54,7 +55,7 @@ class Intel8080 extends React.Component {
                   alt="CLion"
                   href="https://www.jetbrains.com/clion/"
                 />
-              </p>
+              </div>
             </center>
 
             <br />

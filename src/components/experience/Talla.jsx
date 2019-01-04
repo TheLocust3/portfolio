@@ -65,7 +65,7 @@ class Talla extends React.Component {
 
           <br />
 
-          <Text type="headline6">Key Skills</Text>
+          <Text type="headline6">Key Technologies</Text>
           <p>
             React, Redux, Javascript (Babel), Webpack, PostgreSQL, Amazon Web Services, Terraform,
             and Ruby on Rails.

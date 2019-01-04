@@ -27,7 +27,17 @@ let navbarLinkSolid = css`
 
 class NavbarLink extends React.Component {
   render() {
-    let { to, solid, children } = this.props;
+    let { to, solid, children, externalLink } = this.props;
+
+    if (externalLink) {
+      return (
+        <a
+          className={`mdc-typography--headline6 ${navbarLink} ${solid ? navbarLinkSolid : ''}`}
+          href={to}>
+          {children}
+        </a>
+      );
+    }
 
     return (
       <Link
@@ -42,7 +52,8 @@ class NavbarLink extends React.Component {
 NavbarLink.propTypes = {
   to: PropTypes.string.isRequired,
   solid: PropTypes.bool,
-  children: PropTypes.any
+  children: PropTypes.any,
+  externalLink: PropTypes.bool
 };
 
 export default NavbarLink;

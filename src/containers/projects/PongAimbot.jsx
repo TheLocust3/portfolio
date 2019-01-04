@@ -41,8 +41,9 @@ class PongAimbot extends React.Component {
 
             <center>
               <Text type="headline6">Key Technologies</Text>
+              <br />
 
-              <p>
+              <div>
                 <TechLogo src="/images/logos/java.png" alt="Java" href="https://www.java.com/en/" />
                 <TechLogo
                   src="/images/logos/intellij.png"
@@ -50,7 +51,7 @@ class PongAimbot extends React.Component {
                   href="https://www.jetbrains.com/idea/"
                   width="75px"
                 />
-              </p>
+              </div>
             </center>
 
             <br />

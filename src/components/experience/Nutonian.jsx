@@ -64,7 +64,7 @@ class Nutonian extends React.Component {
 
           <br />
 
-          <Text type="headline6">Key Skills</Text>
+          <Text type="headline6">Key Technologies</Text>
           <p>Python, PyTest, Jenkins, Java, and Selenium</p>
         </Text>
       </Container>

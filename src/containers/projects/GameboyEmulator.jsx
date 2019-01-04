@@ -44,8 +44,9 @@ class GameboyEmulator extends React.Component {
 
             <center>
               <Text type="headline6">Key Technologies</Text>
+              <br />
 
-              <p>
+              <div>
                 <TechLogo src="/images/logos/lua.png" alt="Lua" href="https://www.lua.org/" />
                 <TechLogo
                   src="/images/logos/ruby.png"
@@ -58,7 +59,7 @@ class GameboyEmulator extends React.Component {
                   href="https://www.sublimetext.com/"
                   width="75px"
                 />
-              </p>
+              </div>
             </center>
 
             <br />
