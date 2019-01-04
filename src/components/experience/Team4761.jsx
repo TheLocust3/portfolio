@@ -44,41 +44,43 @@ class Team4761 extends React.Component {
           </SideMargin>
 
           <p>
-            I joined my local robotics team during my freshman year of high school. We were FRC Team
-            4761, the Robockets (named after our school mascot, the Rocket). As a team, we were part
-            of FIRST Robotics Competition, and every year, they'd release a huge challenge and field
-            that would take up entire school gyms. After they revealed the game, we'd have six weeks
-            to build a robot and attempt to win the competition.
+            I joined my high school’s robotics team during my freshman year of high school, called
+            the Reading Robockets (or Team 4761, the number that FIRST robotics lovingly assigned to
+            us). We were a part of FIRST of FIRST Robotics Competition, a non-profit dedicated to
+            inspiring kids to pursue STEM careers through having them create people sized robots to
+            solve challenges and generally bash into other robots. The catch was that the challenge
+            changed every year and we had an intense six weeks to build a robot to complete it.
           </p>
 
           <p>
-            I joined the team as a programmer and quickly worked through the ranks. After
+            I joined as a programmer and decided day one that this was the team for me. After
             programming the robot the first year, I became the Programming team lead, and brought
-            Scrum which I had learned at my internships, to the team. We divided our schedule into
+            Scrum, which I had learned at my internships, to my team. We divided our schedule into
             Sprints and had daily standups. In the end of that season, we went to Worlds, the
-            massive final robotics competition with over five hundred teams.
+            massive final robotics competition with over five hundred teams and a hockey arena
+            filled with a cheering audience.
           </p>
 
           <p>
-            After my sophomore year, I was promoted to Technical Project Manager. In that role, I
+            After my sophomore year, I was promoted to Technical Project Manager. In this role, I
             worked as a manager, creating schedules, running daily standups, and keeping the team on
-            track. This role was incredibily valuable for me because it gave me a wide understanding
-            of what it takes to build a robot and run a team.
+            track. Having this job was an incredibly valuable experience for me because it gave me a
+            wide understanding of what it takes to run a team and communicate effectively.
           </p>
 
           <p>
             Finally in my senior year, I was elected Technical President. As Tech President, I
-            oversaw the team as a whole and worked as the Project manager. We faced significant
+            oversaw the team as a whole and worked as the project manager. We faced significant
             challenges that year with many conflicts between the team leadership and our adult
             mentors, but in the end it taught me a ton about managing up and working through
             difficult personal issues with people.
           </p>
 
           <p>
-            My time on the robotics team has shaped the person I am today. Through the good times
-            and the bad, I grew as a programmer, a leader, and a person. I learned how to work on a
-            large project with a group of 50 people and in the end, how to manage those 50 people
-            and keep them motivated. The robotics team changed me in ways I'll never forget.
+            Team 4761 shaped the person I am today. Through the good times and the bad, I grew as a
+            programmer, a leader, and a person. I learned how to work on a large project with a
+            group of 50 people and in the end, how to manage those 50 people and keep them motivated
+            through the ups and downs. The Robockets changed me in ways I'll never forget.
           </p>
         </Text>
       </Container>

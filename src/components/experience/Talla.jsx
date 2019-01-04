@@ -49,22 +49,18 @@ class Talla extends React.Component {
           </p>
 
           <p>
-            When on the team, I was given the project to built out a data annotation platform that
-            would allow them to import Slack conversations and rate whether Talla's (their chatbot)
-            response was correct or not and what it should be. This allowed their data scientists to
-            rapidly improve their product and allowed them to outsource data annotation to those
-            outside the company, speeding up the rate at which they could build their product.
+            As a part of the dev team, I was given the task to built out a data annotation platform
+            that would allow them to import Slack conversations and rate whether Talla's (their
+            chatbot) response was correct or not and what it should be. This allowed their data
+            scientists to rapidly improve their product and allowed them to outsource data
+            annotation to contractors, speeding up the rate at which they could improve their
+            product.
           </p>
 
           <p>
-            On the team I participated in their full Agile process, and was a full developer
-            participating in all their meetings. This gave me great insight into how a small startup
-            of around 20 people worked.
-          </p>
-
-          <p>
-            While there I learned React/modern Javascript web development, how to work with AWS and
-            to make it scalable with Terraform, and to build full webapps with Ruby on Rails.
+            On the team I participated in their full Agile process, and participated in all their
+            meetings. This gave me great insight into how a small startup of around 20 people worked
+            and how informal management among peers works.
           </p>
 
           <br />

@@ -42,16 +42,17 @@ class Nutonian extends React.Component {
           </SideMargin>
 
           <p>
-            I worked at Nutonian during the summer before my sophomore year of highschool. There I
-            worked as a QA engineer, and one of their only QA developers. As a result I got a full
-            view into how QA and DevOps worked.
+            I worked at Nutonian, a company that developed a general purpose machine learning
+            platform, during the summer before my sophomore year of high school. There I worked as a
+            one of two QA developers. As a result I got a full view into how QA and DevOps worked
+            and their interaction with the wider software development world.
           </p>
 
           <p>
-            As a QA developer, I built their performance testing suite which allowed them to track
-            their API performance over time and make sure no one change suddenly bloated the API. I
-            also maintained many fully automated Selenium tests, learning how to develop strong
-            automated browser tests and testable websites.
+            As a QA developer, I built their first performance testing suite which allowed them to
+            track their API performance over time and make sure no one change suddenly bloated the
+            API. I also maintained many fully automated Selenium tests, learning how to develop
+            maintainable automated browser tests and testable websites.
           </p>
 
           <p>

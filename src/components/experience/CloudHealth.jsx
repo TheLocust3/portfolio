@@ -44,10 +44,10 @@ class CloudHealth extends React.Component {
           </SideMargin>
 
           <p>
-            CloudHealth Technologies was my first software engineering job and I worked there for
-            two summers (eighth grade->freshman year and freshman year->sophomore year). This was a
-            formational experience for me because it gave me my first experience working on a
-            project larger than me and working with a team.
+            CloudHealth Technologies was my first software developing job and I worked there for two
+            summers in high school (between eighth grade->freshman year and freshman year->sophomore
+            year). This was a formational experience for me because it gave me my first experience
+            working on a project larger than me and working as part of a team.
           </p>
 
           <p>
@@ -58,7 +58,7 @@ class CloudHealth extends React.Component {
 
           <p>
             While there I got my first experience working in a team environment, and learning modern
-            sofware development techniques like Agile and Scrum. This experience has shaped me as a
+            software development techniques like Agile and Scrum. This experience has shaped me as a
             software developer.
           </p>
           <br />
