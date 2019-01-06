@@ -42,7 +42,6 @@ class Intel8080 extends React.Component {
 
             <center>
               <Text type="headline6">Key Technologies</Text>
-              <br />
 
               <div>
                 <TechLogo

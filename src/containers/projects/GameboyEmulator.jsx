@@ -44,7 +44,6 @@ class GameboyEmulator extends React.Component {
 
             <center>
               <Text type="headline6">Key Technologies</Text>
-              <br />
 
               <div>
                 <TechLogo src="/images/logos/lua.png" alt="Lua" href="https://www.lua.org/" />

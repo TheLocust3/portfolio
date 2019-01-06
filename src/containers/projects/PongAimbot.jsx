@@ -41,7 +41,6 @@ class PongAimbot extends React.Component {
 
             <center>
               <Text type="headline6">Key Technologies</Text>
-              <br />
 
               <div>
                 <TechLogo src="/images/logos/java.png" alt="Java" href="https://www.java.com/en/" />

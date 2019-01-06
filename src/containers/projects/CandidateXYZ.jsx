@@ -54,7 +54,6 @@ class CandidateXYZ extends React.Component {
 
             <center style={{ display: 'inline-block', width: '100%' }}>
               <Text type="headline6">Key Technologies</Text>
-              <br />
 
               <div>
                 <TechLogo

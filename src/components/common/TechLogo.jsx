@@ -10,6 +10,8 @@ let outerClassName = css`
 
   margin-left: 1%;
   margin-right: 1%;
+  margin-top: 3%;
+  margin-bottom: 3%;
 
   &:hover div {
     opacity: 1;
