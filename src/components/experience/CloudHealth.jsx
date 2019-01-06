@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, { css } from 'react-emotion';
 
+import { MAX_MOBILE_WIDTH } from '../../constants';
+
 import Text from '../common/Text';
 import SideMargin from '../common/SideMargin';
 import TechLogo from '../common/TechLogo';
@@ -19,11 +21,19 @@ let leftColumn = css`
   display: inline-block;
   width: 70%;
   vertical-align: top;
+
+  @media (max-width: ${MAX_MOBILE_WIDTH}) {
+    width: 100%;
+  }
 `;
 
 let rightColumn = css`
   display: inline-block;
   width: 30%;
+
+  @media (max-width: ${MAX_MOBILE_WIDTH}) {
+    width: 100%;
+  }
 `;
 
 class CloudHealth extends React.Component {
