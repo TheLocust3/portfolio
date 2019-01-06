@@ -16,7 +16,7 @@ let ProjectContainer = styled('div')`
 
   margin-top: -1px;
 
-  border: 1px solid ${colors.borderGray};
+  border: 1px solid ${colors.accent};
   border-left: 0;
   border-right: 0;
 
@@ -27,11 +27,11 @@ let ProjectContainer = styled('div')`
   transition: background-color 150ms linear;
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.025);
+    background-color: rgba(71, 10, 102, 0.075);
   }
 
-  &:active {
-    background-color: rgba(0, 0, 0, 0.05);
+  &:hover .mdc-typography--headline5 div {
+    color: ${colors.accent} !important;
   }
 
   &:hover i {
@@ -42,6 +42,12 @@ let ProjectContainer = styled('div')`
     padding: 20px;
     padding-top: 2.5vh;
     padding-bottom: 2.5vh;
+  }
+
+  .mdc-typography--headline5 div {
+    -webkit-transition: color 150ms linear;
+    -ms-transition: color 150ms linear;
+    transition: color 150ms linear;
   }
 `;
 
@@ -56,7 +62,7 @@ let arrowClass = css`
   transition: opacity 250ms;
 
   opacity: 0;
-  color: ${colors.linkBlackHover};
+  color: ${colors.accent};
 `;
 
 class Project extends React.Component {

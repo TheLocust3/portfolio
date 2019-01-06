@@ -12,7 +12,8 @@ export let colors = {
   textBlack: '#444',
   textBlackLighter: '#555',
   linkBlackHover: '#666',
-  borderGray: '#9E9E9E'
+  borderGray: '#9E9E9E',
+  accent: '#470a66'
 };
 
 export let MAX_MOBILE_WIDTH = '768px';

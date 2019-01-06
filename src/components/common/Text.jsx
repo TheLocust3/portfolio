@@ -18,16 +18,20 @@ let bodyClass = css`
   color: ${colors.textBlackLighter};
 `;
 
+let accentClass = css`
+  color: ${colors.accent};
+`;
+
 class StyledText extends React.Component {
   render() {
-    let { header, type, className, children, ...props } = this.props;
+    let { header, accent, type, className, children, ...props } = this.props;
 
     return (
       <Text
         type={type}
         className={`${_.isEmpty(className) ? '' : className} ${textClass} ${
           _.includes(type, 'body') ? bodyClass : ''
-        } ${header ? headerClass : ''}`}
+        } ${header ? headerClass : ''} ${accent ? accentClass : ''}`}
         {...props}>
         {children}
       </Text>
@@ -38,6 +42,7 @@ class StyledText extends React.Component {
 StyledText.propTypes = {
   type: PropTypes.string,
   header: PropTypes.bool,
+  accent: PropTypes.bool,
   className: PropTypes.string,
   children: PropTypes.any
 };

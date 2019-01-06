@@ -1,6 +1,6 @@
 import { injectGlobal } from 'emotion';
 
-import { MAX_MOBILE_WIDTH } from './constants';
+import { MAX_MOBILE_WIDTH, colors } from './constants';
 
 injectGlobal`
     body {

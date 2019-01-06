@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'react-emotion';
 import { Button } from 'react-material-components-web';
 
-import { history, colors, MAX_MOBILE_WIDTH } from '../../constants';
+import { history, MAX_MOBILE_WIDTH } from '../../constants';
 
 import Project from './Project';
 import SideMargin from '../common/SideMargin';
@@ -32,7 +32,6 @@ let moreButton = css`
   width: 80%;
 
   background-color: #e0e0e0 !important;
-  color: ${colors.textBlack} !important;
   text-transform: none;
 `;
 
