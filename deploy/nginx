@@ -3,15 +3,9 @@ upstream app {
 }
 
 server {
-    listen 80;
     server_name jakekinsella.com;
-    root /home/ubuntu;
 
     try_files $uri @app;
-
-    if ($http_x_forwarded_proto = http) {
-        return 301 https://$host$request_uri;
-    }
 
     location @app {
         proxy_pass http://app;
@@ -20,5 +14,26 @@ server {
         proxy_redirect off;
     }
 
+    listen [::]:443 ssl ipv6only=on;
+    listen 443 ssl;
+    ssl_certificate /etc/letsencrypt/live/jakekinsella.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/jakekinsella.com/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
     error_log  /home/ubuntu/nginx_error.log  warn;
+}
+
+
+server {
+    if ($host = jakekinsella.com) {
+        return 301 https://$host$request_uri;
+    }
+
+
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    server_name jakekinsella.com;
+    return 404;
 }
