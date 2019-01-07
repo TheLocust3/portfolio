@@ -27,7 +27,12 @@ let ProjectContainer = styled('div')`
   transition: background-color 150ms linear;
 
   &:hover {
-    background-color: rgba(71, 10, 102, 0.075);
+    background-color: rgba(
+      ${colors.accentRGB.r},
+      ${colors.accentRGB.g},
+      ${colors.accentRGB.b},
+      0.05
+    );
   }
 
   &:hover .mdc-typography--headline5 div {

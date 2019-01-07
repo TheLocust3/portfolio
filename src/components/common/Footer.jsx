@@ -17,10 +17,14 @@ let IconRow = styled('div')`
 
     margin-right: 1%;
     margin-left: 1%;
+
+    -webkit-transition: color 150ms linear;
+    -ms-transition: color 150ms linear;
+    transition: color 150ms linear;
   }
 
   & a:hover {
-    color: ${colors.linkBlackHover};
+    color: ${colors.accent};
   }
 `;
 
