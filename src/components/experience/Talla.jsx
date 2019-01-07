@@ -76,6 +76,7 @@ class Talla extends React.Component {
             <center>
               <img className={imageClass} src="/images/talla.png" alt="Talla" />
               <br />
+              <br />
 
               <Text type="headline6">Key Technologies</Text>
 
