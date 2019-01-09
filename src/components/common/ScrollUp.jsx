@@ -2,6 +2,8 @@ import $ from 'jquery';
 import React from 'react';
 import styled from 'react-emotion';
 
+import { colors } from '../../constants';
+
 import Icon from './Icon';
 import MiddleCenter from './MiddleCenter';
 
@@ -17,9 +19,18 @@ let ScrollContainer = styled('div')`
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
 
+  -webkit-transition: background-color 150ms linear;
+  -ms-transition: background-color 150ms linear;
+  transition: background-color 150ms linear;
+
   &:hover {
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(
+      ${colors.accentRGB.r},
+      ${colors.accentRGB.g},
+      ${colors.accentRGB.b},
+      0.6
+    );
   }
 `;
 
