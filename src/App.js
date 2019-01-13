@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -13,7 +14,7 @@ import AdminRoutes from './routes/AdminRoutes';
 
 // Always start navigation at the top of the page
 const ScrollToTop = () => {
-  window.scrollTo(0, 0);
+  $('html, body').scrollTop(0);
 
   return null;
 };

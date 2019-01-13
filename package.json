@@ -9,6 +9,7 @@
     "lodash": "^4.17.11",
     "prop-types": "^15.6.2",
     "query-string": "5",
+    "raf": "^3.4.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-emotion": "^9.2.12",
@@ -17,6 +18,7 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5",
+    "react-snap": "^1.23.0",
     "redux": "^4.0.0",
     "redux-actions": "^2.6.1",
     "redux-thunk": "^2.3.0"
@@ -24,6 +26,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

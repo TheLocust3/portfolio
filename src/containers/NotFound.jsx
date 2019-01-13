@@ -9,7 +9,7 @@ import FadeIn from '../components/common/FadeIn';
 
 class NotFound extends React.Component {
   componentWillMount() {
-    this.props.dispatch(setTitle('Not Found'));
+    this.props.dispatch(setTitle('404 Not Found'));
     this.props.dispatch(setSolidNavbar(true));
   }
 
