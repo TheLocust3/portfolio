@@ -45,7 +45,7 @@ class Experience extends React.Component {
     return (
       <div>
         <Helmet>
-          <title>Jake Kinsella - Projects</title>
+          <title>Jake Kinsella - Experience</title>
           <meta
             name="description"
             content="All my professional experience through internships and jobs."
