@@ -1,13 +1,13 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import { Text } from 'react-material-components-web';
 
 import AuthApi from '../api/auth-api';
-import { setTitle, setSolidNavbar } from '../actions/global-actions';
+import { setSolidNavbar } from '../actions/global-actions';
 
 class AdminDashboard extends React.Component {
   componentWillMount() {
-    this.props.dispatch(setTitle('Admin'));
     this.props.dispatch(setSolidNavbar(true));
   }
 
@@ -18,6 +18,10 @@ class AdminDashboard extends React.Component {
   render() {
     return (
       <div className="content">
+        <Helmet>
+          <title>Jake Kinsella - Admin</title>
+        </Helmet>
+
         <Text type="headline2">Admin Dashboard</Text>
 
         <Text type="body2">

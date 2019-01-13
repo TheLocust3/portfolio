@@ -1,12 +1,13 @@
 import $ from 'jquery';
 import _ from 'lodash';
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import queryString from 'query-string';
 import styled from 'react-emotion';
 
 import { MAX_MOBILE_WIDTH } from '../constants';
-import { setTitle, setSolidNavbar } from '../actions/global-actions';
+import { setSolidNavbar } from '../actions/global-actions';
 
 import Content from '../components/common/Content';
 import FadeIn from '../components/common/FadeIn';
@@ -24,7 +25,6 @@ let Spacer = styled('div')`
 
 class Experience extends React.Component {
   componentWillMount() {
-    this.props.dispatch(setTitle('Projects'));
     this.props.dispatch(setSolidNavbar(true));
   }
 
@@ -43,29 +43,39 @@ class Experience extends React.Component {
 
   render() {
     return (
-      <FadeIn>
-        <Content>
-          <Spacer />
+      <div>
+        <Helmet>
+          <title>Jake Kinsella - Projects</title>
+          <meta
+            name="description"
+            content="All my professional experience through internships and jobs."
+          />
+        </Helmet>
 
-          <div id="1">
-            <Team4761 />
-          </div>
+        <FadeIn>
+          <Content>
+            <Spacer />
 
-          <div id="2">
-            <Talla />
-          </div>
+            <div id="1">
+              <Team4761 />
+            </div>
 
-          <div id="3">
-            <Nutonian />
-          </div>
+            <div id="2">
+              <Talla />
+            </div>
 
-          <div id="4">
-            <CloudHealth />
-          </div>
+            <div id="3">
+              <Nutonian />
+            </div>
 
-          <ScrollUp />
-        </Content>
-      </FadeIn>
+            <div id="4">
+              <CloudHealth />
+            </div>
+
+            <ScrollUp />
+          </Content>
+        </FadeIn>
+      </div>
     );
   }
 }

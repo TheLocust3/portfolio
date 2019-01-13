@@ -10,12 +10,6 @@ export function globalReducer(state = initialState, action) {
       return Object.assign({}, state, {
         solidNavbar: action.data
       });
-    case GlobalActions.SET_TITLE:
-      document.title = `Jake Kinsella - ${action.data}`;
-
-      return Object.assign({}, state, {
-        title: action.data
-      });
     default:
       return state;
   }

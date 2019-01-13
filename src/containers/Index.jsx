@@ -1,7 +1,8 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 
-import { setTitle, setSolidNavbar } from '../actions/global-actions';
+import { setSolidNavbar } from '../actions/global-actions';
 
 import ScrollUp from '../components/common/ScrollUp';
 
@@ -14,29 +15,38 @@ import ExperiencePanel from '../components/panels/ExperiencePanel';
 
 class Index extends React.Component {
   componentWillMount() {
-    this.props.dispatch(setTitle('Home'));
     this.props.dispatch(setSolidNavbar(false));
   }
 
   render() {
     return (
-      <FadeIn>
-        <SplashScreen
-          src="/images/splash.jpeg"
-          header="Jake Kinsella"
-          subtitle="Developer and aspiring entrepreneur."
-        />
-        <br />
+      <div>
+        <Helmet>
+          <title>Jake Kinsella - Home</title>
+          <meta
+            name="description"
+            content="I'm a software developer, and entrepreneur, with a passion for building technology."
+          />
+        </Helmet>
 
-        <AboutPanel />
+        <FadeIn>
+          <SplashScreen
+            src="/images/splash.jpeg"
+            header="Jake Kinsella"
+            subtitle="Developer and aspiring entrepreneur."
+          />
+          <br />
 
-        <ProjectsPanel />
-        <br />
+          <AboutPanel />
 
-        <ExperiencePanel />
+          <ProjectsPanel />
+          <br />
 
-        <ScrollUp />
-      </FadeIn>
+          <ExperiencePanel />
+
+          <ScrollUp />
+        </FadeIn>
+      </div>
     );
   }
 }
