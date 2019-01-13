@@ -57,7 +57,9 @@ class SignInForm extends React.Component {
         <br />
         <br />
 
-        <Button type="submit">Sign In</Button>
+        <Button type="submit" noRipple>
+          Sign In
+        </Button>
 
         <input type="submit" style={{ visibility: 'hidden' }} />
       </form>

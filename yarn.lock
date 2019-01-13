@@ -7485,7 +7485,7 @@ react-helmet@^5.2.0:
 
 "react-material-components-web@git+https://github.com/TheLocust3/react-material-components-web.git":
   version "0.1.0"
-  resolved "git+https://github.com/TheLocust3/react-material-components-web.git#cd65a44636c1ab4adb48964626496df6b86450c9"
+  resolved "git+https://github.com/TheLocust3/react-material-components-web.git#4581b3041cf82be732d7ed60f0ed8cf488bb8a13"
   dependencies:
     babel-cli "^6.26.0"
     babel-polyfill "^6.26.0"

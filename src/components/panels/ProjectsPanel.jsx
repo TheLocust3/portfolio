@@ -43,7 +43,7 @@ class ProjectsPanel extends React.Component {
           <br />
           <br />
 
-          <Button className={moreButton} onClick={() => history.push('/projects')}>
+          <Button className={moreButton} onClick={() => history.push('/projects')} noRipple>
             <Text type="body2">See more projects</Text>
           </Button>
         </center>
