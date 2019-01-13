@@ -13,10 +13,6 @@ export let colors = {
   textBlackLighter: '#555',
   linkBlackHover: '#666',
   borderGray: '#9E9E9E',
-  // accent: '#03256C',
-  // accentRGB: { r: 3, g: 37, b: 108 }
-  // accent: '#52154E',
-  // accentRGB: { r: 82, g: 21, b: 78 }
   accent: '#6B4E71',
   accentRGB: { r: 107, g: 78, b: 113 }
 };

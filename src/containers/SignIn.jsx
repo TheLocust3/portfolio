@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Text, MDCAutoInit } from 'react-material-components-web';
+import { Text } from 'react-material-components-web';
 
 import { setTitle, setSolidNavbar } from '../actions/global-actions';
 
@@ -20,8 +20,6 @@ class SignIn extends React.Component {
         <br />
 
         <SignInForm />
-
-        <MDCAutoInit />
       </Content>
     );
   }

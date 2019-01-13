@@ -2,6 +2,7 @@ import $ from 'jquery';
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { Helmet } from 'react-helmet';
 
 import { store, history } from './constants';
 import './global-styles';
@@ -24,6 +25,11 @@ class App extends React.Component {
     return (
       <Provider store={store}>
         <div>
+          <Helmet>
+            <meta charSet="utf-8" />
+            <title>Jake Kinsella</title>
+          </Helmet>
+
           <Router history={history}>
             <div>
               <Navbar />
