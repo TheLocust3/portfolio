@@ -20,6 +20,10 @@ injectGlobal`
     .mdc-floating-label {
         font-weight: 300;
     }
+
+    .mdc-text-field {
+        width: 500px;
+    }
     
     .mdc-text-field__input {
         font-weight: 300;

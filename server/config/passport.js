@@ -12,15 +12,15 @@ jwtOptions.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 jwtOptions.secretOrKey = secrets.jwtSecret;
 
 var strategy = new JwtStrategy(jwtOptions, function(jwtPayload, next) {
-    console.log('payload received', jwtPayload);
+  console.log('payload received', jwtPayload);
 
-    User.find({ _id: jwtPayload.id }, (err, users) => {
-        if (_.isEmpty(users)) {
-            next(null, false);
-        } else {
-            next(null, users[0]);
-        }
-    });
+  User.find({ _id: jwtPayload.id }, (err, users) => {
+    if (_.isEmpty(users)) {
+      next(null, false);
+    } else {
+      next(null, users[0]);
+    }
+  });
 });
 
 module.exports = strategy;

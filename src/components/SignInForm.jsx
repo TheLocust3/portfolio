@@ -23,6 +23,7 @@ class SignInForm extends React.Component {
     AuthApi.signIn(this.state.email, this.state.password)
       .then((response) => {
         history.push('/admin');
+        window.location.reload();
       })
       .catch((response) => {
         if (response.status === 401) {

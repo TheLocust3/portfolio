@@ -1,11 +1,12 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
-import { Text } from 'react-material-components-web';
+import { Text, MDCAutoInit } from 'react-material-components-web';
 
 import { setSolidNavbar } from '../actions/global-actions';
 
 import Content from '../components/common/Content';
+import SideMargin from '../components/common/SideMargin';
 import SignInForm from '../components/SignInForm';
 
 class SignIn extends React.Component {
@@ -23,7 +24,11 @@ class SignIn extends React.Component {
         <Text type="headline2">Sign In</Text>
         <br />
 
-        <SignInForm />
+        <SideMargin margin="5%">
+          <SignInForm />
+        </SideMargin>
+
+        <MDCAutoInit />
       </Content>
     );
   }

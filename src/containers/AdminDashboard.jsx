@@ -6,6 +6,9 @@ import { Text } from 'react-material-components-web';
 import AuthApi from '../api/auth-api';
 import { setSolidNavbar } from '../actions/global-actions';
 
+import FadeIn from '../components/common/FadeIn';
+import Content from '../components/common/Content';
+
 class AdminDashboard extends React.Component {
   componentWillMount() {
     this.props.dispatch(setSolidNavbar(true));
@@ -17,21 +20,25 @@ class AdminDashboard extends React.Component {
 
   render() {
     return (
-      <div className="content">
+      <div>
         <Helmet>
           <title>Jake Kinsella - Admin</title>
         </Helmet>
 
-        <Text type="headline2">Admin Dashboard</Text>
+        <FadeIn>
+          <Content>
+            <Text type="headline2">Admin Dashboard</Text>
 
-        <Text type="body2">
-          <a href="/" onClick={this.onSignOutClick.bind(this)}>
-            Sign Out
-          </a>
-        </Text>
-        <br />
+            <Text type="body2">
+              <a href="/" onClick={this.onSignOutClick.bind(this)}>
+                Sign Out
+              </a>
+            </Text>
+            <br />
 
-        <Text type="text2">Email: {this.props.user.email}</Text>
+            <Text type="body1">Email: {this.props.user.email}</Text>
+          </Content>
+        </FadeIn>
       </div>
     );
   }
