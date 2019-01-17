@@ -1,7 +1,9 @@
 var _ = require('lodash');
 var express = require('express');
-var router = express.Router();
+
 var User = require('../../models/user');
+
+var router = express.Router();
 
 router.post('/sign-in', (req, res) => {
   User.find({ email: req.body.email }, function(err, users) {
