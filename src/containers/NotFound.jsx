@@ -20,7 +20,6 @@ class NotFound extends React.Component {
           <title>Jake Kinsella - 404 Not Found</title>
           <meta name="description" content="404 Page not found" />
         </Helmet>
-        +
         <FadeIn>
           <Content>
             <br />

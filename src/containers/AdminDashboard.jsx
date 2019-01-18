@@ -1,11 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
-import { Text } from 'react-material-components-web';
 
 import AuthApi from '../api/auth-api';
 import { setSolidNavbar } from '../actions/global-actions';
 
+import Text from '../components/common/Text';
 import FadeIn from '../components/common/FadeIn';
 import Content from '../components/common/Content';
 
@@ -27,7 +27,9 @@ class AdminDashboard extends React.Component {
 
         <FadeIn>
           <Content>
-            <Text type="headline2">Admin Dashboard</Text>
+            <Text type="headline3" header>
+              Admin Dashboard
+            </Text>
 
             <Text type="body2">
               <a href="/" onClick={this.onSignOutClick.bind(this)}>

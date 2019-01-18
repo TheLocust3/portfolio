@@ -7,6 +7,10 @@ import { fetchCurrentUser } from '../actions/user-actions';
 
 import SignIn from '../containers/SignIn';
 import AdminDashboard from '../containers/AdminDashboard';
+import AllArticles from '../containers/articles/AllArticles';
+import NewArticle from '../containers/articles/NewArticle';
+import EditArticle from '../containers/articles/EditArticle';
+import NotFound from '../containers/NotFound';
 
 class AdminRoutes extends React.Component {
   componentWillMount() {
@@ -22,7 +26,13 @@ class AdminRoutes extends React.Component {
 
     return (
       <Switch>
-        <Route path="/" component={AdminDashboard} />
+        <Route exact path="/admin/" component={AdminDashboard} />
+
+        <Route exact path="/admin/articles" component={AllArticles} />
+        <Route exact path="/admin/articles/new" component={NewArticle} />
+        <Route exact path="/admin/articles/:url" component={EditArticle} />
+
+        <Route component={NotFound} />
       </Switch>
     );
   }

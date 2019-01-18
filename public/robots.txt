@@ -1,3 +1,5 @@
 User-agent: *
 Disallow: /admin/
+Disallow: /admin/articles/
+Disallow: /admin/articles/new/
 Disallow: /sign-in/
