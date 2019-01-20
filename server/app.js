@@ -4,11 +4,11 @@ const path = require('path');
 var cookieParser = require('cookie-parser');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-// var mongoose = require('mongoose');
-// var passport = require('passport');
+var mongoose = require('mongoose');
+var passport = require('passport');
 
-// var configDB = require('./config/database.js');
-// var strategy = require('./config/passport.js');
+var configDB = require('./config/database.js');
+var strategy = require('./config/passport.js');
 
 var app = express();
 const port = app.get('env') === 'production' ? 80 : 2001;
@@ -20,23 +20,23 @@ app.use(cookieParser());
 app.use(favicon(path.join(__dirname, '../public/favicon.ico')));
 app.use(compression());
 
-// mongoose.connect(configDB.url);
+mongoose.connect(configDB.url);
 
-// app.use(passport.initialize());
-// passport.use(strategy);
+app.use(passport.initialize());
+passport.use(strategy);
 
-// var authRouter = require('./routes/api/auth');
-// var usersRouter = require('./routes/api/users');
-// var articlesRouter = require('./routes/api/articles');
+var authRouter = require('./routes/api/auth');
+var usersRouter = require('./routes/api/users');
+var articlesRouter = require('./routes/api/articles');
 
-// app.use('/api/auth', authRouter);
-// app.use('/api/users', usersRouter);
-// app.use('/api/articles', articlesRouter);
+app.use('/api/auth', authRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/articles', articlesRouter);
 
 app.use(express.static(path.join(__dirname, '../build')));
 
 app.use('/', (req, res, next) => {
-  // res.sendFile(path.join(__dirname, '../build', 'index.html'));
+  res.sendFile(path.join(__dirname, '../build', 'index.html'));
 });
 
 // error handler
