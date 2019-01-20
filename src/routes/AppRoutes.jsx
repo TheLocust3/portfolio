@@ -29,7 +29,7 @@ class AppRoutes extends React.Component {
         <Route exact path="/projects/gameboy-emulator" component={GameboyEmulator} />
         <Route exact path="/projects/pong-aimbot" component={PongAimbot} />
 
-        <Route exact path="/articles/:url" component={ShowArticle} />
+        {/* <Route exact path="/articles/:url" component={ShowArticle} /> */}
 
         <Route component={NotFound} />
       </Switch>

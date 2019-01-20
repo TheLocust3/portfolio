@@ -28,9 +28,9 @@ class AdminRoutes extends React.Component {
       <Switch>
         <Route exact path="/admin/" component={AdminDashboard} />
 
-        <Route exact path="/admin/articles" component={AllArticles} />
-        <Route exact path="/admin/articles/new" component={NewArticle} />
-        <Route exact path="/admin/articles/:url" component={EditArticle} />
+        {/* <Route exact path="/admin/articles" component={AllArticles} /> */}
+        {/* <Route exact path="/admin/articles/new" component={NewArticle} /> */}
+        {/* <Route exact path="/admin/articles/:url" component={EditArticle} /> */}
 
         <Route component={NotFound} />
       </Switch>
