@@ -52,7 +52,7 @@ class Nutonian extends React.Component {
             </SideMargin>
 
             <p>
-              I worked at Nutonian, a company that developed a general purpose machine learning
+              I worked at Nutonian, a startup that developed a general purpose machine learning
               platform, during the summer before my sophomore year of high school. There I worked as
               a one of two QA developers. As a result I got a full view into how QA and DevOps
               worked and their interaction with the wider software development world.

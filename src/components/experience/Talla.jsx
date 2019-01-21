@@ -53,7 +53,7 @@ class Talla extends React.Component {
 
             <p>
               I joined Talla during the summer between my junior and senior years of high school.
-              Talla is company that builds intelligent Slackbots to manage common HR tasks.
+              Talla Boston startup that builds intelligent Slackbots to manage common HR tasks.
             </p>
 
             <p>
