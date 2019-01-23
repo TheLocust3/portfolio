@@ -9,21 +9,25 @@ var router = express.Router();
 router.get('/', function(req, res) {
   Article.findOne({}, function(err, articles) {
     if (_.isEmpty(err)) {
-      res.json(articles);
+      if (_.isNull(articles)) {
+        res.json([]);
+      } else {
+        res.json(articles);
+      }
     } else {
       res.json({ err });
-      res.sendStatus(404);
+      res.status(404);
     }
   });
 });
 
 router.get('/:url', function(req, res) {
   Article.findOne({ url: req.params.url }, function(err, article) {
-    if (_.isEmpty(err)) {
+    if (_.isEmpty(err) && !_.isNull(article)) {
       res.json(article);
     } else {
       res.json({ err });
-      res.sendStatus(404);
+      res.status(404);
     }
   });
 });
@@ -41,7 +45,7 @@ router.post('/', passport.authenticate('jwt', { session: false }), function(req,
       res.json(article);
     } else {
       res.json({ err });
-      res.sendStatus(400);
+      res.status(400);
     }
   });
 });
@@ -52,7 +56,7 @@ router.patch('/:id', passport.authenticate('jwt', { session: false }), function(
       res.json(article);
     } else {
       res.json({ err });
-      res.sendStatus(400);
+      res.status(400);
     }
   });
 });
@@ -63,7 +67,7 @@ router.delete('/:id', passport.authenticate('jwt', { session: false }), function
       res.json({ success: 'ok' });
     } else {
       res.json({ err });
-      res.sendStatus(400);
+      res.status(400);
     }
   });
 });

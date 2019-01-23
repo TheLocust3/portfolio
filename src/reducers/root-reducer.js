@@ -6,7 +6,7 @@ import { globalReducer } from './global-reducer';
 
 const reducer = combineReducers({
   users: userReducer,
-  article: articleReducer,
+  articles: articleReducer,
   global: globalReducer
 });
 

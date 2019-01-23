@@ -40,7 +40,7 @@ export function fetchAllArticles() {
         dispatch(receiveAllArticlesAction(response.body));
       })
       .catch(() => {
-        dispatch(receiveAllArticlesAction({}));
+        dispatch(receiveAllArticlesAction([]));
       });
   };
 }

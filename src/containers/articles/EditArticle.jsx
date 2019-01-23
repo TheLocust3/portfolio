@@ -3,18 +3,23 @@ import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 
 import { setSolidNavbar } from '../../actions/global-actions';
+import { fetchArticle } from '../../actions/article-actions';
 
 import Text from '../../components/common/Text';
 import ScrollUp from '../../components/common/ScrollUp';
 import Content from '../../components/common/Content';
 import FadeIn from '../../components/common/FadeIn';
+import ArticleForm from '../../components/articles/ArticleForm';
 
 class EditArticle extends React.Component {
   componentWillMount() {
     this.props.dispatch(setSolidNavbar(true));
+    this.props.dispatch(fetchArticle(this.props.match.params.url));
   }
 
   render() {
+    if (!this.props.isReady) return null;
+
     return (
       <div>
         <Helmet>
@@ -28,6 +33,8 @@ class EditArticle extends React.Component {
               Edit Article
             </Text>
 
+            <ArticleForm article={this.props.article} />
+
             <ScrollUp />
           </Content>
         </FadeIn>
@@ -36,4 +43,11 @@ class EditArticle extends React.Component {
   }
 }
 
-export default connect()(EditArticle);
+function mapStateToProps(state) {
+  return {
+    isReady: state.articles.isReady,
+    article: state.articles.article
+  };
+}
+
+export default connect(mapStateToProps)(EditArticle);

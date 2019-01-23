@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 
 import { setSolidNavbar } from '../../actions/global-actions';
+import { fetchAllArticles } from '../../actions/article-actions';
 
 import Text from '../../components/common/Text';
 import ScrollUp from '../../components/common/ScrollUp';
@@ -12,9 +13,12 @@ import FadeIn from '../../components/common/FadeIn';
 class AllArticles extends React.Component {
   componentWillMount() {
     this.props.dispatch(setSolidNavbar(true));
+    this.props.dispatch(fetchAllArticles());
   }
 
   render() {
+    if (!this.props.isReady) return null;
+
     return (
       <div>
         <Helmet>
@@ -36,4 +40,11 @@ class AllArticles extends React.Component {
   }
 }
 
-export default connect()(AllArticles);
+function mapStateToProps(state) {
+  return {
+    isReady: state.articles.isReady,
+    articles: state.articles.articles
+  };
+}
+
+export default connect(mapStateToProps)(AllArticles);

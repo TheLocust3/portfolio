@@ -8,6 +8,7 @@ import Text from '../../components/common/Text';
 import ScrollUp from '../../components/common/ScrollUp';
 import Content from '../../components/common/Content';
 import FadeIn from '../../components/common/FadeIn';
+import ArticleForm from '../../components/articles/ArticleForm';
 
 class NewArticle extends React.Component {
   componentWillMount() {
@@ -27,6 +28,8 @@ class NewArticle extends React.Component {
             <Text type="headline4" header>
               New Article
             </Text>
+
+            <ArticleForm article={{}} />
 
             <ScrollUp />
           </Content>
