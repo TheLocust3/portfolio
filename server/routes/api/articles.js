@@ -46,8 +46,8 @@ router.post('/', passport.authenticate('jwt', { session: false }), function(req,
   });
 });
 
-router.patch('/:url', passport.authenticate('jwt', { session: false }), function(req, res, next) {
-  Article.updateOne({ url: req.params.url }, function(err, article) {
+router.patch('/:id', passport.authenticate('jwt', { session: false }), function(req, res, next) {
+  Article.updateOne({ id: req.params.id }, function(err, article) {
     if (_.isEmpty(err)) {
       res.json(article);
     } else {
@@ -57,8 +57,8 @@ router.patch('/:url', passport.authenticate('jwt', { session: false }), function
   });
 });
 
-router.delete('/:url', passport.authenticate('jwt', { session: false }), function(req, res, next) {
-  Article.deleteOne({ url: req.params.url }, function(err) {
+router.delete('/:id', passport.authenticate('jwt', { session: false }), function(req, res, next) {
+  Article.deleteOne({ id: req.params.id }, function(err) {
     if (_.isEmpty(err)) {
       res.json({ success: 'ok' });
     } else {
