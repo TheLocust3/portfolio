@@ -20,7 +20,7 @@ class AllArticles extends React.Component {
   renderArticleList(articles) {
     return articles.map((article) => {
       return (
-        <div>
+        <div key={article._id}>
           <Link to={`/articles/${article.url}`}>{article.title}</Link>
         </div>
       );

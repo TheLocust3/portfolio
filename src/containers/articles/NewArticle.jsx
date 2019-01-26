@@ -30,7 +30,7 @@ class NewArticle extends React.Component {
               New Article
             </Text>
 
-            <ArticleForm article={{}} />
+            <ArticleForm />
 
             <ScrollUp />
           </Content>

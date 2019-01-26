@@ -12,7 +12,12 @@ export default class ArticleForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { article: this.props.article, errors: {} };
+    this.state = { errors: {} };
+    if (_.isEmpty(this.props.article)) {
+      this.state.article = {};
+    } else {
+      this.state.article = this.props.article;
+    }
   }
 
   handleChange(event) {
@@ -33,7 +38,7 @@ export default class ArticleForm extends React.Component {
     if (_.isEmpty(this.props.article)) {
       ArticleApi.create(article.title, article.body, article.image, article.url)
         .then((response) => {
-          history.push(`/articles/${response.id}`);
+          history.push(`/articles/${response.url}`);
         })
         .catch((response) => {
           this.setState({
@@ -42,14 +47,15 @@ export default class ArticleForm extends React.Component {
         });
     } else {
       ArticleApi.update(
-        this.props.article.id,
+        this.props.article._id,
         article.title,
         article.body,
         article.image,
         article.url
       )
         .then((response) => {
-          history.push(`/articles/${this.props.article.id}`);
+          console.log(response);
+          history.push(`/articles/${this.props.article.url}`);
         })
         .catch((response) => {
           this.setState({
@@ -69,6 +75,7 @@ export default class ArticleForm extends React.Component {
           name="title"
           defaultValue={this.state.article.title}
           onChange={this.handleChange.bind(this)}
+          required
         />
         <br />
         <br />
@@ -78,6 +85,7 @@ export default class ArticleForm extends React.Component {
           name="body"
           defaultValue={this.state.article.body}
           onChange={this.handleChange.bind(this)}
+          required
         />
         <br />
 
@@ -86,6 +94,7 @@ export default class ArticleForm extends React.Component {
           name="image"
           defaultValue={this.state.article.image}
           onChange={this.handleChange.bind(this)}
+          required
         />
         <br />
 
@@ -94,6 +103,7 @@ export default class ArticleForm extends React.Component {
           name="url"
           defaultValue={this.state.article.url}
           onChange={this.handleChange.bind(this)}
+          required
         />
         <br />
         <br />

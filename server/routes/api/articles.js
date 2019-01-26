@@ -7,68 +7,82 @@ var Article = require('../../models/article');
 var router = express.Router();
 
 router.get('/', function(req, res) {
-  Article.findOne({}, function(err, articles) {
-    if (_.isEmpty(err)) {
-      if (_.isNull(articles)) {
-        res.json([]);
-      } else {
-        res.json(articles);
-      }
-    } else {
+  Article.find(function(err, articles) {
+    if (err) {
       res.json({ err });
       res.status(404);
+      return;
+    }
+
+    if (_.isNull(articles)) {
+      res.json([]);
+    } else {
+      res.json(articles);
     }
   });
 });
 
 router.get('/:url', function(req, res) {
   Article.findOne({ url: req.params.url }, function(err, article) {
-    if (_.isEmpty(err) && !_.isNull(article)) {
-      res.json(article);
-    } else {
+    if (err) {
       res.json({ err });
       res.status(404);
+      return;
     }
+
+    res.json(article);
   });
 });
 
 router.post('/', passport.authenticate('jwt', { session: false }), function(req, res, next) {
   const article = new Article({
-    title: req.params.title,
-    body: req.params.body,
-    image: req.params.image,
-    url: req.params.url
+    title: req.body.title,
+    body: req.body.body,
+    image: req.body.image,
+    url: req.body.url
   });
 
-  article.save().then(function(err, article) {
-    if (_.isEmpty(err)) {
-      res.json(article);
-    } else {
+  article.save(function(err, article) {
+    if (err) {
       res.json({ err });
       res.status(400);
+      return;
     }
+
+    res.json(article);
   });
 });
 
 router.patch('/:id', passport.authenticate('jwt', { session: false }), function(req, res, next) {
-  Article.updateOne({ id: req.params.id }, function(err, article) {
-    if (_.isEmpty(err)) {
+  Article.findOneAndUpdate(
+    { _id: req.params.id },
+    {
+      title: req.body.title,
+      body: req.body.body,
+      image: req.body.image,
+      url: req.body.url
+    },
+    function(err, article) {
+      if (err) {
+        res.json({ err });
+        res.status(400);
+        return;
+      }
+
       res.json(article);
-    } else {
-      res.json({ err });
-      res.status(400);
     }
-  });
+  );
 });
 
 router.delete('/:id', passport.authenticate('jwt', { session: false }), function(req, res, next) {
   Article.deleteOne({ id: req.params.id }, function(err) {
-    if (_.isEmpty(err)) {
-      res.json({ success: 'ok' });
-    } else {
+    if (err) {
       res.json({ err });
       res.status(400);
+      return;
     }
+
+    res.json({ success: 'ok' });
   });
 });
 
