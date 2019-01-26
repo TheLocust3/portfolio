@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
+import { MDCAutoInit } from 'react-material-components-web';
 
 import { setSolidNavbar } from '../../actions/global-actions';
 import { fetchArticle } from '../../actions/article-actions';
@@ -38,6 +39,8 @@ class EditArticle extends React.Component {
             <ScrollUp />
           </Content>
         </FadeIn>
+
+        <MDCAutoInit />
       </div>
     );
   }

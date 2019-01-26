@@ -1,10 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
-import { Text, MDCAutoInit } from 'react-material-components-web';
+import { MDCAutoInit } from 'react-material-components-web';
 
 import { setSolidNavbar } from '../actions/global-actions';
 
+import Text from '../components/common/Text';
 import Content from '../components/common/Content';
 import SideMargin from '../components/common/SideMargin';
 import SignInForm from '../components/SignInForm';

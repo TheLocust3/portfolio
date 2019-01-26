@@ -1,8 +1,10 @@
 import React from 'react';
-import { Text, Button, TextField } from 'react-material-components-web';
+import { Button, TextField } from 'react-material-components-web';
 
 import AuthApi from '../api/auth-api';
 import { history } from '../constants';
+
+import Text from '../components/common/Text';
 
 class SignInForm extends React.Component {
   constructor(props) {

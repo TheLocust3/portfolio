@@ -19,6 +19,8 @@ class ShowArticle extends React.Component {
   render() {
     if (!this.props.isReady) return null;
 
+    let article = this.props.article;
+
     return (
       <div>
         <Helmet>
@@ -29,7 +31,11 @@ class ShowArticle extends React.Component {
         <FadeIn>
           <Content>
             <Text type="headline4" header>
-              Show Article
+              {article.title}
+            </Text>
+
+            <Text type="body1" header>
+              {article.body}
             </Text>
 
             <ScrollUp />

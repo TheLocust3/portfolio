@@ -1,9 +1,12 @@
 import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Button, TextField, TextArea } from 'react-material-components-web';
 
 import { history } from '../../constants';
 import ArticleApi from '../../api/article-api';
+
+import Text from '../common/Text';
 
 export default class ArticleForm extends React.Component {
   constructor(props) {
@@ -22,6 +25,9 @@ export default class ArticleForm extends React.Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
     let article = this.state.article;
 
     if (_.isEmpty(this.props.article)) {
@@ -54,7 +60,51 @@ export default class ArticleForm extends React.Component {
   }
 
   render() {
-    return <div>Form</div>;
+    return (
+      <form onSubmit={this.handleSubmit.bind(this)}>
+        <Text type="body2">{this.state.error}</Text>
+
+        <TextField
+          label="Title"
+          name="title"
+          defaultValue={this.state.article.title}
+          onChange={this.handleChange.bind(this)}
+        />
+        <br />
+        <br />
+
+        <TextArea
+          label="Body"
+          name="body"
+          defaultValue={this.state.article.body}
+          onChange={this.handleChange.bind(this)}
+        />
+        <br />
+
+        <TextField
+          label="Image"
+          name="image"
+          defaultValue={this.state.article.image}
+          onChange={this.handleChange.bind(this)}
+        />
+        <br />
+
+        <TextField
+          label="Url"
+          name="url"
+          defaultValue={this.state.article.url}
+          onChange={this.handleChange.bind(this)}
+        />
+        <br />
+        <br />
+
+        <Button type="submit" noRipple>
+          Save
+        </Button>
+
+        <input type="submit" style={{ visibility: 'hidden' }} />
+      </form>
+    );
   }
 }
 

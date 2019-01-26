@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 
@@ -16,6 +17,16 @@ class AllArticles extends React.Component {
     this.props.dispatch(fetchAllArticles());
   }
 
+  renderArticleList(articles) {
+    return articles.map((article) => {
+      return (
+        <div>
+          <Link to={`/articles/${article.url}`}>{article.title}</Link>
+        </div>
+      );
+    });
+  }
+
   render() {
     if (!this.props.isReady) return null;
 
@@ -31,6 +42,8 @@ class AllArticles extends React.Component {
             <Text type="headline4" header>
               All Articles
             </Text>
+
+            <div>{this.renderArticleList(this.props.articles)}</div>
 
             <ScrollUp />
           </Content>
