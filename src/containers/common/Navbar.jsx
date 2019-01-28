@@ -63,6 +63,10 @@ class Navbar extends React.Component {
               Home
             </NavbarLink>
 
+            <NavbarLink to="/blog" solid={this.props.solidNavbar}>
+              Blog
+            </NavbarLink>
+
             <NavbarLink to="/projects" solid={this.props.solidNavbar}>
               Projects
             </NavbarLink>

@@ -2,9 +2,10 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Index from '../containers/Index';
+import Blog from '../containers/articles/Blog';
 import Experience from '../containers/Experience';
-import SignIn from '../containers/SignIn';
 import Projects from '../containers/Projects';
+import SignIn from '../containers/SignIn';
 import NotFound from '../containers/NotFound';
 
 import CandidateXYZ from '../containers/projects/CandidateXYZ';
@@ -29,6 +30,7 @@ class AppRoutes extends React.Component {
         <Route exact path="/projects/gameboy-emulator" component={GameboyEmulator} />
         <Route exact path="/projects/pong-aimbot" component={PongAimbot} />
 
+        <Route exact path="/blog" component={Blog} />
         <Route exact path="/articles/:url" component={ShowArticle} />
 
         <Route component={NotFound} />
