@@ -36,7 +36,7 @@ let ArticleApi = {
   },
 
   destroy(id) {
-    return ApiBase.patch(`/api/articles/${id}`, ApiBase.authHeader());
+    return ApiBase.delete(`/api/articles/${id}`, ApiBase.authHeader());
   }
 };
 

@@ -9,9 +9,8 @@ var router = express.Router();
 router.get('/', function(req, res) {
   Article.find(function(err, articles) {
     if (err) {
+      res.status(err.status || 404);
       res.json({ err });
-      res.status(404);
-      return;
     }
 
     if (_.isNull(articles)) {
@@ -25,9 +24,8 @@ router.get('/', function(req, res) {
 router.get('/:url', function(req, res) {
   Article.findOne({ url: req.params.url }, function(err, article) {
     if (err) {
+      res.status(err.status || 404);
       res.json({ err });
-      res.status(404);
-      return;
     }
 
     res.json(article);
@@ -44,9 +42,8 @@ router.post('/', passport.authenticate('jwt', { session: false }), function(req,
 
   article.save(function(err, article) {
     if (err) {
+      res.status(err.status || 400);
       res.json({ err });
-      res.status(400);
-      return;
     }
 
     res.json(article);
@@ -64,9 +61,8 @@ router.patch('/:id', passport.authenticate('jwt', { session: false }), function(
     },
     function(err, article) {
       if (err) {
+        res.status(err.status || 400);
         res.json({ err });
-        res.status(400);
-        return;
       }
 
       res.json(article);
@@ -75,11 +71,10 @@ router.patch('/:id', passport.authenticate('jwt', { session: false }), function(
 });
 
 router.delete('/:id', passport.authenticate('jwt', { session: false }), function(req, res, next) {
-  Article.deleteOne({ id: req.params.id }, function(err) {
+  Article.deleteOne({ _id: req.params.id }, function(err) {
     if (err) {
+      res.status(err.status || 400);
       res.json({ err });
-      res.status(400);
-      return;
     }
 
     res.json({ success: 'ok' });

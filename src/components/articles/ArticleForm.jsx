@@ -38,11 +38,11 @@ export default class ArticleForm extends React.Component {
     if (_.isEmpty(this.props.article)) {
       ArticleApi.create(article.title, article.body, article.image, article.url)
         .then((response) => {
-          history.push(`/articles/${response.url}`);
+          history.push(`/articles/${response.body.url}`);
         })
         .catch((response) => {
           this.setState({
-            errors: response.responseJSON.errors
+            errors: response.body.err
           });
         });
     } else {
@@ -54,12 +54,11 @@ export default class ArticleForm extends React.Component {
         article.url
       )
         .then((response) => {
-          console.log(response);
           history.push(`/articles/${this.props.article.url}`);
         })
         .catch((response) => {
           this.setState({
-            errors: response.responseJSON.errors
+            errors: response.body.err
           });
         });
     }
@@ -68,7 +67,7 @@ export default class ArticleForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit.bind(this)}>
-        <Text type="body2">{this.state.error}</Text>
+        <Text type="body2">{_.isEmpty(this.state.errors) ? '' : 'Bad input'}</Text>
 
         <TextField
           label="Title"
