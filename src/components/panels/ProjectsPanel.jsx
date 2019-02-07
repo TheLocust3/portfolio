@@ -51,21 +51,39 @@ class ProjectsPanel extends React.Component {
     }
 
     return (
-      <Project to="/projects/pong-aimbot">
-        <Text type="headline5" header>
-          3D Pong Aimbot
-        </Text>
-        <br />
+      <div>
+        <Project to="/projects/gameboy-emulator">
+          <Text type="headline5" header>
+            Ti NSpire Gameboy Emulator
+          </Text>
+          <br />
 
-        <Text type="body2">
-          <SideMargin margin={3}>
-            Written during my freshman year of high school in a competition with my close friend.
-            This program is made to play a version of 3D Pong automatically and get to as high a
-            level as possible. It involved hundreds of lines of optimizations and parallel
-            processing techniques to predict where the ball would be going and move the paddle.
-          </SideMargin>
-        </Text>
-      </Project>
+          <Text type="body2">
+            <SideMargin margin={3}>
+              My first attempt at writing an emulator back in Sophmore year of high school. Designed
+              to be run on a common graphing calculator (the Ti-NSpire CX CAS) and allow users to
+              play Gameboy Classic games. Never got the graphics working but implemented the full
+              CPU instruction set and interrupts.
+            </SideMargin>
+          </Text>
+        </Project>
+
+        <Project to="/projects/pong-aimbot">
+          <Text type="headline5" header>
+            3D Pong Aimbot
+          </Text>
+          <br />
+
+          <Text type="body2">
+            <SideMargin margin={3}>
+              Written during my freshman year of high school in a competition with my close friend.
+              This program is made to play a version of 3D Pong automatically and get to as high a
+              level as possible. It involved hundreds of lines of optimizations and parallel
+              processing techniques to predict where the ball would be going and move the paddle.
+            </SideMargin>
+          </Text>
+        </Project>
+      </div>
     );
   }
 
@@ -79,6 +97,23 @@ class ProjectsPanel extends React.Component {
         </center>
 
         <ContentContainer>
+          <Project to="/projects/full-stack-vm">
+            <Text type="headline5" header>
+              Full Stack VM
+            </Text>
+            <br />
+
+            <Text type="body2">
+              <SideMargin margin={3}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta diam ut feugiat
+                consectetur. Mauris nec metus erat. Nulla ultricies ipsum nec augue maximus
+                convallis. Donec enim urna, hendrerit non elit nec, pellentesque sollicitudin magna.
+                Vestibulum luctus, felis vel convallis pretium, neque leo posuere eros, ac venenatis
+                elit turpis id neque. In hac habitasse platea dictumst.
+              </SideMargin>
+            </Text>
+          </Project>
+
           <Project to="/projects/candidatexyz">
             <Text type="headline5" header>
               candidateXYZ
@@ -107,22 +142,6 @@ class ProjectsPanel extends React.Component {
                 Built during my junior year of high school after my first attempt at building a
                 Gameboy emulator. Emulates the pure Intel 8080 CPU based off of the original
                 specification. Fully tested instruction set and CPU interrupts.
-              </SideMargin>
-            </Text>
-          </Project>
-
-          <Project to="/projects/gameboy-emulator">
-            <Text type="headline5" header>
-              Ti NSpire Gameboy Emulator
-            </Text>
-            <br />
-
-            <Text type="body2">
-              <SideMargin margin={3}>
-                My first attempt at writing an emulator back in Sophmore year of high school.
-                Designed to be run on a common graphing calculator (the Ti-NSpire CX CAS) and allow
-                users to play Gameboy Classic games. Never got the graphics working but implemented
-                the full CPU instruction set and interrupts.
               </SideMargin>
             </Text>
           </Project>

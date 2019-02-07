@@ -11,8 +11,7 @@ import CandidateXYZ from '../containers/projects/CandidateXYZ';
 import Intel8080 from '../containers/projects/Intel8080';
 import GameboyEmulator from '../containers/projects/GameboyEmulator';
 import PongAimbot from '../containers/projects/PongAimbot';
-
-import ShowArticle from '../containers/articles/ShowArticle';
+import FullStackVM from '../containers/projects/FullStackVM';
 
 class AppRoutes extends React.Component {
   render() {
@@ -28,8 +27,7 @@ class AppRoutes extends React.Component {
         <Route exact path="/projects/intel8080" component={Intel8080} />
         <Route exact path="/projects/gameboy-emulator" component={GameboyEmulator} />
         <Route exact path="/projects/pong-aimbot" component={PongAimbot} />
-
-        {/* <Route exact path="/articles/:url" component={ShowArticle} /> */}
+        <Route exact path="/projects/full-stack-vm" component={FullStackVM} />
 
         <Route component={NotFound} />
       </Switch>

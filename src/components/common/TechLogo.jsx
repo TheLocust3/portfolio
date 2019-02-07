@@ -34,6 +34,12 @@ let imgClassName = css`
   }
 `;
 
+let blackImgClassName = css`
+  -webkit-filter: grayscale(100%) opacity(60%);
+  -moz-filter: grayscale(100%) opacity(60%);
+  filter: grayscale(100%) opacity(60%);
+`;
+
 let tooltipClassName = css`
   opacity: 0;
   transition: all 0.5s ease;
@@ -73,7 +79,11 @@ class TechLogo extends React.Component {
     return (
       <div className={outerClassName}>
         <a href={this.props.href}>
-          <img className={imgClassName} src={this.props.src} alt={this.props.alt} />
+          <img
+            className={`${imgClassName} ${this.props.black ? blackImgClassName : ''}`}
+            src={this.props.src}
+            alt={this.props.alt}
+          />
         </a>
 
         <div className={tooltipClassName} style={{ width: this.props.width }}>
@@ -92,7 +102,8 @@ TechLogo.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
-  width: PropTypes.string
+  width: PropTypes.string,
+  black: PropTypes.boolean
 };
 
 export default TechLogo;
