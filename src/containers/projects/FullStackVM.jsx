@@ -60,6 +60,7 @@ class Intel8080 extends React.Component {
                     href="https://www.rust-lang.org/"
                     black
                   />
+                  <TechLogo src="/images/logos/cargo.png" alt="Cargo" href="https://crates.io/" />
                   <TechLogo
                     src="/images/logos/vscode.png"
                     alt="VSCode"
