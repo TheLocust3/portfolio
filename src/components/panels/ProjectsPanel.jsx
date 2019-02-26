@@ -105,11 +105,9 @@ class ProjectsPanel extends React.Component {
 
             <Text type="body2">
               <SideMargin margin={3}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta diam ut feugiat
-                consectetur. Mauris nec metus erat. Nulla ultricies ipsum nec augue maximus
-                convallis. Donec enim urna, hendrerit non elit nec, pellentesque sollicitudin magna.
-                Vestibulum luctus, felis vel convallis pretium, neque leo posuere eros, ac venenatis
-                elit turpis id neque. In hac habitasse platea dictumst.
+                A virtual machine built from the ground up, emulating a complete CPU with a limited
+                instruction set, building out an assembler for the emulator with plans to create
+                higher level languages on top of it.
               </SideMargin>
             </Text>
           </Project>
