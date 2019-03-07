@@ -1,9 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
 import { connect } from 'react-redux';
 
 import { setSolidNavbar } from '../../actions/global-actions';
-import { fetchArticle } from '../../actions/article-actions';
 
 import Text from '../../components/common/Text';
 import ScrollUp from '../../components/common/ScrollUp';
@@ -13,44 +14,54 @@ import FadeIn from '../../components/common/FadeIn';
 class ShowArticle extends React.Component {
   componentWillMount() {
     this.props.dispatch(setSolidNavbar(true));
-    this.props.dispatch(fetchArticle(this.props.match.params.url));
   }
 
   render() {
-    if (!this.props.isReady) return null;
-
-    let article = this.props.article;
-
     return (
-      <div>
-        <Helmet>
-          <title>Jake Kinsella - Article</title>
-          <meta name="description" content="Show article." />
-        </Helmet>
+      <Query
+        query={gql`
+          {
+            article(url: "${this.props.match.params.url}") {
+              id
+              title
+              body
+              image
+              url
+            }
+          }
+        `}>
+        {({ loading, error, data }) => {
+          if (loading) return <Text type="body2">Loading...</Text>;
+          if (error) return <Text type="body2">Error</Text>;
 
-        <FadeIn>
-          <Content>
-            <Text type="headline4" header>
-              {article.title}
-            </Text>
+          let article = data.article;
 
-            <Text type="body1" header>
-              {article.body}
-            </Text>
+          return (
+            <div>
+              <Helmet>
+                <title>Jake Kinsella - Article</title>
+                <meta name="description" content="Show article." />
+              </Helmet>
 
-            <ScrollUp />
-          </Content>
-        </FadeIn>
-      </div>
+              <FadeIn>
+                <Content>
+                  <Text type="headline4" header>
+                    {article.title}
+                  </Text>
+
+                  <Text type="body1" header>
+                    {article.body}
+                  </Text>
+
+                  <ScrollUp />
+                </Content>
+              </FadeIn>
+            </div>
+          );
+        }}
+      </Query>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    isReady: state.articles.isReady,
-    article: state.articles.article
-  };
-}
-
-export default connect(mapStateToProps)(ShowArticle);
+export default connect()(ShowArticle);

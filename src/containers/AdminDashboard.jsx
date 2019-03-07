@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 
 import { signOut } from '../helpers';
 import { setSolidNavbar } from '../actions/global-actions';
-import { fetchAllArticles } from '../actions/article-actions';
 
 import Text from '../components/common/Text';
 import FadeIn from '../components/common/FadeIn';
@@ -17,12 +16,9 @@ import ArticleList from '../components/articles/ArticleList';
 class AdminDashboard extends React.Component {
   componentWillMount() {
     this.props.dispatch(setSolidNavbar(true));
-    this.props.dispatch(fetchAllArticles());
   }
 
   render() {
-    if (!this.props.isReady) return null;
-
     return (
       <Query
         query={gql`
@@ -30,6 +26,14 @@ class AdminDashboard extends React.Component {
             currentUser {
               id
               email
+            }
+
+            articles {
+              id
+              title
+              body
+              image
+              url
             }
           }
         `}>
@@ -66,7 +70,7 @@ class AdminDashboard extends React.Component {
                       <Link to="/admin/articles/new">New Article</Link>
                     </Text>
 
-                    <ArticleList articles={this.props.articles} />
+                    <ArticleList articles={data.articles} />
                   </div>
                 </Content>
               </FadeIn>
@@ -78,11 +82,4 @@ class AdminDashboard extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    isReady: state.articles.isReady,
-    articles: state.articles.articles
-  };
-}
-
-export default connect(mapStateToProps)(AdminDashboard);
+export default connect()(AdminDashboard);

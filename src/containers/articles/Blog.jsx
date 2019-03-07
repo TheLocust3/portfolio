@@ -1,9 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
 import { connect } from 'react-redux';
 
 import { setSolidNavbar } from '../../actions/global-actions';
-import { fetchAllArticles } from '../../actions/article-actions';
 
 import Text from '../../components/common/Text';
 import ScrollUp from '../../components/common/ScrollUp';
@@ -14,13 +15,12 @@ import ArticleThumbnail from '../../components/articles/ArticleThumbnail';
 class Blog extends React.Component {
   componentWillMount() {
     this.props.dispatch(setSolidNavbar(true));
-    this.props.dispatch(fetchAllArticles());
   }
 
   renderArticleList(articles) {
     return articles.map((article) => {
       return (
-        <span key={article._id}>
+        <span key={article.id}>
           <ArticleThumbnail article={article} />
         </span>
       );
@@ -28,36 +28,47 @@ class Blog extends React.Component {
   }
 
   render() {
-    if (!this.props.isReady) return null;
-
     return (
-      <div>
-        <Helmet>
-          <title>Jake Kinsella - Blog</title>
-          <meta name="description" content="Blog." />
-        </Helmet>
+      <Query
+        query={gql`
+          {
+            articles {
+              id
+              title
+              body
+              image
+              url
+            }
+          }
+        `}>
+        {({ loading, error, data }) => {
+          if (loading) return <Text type="body2">Loading...</Text>;
+          if (error) return <Text type="body2">Error</Text>;
 
-        <FadeIn>
-          <Content>
-            <Text type="headline3" header>
-              Blog
-            </Text>
-          </Content>
+          return (
+            <div>
+              <Helmet>
+                <title>Jake Kinsella - Blog</title>
+                <meta name="description" content="Blog." />
+              </Helmet>
 
-          <center>{this.renderArticleList(this.props.articles)}</center>
+              <FadeIn>
+                <Content>
+                  <Text type="headline3" header>
+                    Blog
+                  </Text>
+                </Content>
 
-          <ScrollUp />
-        </FadeIn>
-      </div>
+                <center>{this.renderArticleList(data.articles)}</center>
+
+                <ScrollUp />
+              </FadeIn>
+            </div>
+          );
+        }}
+      </Query>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    isReady: state.articles.isReady,
-    articles: state.articles.articles
-  };
-}
-
-export default connect(mapStateToProps)(Blog);
+export default connect()(Blog);

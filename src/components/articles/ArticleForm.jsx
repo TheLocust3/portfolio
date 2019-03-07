@@ -47,7 +47,7 @@ export default class ArticleForm extends React.Component {
         });
     } else {
       ArticleApi.update(
-        this.props.article._id,
+        this.props.article.id,
         article.title,
         article.body,
         article.image,

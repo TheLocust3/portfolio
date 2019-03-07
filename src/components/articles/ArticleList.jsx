@@ -16,11 +16,11 @@ class ArticleList extends React.Component {
   renderArticleList(articles) {
     return articles.map((article) => {
       return (
-        <li key={article._id}>
+        <li key={article.id}>
           <Text type="body1">
             <Link to={`/articles/${article.url}`}>{article.title}</Link> |{' '}
             <Link to={`/admin/articles/${article.url}`}>Edit</Link> |{' '}
-            <a href="#" onClick={() => this.onDeleteClick(article._id)}>
+            <a href="#" onClick={() => this.onDeleteClick(article.id)}>
               Delete
             </a>
           </Text>

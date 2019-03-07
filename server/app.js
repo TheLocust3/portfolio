@@ -48,12 +48,8 @@ app.use(
   }))
 );
 
-var authRouter = require('./routes/api/auth');
-var usersRouter = require('./routes/api/users');
 var articlesRouter = require('./routes/api/articles');
 
-app.use('/api/auth', authRouter);
-app.use('/api/users', usersRouter);
 app.use('/api/articles', articlesRouter);
 
 app.use(express.static(path.join(__dirname, '../build')));

@@ -1,10 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
 import { connect } from 'react-redux';
 import { MDCAutoInit } from 'react-material-components-web';
 
 import { setSolidNavbar } from '../../actions/global-actions';
-import { fetchArticle } from '../../actions/article-actions';
 
 import Text from '../../components/common/Text';
 import ScrollUp from '../../components/common/ScrollUp';
@@ -15,42 +16,52 @@ import ArticleForm from '../../components/articles/ArticleForm';
 class EditArticle extends React.Component {
   componentWillMount() {
     this.props.dispatch(setSolidNavbar(true));
-    this.props.dispatch(fetchArticle(this.props.match.params.url));
   }
 
   render() {
-    if (!this.props.isReady) return null;
-
     return (
-      <div>
-        <Helmet>
-          <title>Jake Kinsella - Edit Article</title>
-          <meta name="description" content="Edit article." />
-        </Helmet>
+      <Query
+        query={gql`
+          {
+            article(url: "${this.props.match.params.url}") {
+              id
+              title
+              body
+              image
+              url
+            }
+          }
+        `}>
+        {({ loading, error, data }) => {
+          if (loading) return <Text type="body2">Loading...</Text>;
+          if (error) return <Text type="body2">Error</Text>;
 
-        <FadeIn>
-          <Content>
-            <Text type="headline4" header>
-              Edit Article
-            </Text>
+          return (
+            <div>
+              <Helmet>
+                <title>Jake Kinsella - Edit Article</title>
+                <meta name="description" content="Edit article." />
+              </Helmet>
 
-            <ArticleForm article={this.props.article} />
+              <FadeIn>
+                <Content>
+                  <Text type="headline4" header>
+                    Edit Article
+                  </Text>
 
-            <ScrollUp />
-          </Content>
-        </FadeIn>
+                  <ArticleForm article={data.article} />
 
-        <MDCAutoInit />
-      </div>
+                  <ScrollUp />
+                </Content>
+              </FadeIn>
+
+              <MDCAutoInit />
+            </div>
+          );
+        }}
+      </Query>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    isReady: state.articles.isReady,
-    article: state.articles.article
-  };
-}
-
-export default connect(mapStateToProps)(EditArticle);
+export default connect()(EditArticle);
