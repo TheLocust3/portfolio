@@ -6,9 +6,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 var passport = require('passport');
+let graphqlHTTP = require('express-graphql');
+let { graphqlUploadExpress } = require('graphql-upload');
 
 var configDB = require('./config/database.js');
 var strategy = require('./config/passport.js');
+let graphqlSchema = require('./graphql/schema');
+let graphqlRoot = require('./graphql/root');
 
 var app = express();
 const port = app.get('env') === 'production' ? 80 : 2001;
@@ -20,10 +24,27 @@ app.use(cookieParser());
 app.use(favicon(path.join(__dirname, '../public/favicon.ico')));
 app.use(compression());
 
-mongoose.connect(configDB.url);
+mongoose.connect('mongodb://localhost/portfolio', configDB);
 
 app.use(passport.initialize());
 passport.use(strategy);
+
+app.use(
+  '/graphql',
+  graphqlUploadExpress({ maxFileSize: 10000000, maxFiles: 1 }),
+  graphqlHTTP((req, res, params) => ({
+    schema: graphqlSchema,
+    rootValue: graphqlRoot(req),
+    graphiql: true,
+    formatError: (error) => {
+      if (req.app.get('env') === 'development') {
+        console.log(error);
+      }
+
+      return error;
+    }
+  }))
+);
 
 var authRouter = require('./routes/api/auth');
 var usersRouter = require('./routes/api/users');

@@ -1,3 +1,4 @@
 module.exports = {
-  url: 'mongodb://localhost/portfolio'
+  useNewUrlParser: true,
+  useCreateIndex: true
 };
