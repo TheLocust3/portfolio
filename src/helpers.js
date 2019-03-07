@@ -24,3 +24,7 @@ export function getCookie(cname) {
   }
   return '';
 }
+
+export function signOut() {
+  setCookie('token', '', 1);
+}

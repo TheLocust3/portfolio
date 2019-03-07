@@ -1,9 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import AuthApi from '../api/auth-api';
+import { signOut } from '../helpers';
 import { setSolidNavbar } from '../actions/global-actions';
 import { fetchAllArticles } from '../actions/article-actions';
 
@@ -18,54 +20,66 @@ class AdminDashboard extends React.Component {
     this.props.dispatch(fetchAllArticles());
   }
 
-  onSignOutClick() {
-    AuthApi.signOut();
-  }
-
   render() {
     if (!this.props.isReady) return null;
 
     return (
-      <div>
-        <Helmet>
-          <title>Jake Kinsella - Admin</title>
-        </Helmet>
+      <Query
+        query={gql`
+          {
+            currentUser {
+              id
+              email
+            }
+          }
+        `}>
+        {({ loading, error, data }) => {
+          if (loading) return <Text type="body2">Loading...</Text>;
+          if (error) return <Text type="body2">Error</Text>;
 
-        <FadeIn>
-          <Content>
-            <Text type="headline3" header>
-              Admin Dashboard
-            </Text>
-
-            <Text type="body2">
-              <a href="/" onClick={this.onSignOutClick.bind(this)}>
-                Sign Out
-              </a>
-            </Text>
-            <br />
-
-            <Text type="body1">Email: {this.props.user.email}</Text>
-            <br />
-
+          return (
             <div>
-              <Text type="headline5">Articles</Text>
+              <Helmet>
+                <title>Jake Kinsella - Admin</title>
+              </Helmet>
 
-              <Text type="body2">
-                <Link to="/admin/articles/new">New Article</Link>
-              </Text>
+              <FadeIn>
+                <Content>
+                  <Text type="headline3" header>
+                    Admin Dashboard
+                  </Text>
 
-              <ArticleList articles={this.props.articles} />
+                  <Text type="body2">
+                    <a href="/" onClick={() => signOut()}>
+                      Sign Out
+                    </a>
+                  </Text>
+                  <br />
+
+                  <Text type="body1">Email: {data.currentUser.email}</Text>
+                  <br />
+
+                  <div>
+                    <Text type="headline5">Articles</Text>
+
+                    <Text type="body2">
+                      <Link to="/admin/articles/new">New Article</Link>
+                    </Text>
+
+                    <ArticleList articles={this.props.articles} />
+                  </div>
+                </Content>
+              </FadeIn>
             </div>
-          </Content>
-        </FadeIn>
-      </div>
+          );
+        }}
+      </Query>
     );
   }
 }
 
 function mapStateToProps(state) {
   return {
-    user: state.users.currentUser,
     isReady: state.articles.isReady,
     articles: state.articles.articles
   };

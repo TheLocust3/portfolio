@@ -4,6 +4,7 @@ const path = require('path');
 var cookieParser = require('cookie-parser');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+let cors = require('cors');
 var mongoose = require('mongoose');
 var passport = require('passport');
 let graphqlHTTP = require('express-graphql');
@@ -21,6 +22,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(cors());
 app.use(favicon(path.join(__dirname, '../public/favicon.ico')));
 app.use(compression());
 
