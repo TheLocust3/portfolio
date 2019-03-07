@@ -1,8 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { Mutation } from 'react-apollo';
+import gql from 'graphql-tag';
 import { connect } from 'react-redux';
 import { MDCAutoInit } from 'react-material-components-web';
 
+import { history } from '../../constants';
 import { setSolidNavbar } from '../../actions/global-actions';
 
 import Text from '../../components/common/Text';
@@ -14,6 +17,16 @@ import ArticleForm from '../../components/articles/ArticleForm';
 class NewArticle extends React.Component {
   componentWillMount() {
     this.props.dispatch(setSolidNavbar(true));
+  }
+
+  onSubmit(createArticle, title, body, image, url) {
+    return createArticle({ variables: { title: title, body: body, image: image, url: url } })
+      .then(({ data }) => {
+        history.push(`/blog/${data.createArticle.url}`);
+      })
+      .catch(({ graphQLErrors }) => {
+        throw graphQLErrors[0].message;
+      });
   }
 
   render() {
@@ -30,7 +43,28 @@ class NewArticle extends React.Component {
               New Article
             </Text>
 
-            <ArticleForm />
+            <Mutation
+              mutation={gql`
+                mutation CreateArticle(
+                  $title: String!
+                  $body: String!
+                  $image: String!
+                  $url: String!
+                ) {
+                  createArticle(input: { title: $title, body: $body, image: $image, url: $url }) {
+                    id
+                    url
+                  }
+                }
+              `}>
+              {(createArticle) => (
+                <ArticleForm
+                  onSubmit={(title, body, image, url) =>
+                    this.onSubmit(createArticle, title, body, image, url)
+                  }
+                />
+              )}
+            </Mutation>
 
             <ScrollUp />
           </Content>

@@ -3,16 +3,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, TextField, TextArea } from 'react-material-components-web';
 
-import { history } from '../../constants';
-import ArticleApi from '../../api/article-api';
-
 import Text from '../common/Text';
 
 export default class ArticleForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { errors: {} };
+    this.state = { error: '' };
     if (_.isEmpty(this.props.article)) {
       this.state.article = {};
     } else {
@@ -35,39 +32,17 @@ export default class ArticleForm extends React.Component {
 
     let article = this.state.article;
 
-    if (_.isEmpty(this.props.article)) {
-      ArticleApi.create(article.title, article.body, article.image, article.url)
-        .then((response) => {
-          history.push(`/articles/${response.body.url}`);
-        })
-        .catch((response) => {
-          this.setState({
-            errors: response.body.err
-          });
-        });
-    } else {
-      ArticleApi.update(
-        this.props.article.id,
-        article.title,
-        article.body,
-        article.image,
-        article.url
-      )
-        .then((response) => {
-          history.push(`/articles/${this.props.article.url}`);
-        })
-        .catch((response) => {
-          this.setState({
-            errors: response.body.err
-          });
-        });
-    }
+    this.props.onSubmit(article.title, article.body, article.image, article.url).catch((error) => {
+      this.setState({
+        error: error
+      });
+    });
   }
 
   render() {
     return (
       <form onSubmit={this.handleSubmit.bind(this)}>
-        <Text type="body2">{_.isEmpty(this.state.errors) ? '' : 'Bad input'}</Text>
+        <Text type="body2">{this.state.error}</Text>
 
         <TextField
           label="Title"
@@ -118,5 +93,6 @@ export default class ArticleForm extends React.Component {
 }
 
 ArticleForm.propTypes = {
-  article: PropTypes.object
+  article: PropTypes.object,
+  onSubmit: PropTypes.func.isRequired
 };

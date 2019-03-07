@@ -18,48 +18,50 @@ class ShowArticle extends React.Component {
 
   render() {
     return (
-      <Query
-        query={gql`
-          {
-            article(url: "${this.props.match.params.url}") {
-              id
-              title
-              body
-              image
-              url
-            }
-          }
-        `}>
-        {({ loading, error, data }) => {
-          if (loading) return <Text type="body2">Loading...</Text>;
-          if (error) return <Text type="body2">Error</Text>;
+      <div>
+        <Helmet>
+          <title>Jake Kinsella - Article</title>
+          <meta name="description" content="Show article." />
+        </Helmet>
 
-          let article = data.article;
+        <FadeIn>
+          <Content>
+            <Query
+              query={gql`
+                {
+                  article(url: "${this.props.match.params.url}") {
+                    id
+                    title
+                    body
+                    image
+                    url
+                  }
+                }
+              `}>
+              {({ loading, error, data }) => {
+                if (loading) return <Text type="body2">Loading...</Text>;
+                if (error) return <Text type="body2">Error</Text>;
 
-          return (
-            <div>
-              <Helmet>
-                <title>Jake Kinsella - Article</title>
-                <meta name="description" content="Show article." />
-              </Helmet>
+                let article = data.article;
 
-              <FadeIn>
-                <Content>
-                  <Text type="headline4" header>
-                    {article.title}
-                  </Text>
+                return (
+                  <div>
+                    <Text type="headline4" header>
+                      {article.title}
+                    </Text>
 
-                  <Text type="body1" header>
-                    {article.body}
-                  </Text>
+                    <Text type="body1" header>
+                      {article.body}
+                    </Text>
+                  </div>
+                );
+              }}
+            </Query>
 
-                  <ScrollUp />
-                </Content>
-              </FadeIn>
-            </div>
-          );
-        }}
-      </Query>
+            <ScrollUp />
+          </Content>
+        </FadeIn>
+      </div>
     );
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Query } from 'react-apollo';
+import { Query, Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -18,66 +18,91 @@ class AdminDashboard extends React.Component {
     this.props.dispatch(setSolidNavbar(true));
   }
 
+  onRemoveArticle(removeArticle, id) {
+    return removeArticle({ variables: { id: id } })
+      .then(() => {
+        window.location.reload();
+      })
+      .catch(({ graphQLErrors }) => {
+        throw graphQLErrors[0].message;
+      });
+  }
+
   render() {
     return (
-      <Query
-        query={gql`
-          {
-            currentUser {
-              id
-              email
-            }
+      <div>
+        <Helmet>
+          <title>Jake Kinsella - Admin</title>
+        </Helmet>
 
-            articles {
-              id
-              title
-              body
-              image
-              url
-            }
-          }
-        `}>
-        {({ loading, error, data }) => {
-          if (loading) return <Text type="body2">Loading...</Text>;
-          if (error) return <Text type="body2">Error</Text>;
+        <FadeIn>
+          <Content>
+            <Text type="headline3" header>
+              Admin Dashboard
+            </Text>
 
-          return (
-            <div>
-              <Helmet>
-                <title>Jake Kinsella - Admin</title>
-              </Helmet>
+            <Text type="body2">
+              <a href="/" onClick={() => signOut()}>
+                Sign Out
+              </a>
+            </Text>
+            <br />
+            <Query
+              query={gql`
+                {
+                  currentUser {
+                    id
+                    email
+                  }
 
-              <FadeIn>
-                <Content>
-                  <Text type="headline3" header>
-                    Admin Dashboard
-                  </Text>
+                  articles {
+                    id
+                    title
+                    body
+                    image
+                    url
+                  }
+                }
+              `}>
+              {({ loading, error, data }) => {
+                if (loading) return <Text type="body2">Loading...</Text>;
+                if (error) return <Text type="body2">Error</Text>;
 
-                  <Text type="body2">
-                    <a href="/" onClick={() => signOut()}>
-                      Sign Out
-                    </a>
-                  </Text>
-                  <br />
-
-                  <Text type="body1">Email: {data.currentUser.email}</Text>
-                  <br />
-
+                return (
                   <div>
-                    <Text type="headline5">Articles</Text>
+                    <Text type="body1">Email: {data.currentUser.email}</Text>
+                    <br />
 
-                    <Text type="body2">
-                      <Link to="/admin/articles/new">New Article</Link>
-                    </Text>
+                    <div>
+                      <Text type="headline5">Articles</Text>
 
-                    <ArticleList articles={data.articles} />
+                      <Text type="body2">
+                        <Link to="/admin/articles/new">New Article</Link>
+                      </Text>
+
+                      <Mutation
+                        mutation={gql`
+                          mutation RemoveArticle($id: String!) {
+                            removeArticle(id: $id) {
+                              message
+                            }
+                          }
+                        `}>
+                        {(removeArticle) => (
+                          <ArticleList
+                            articles={data.articles}
+                            remove={(id) => this.onRemoveArticle(removeArticle, id)}
+                          />
+                        )}
+                      </Mutation>
+                    </div>
                   </div>
-                </Content>
-              </FadeIn>
-            </div>
-          );
-        }}
-      </Query>
+                );
+              }}
+            </Query>
+          </Content>
+        </FadeIn>
+      </div>
     );
   }
 }

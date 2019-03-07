@@ -48,10 +48,6 @@ app.use(
   }))
 );
 
-var articlesRouter = require('./routes/api/articles');
-
-app.use('/api/articles', articlesRouter);
-
 app.use(express.static(path.join(__dirname, '../build')));
 
 app.use('/', (req, res, next) => {

@@ -2,25 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import ArticleApi from '../../api/article-api';
-
 import Text from '../../components/common/Text';
 
 class ArticleList extends React.Component {
-  onDeleteClick(id) {
-    ArticleApi.destroy(id).then(() => {
-      window.location.reload();
-    });
-  }
-
   renderArticleList(articles) {
     return articles.map((article) => {
       return (
         <li key={article.id}>
           <Text type="body1">
-            <Link to={`/articles/${article.url}`}>{article.title}</Link> |{' '}
+            <Link to={`/blog/${article.url}`}>{article.title}</Link> |{' '}
             <Link to={`/admin/articles/${article.url}`}>Edit</Link> |{' '}
-            <a href="#" onClick={() => this.onDeleteClick(article.id)}>
+            <a href="#" onClick={() => this.props.remove(article.id)}>
               Delete
             </a>
           </Text>
@@ -39,7 +31,8 @@ class ArticleList extends React.Component {
 }
 
 ArticleList.propTypes = {
-  articles: PropTypes.array.isRequired
+  articles: PropTypes.array.isRequired,
+  remove: PropTypes.func.isRequired
 };
 
 export default ArticleList;
