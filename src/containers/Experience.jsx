@@ -89,19 +89,19 @@ class Experience extends React.Component {
             <Spacer />
 
             <div id="1">
-              <Team4761 />
-            </div>
-
-            <div id="2">
               <Talla />
             </div>
 
-            <div id="3">
+            <div id="2">
               <Nutonian />
             </div>
 
-            <div id="4">
+            <div id="3">
               <CloudHealth />
+            </div>
+
+            <div id="4">
+              <Team4761 />
             </div>
 
             <ScrollUp />

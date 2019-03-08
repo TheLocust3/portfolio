@@ -33,24 +33,6 @@ class ExperiencePanel extends React.Component {
         <ContentContainer>
           <Project to="/experience?scroll=1">
             <Text type="headline5" header>
-              Tech President of Team 4761
-            </Text>
-            <br />
-
-            <Text type="body2">
-              <SideMargin margin={3}>
-                I joined my high school's robotics team (FRC Team 4761) during my freshman year of
-                high school and spent four years working my way through the ranks of the team until
-                I was the Technical President. Every year, we were assigned a challenge by FIRST and
-                built a robot in an intense six weeks. As Tech President, my role was to oversee the
-                creation of the robot and manage our resources to ensure that we built the best
-                robot possible, on time.
-              </SideMargin>
-            </Text>
-          </Project>
-
-          <Project to="/experience?scroll=2">
-            <Text type="headline5" header>
               Talla
             </Text>
             <br />
@@ -65,7 +47,7 @@ class ExperiencePanel extends React.Component {
             </Text>
           </Project>
 
-          <Project to="/experience?scroll=3">
+          <Project to="/experience?scroll=2">
             <Text type="headline5" header>
               Nutonian
             </Text>
@@ -81,7 +63,7 @@ class ExperiencePanel extends React.Component {
             </Text>
           </Project>
 
-          <Project to="/experience?scroll=4">
+          <Project to="/experience?scroll=3">
             <Text type="headline5" header>
               CloudHealth Tech
             </Text>
@@ -93,6 +75,24 @@ class ExperiencePanel extends React.Component {
                 at CloudHealth Tech, a cloud management company whose product optimized your cloud
                 infrastructure. During my time there, I was part of the development team and built
                 out features and fixed bugs for them.
+              </SideMargin>
+            </Text>
+          </Project>
+
+          <Project to="/experience?scroll=4">
+            <Text type="headline5" header>
+              Tech President of Team 4761
+            </Text>
+            <br />
+
+            <Text type="body2">
+              <SideMargin margin={3}>
+                I joined my high school's robotics team (FRC Team 4761) during my freshman year of
+                high school and spent four years working my way through the ranks of the team until
+                I was the Technical President. Every year, we were assigned a challenge by FIRST and
+                built a robot in an intense six weeks. As Tech President, my role was to oversee the
+                creation of the robot and manage our resources to ensure that we built the best
+                robot possible, on time.
               </SideMargin>
             </Text>
           </Project>
