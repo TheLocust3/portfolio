@@ -103,7 +103,7 @@ TechLogo.propTypes = {
   alt: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
   width: PropTypes.string,
-  black: PropTypes.boolean
+  black: PropTypes.bool
 };
 
 export default TechLogo;
