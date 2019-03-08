@@ -7,29 +7,25 @@ let articleResolver = (req) => {
   return {
     articles: () => {
       return new Promise((resolve, reject) => {
-        auth(req).then(() => {
-          Article.find((err, articles) => {
-            if (err || !articles) {
-              resolve([]);
-              return;
-            }
+        Article.find((err, articles) => {
+          if (err || !articles) {
+            resolve([]);
+            return;
+          }
 
-            resolve(articles);
-          });
+          resolve(articles);
         });
       });
     },
     article: ({ url }) => {
       return new Promise((resolve, reject) => {
-        auth(req).then(() => {
-          Article.findOne({ url: url }, (err, article) => {
-            if (err || !article) {
-              reject('Article not found!');
-              return;
-            }
+        Article.findOne({ url: url }, (err, article) => {
+          if (err || !article) {
+            reject('Article not found!');
+            return;
+          }
 
-            resolve(article);
-          });
+          resolve(article);
         });
       });
     },

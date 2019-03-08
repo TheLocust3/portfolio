@@ -9,6 +9,7 @@ import { setSolidNavbar } from '../../actions/global-actions';
 import Text from '../../components/common/Text';
 import ScrollUp from '../../components/common/ScrollUp';
 import Content from '../../components/common/Content';
+import SideMargin from '../../components/common/SideMargin';
 import FadeIn from '../../components/common/FadeIn';
 import ArticleThumbnail from '../../components/articles/ArticleThumbnail';
 
@@ -57,9 +58,10 @@ class Blog extends React.Component {
                   <Text type="headline3" header>
                     Blog
                   </Text>
-                </Content>
+                  <br />
 
-                <center>{this.renderArticleList(data.articles)}</center>
+                  <SideMargin margin="2.5%">{this.renderArticleList(data.articles)}</SideMargin>
+                </Content>
 
                 <ScrollUp />
               </FadeIn>
