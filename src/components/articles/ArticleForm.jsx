@@ -1,9 +1,17 @@
 import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'react-emotion';
 import { Button, TextField, TextArea } from 'react-material-components-web';
 
+import { IMAGES_URL } from '../../constants';
+
 import Text from '../common/Text';
+
+let ImagePreview = styled('img')`
+  height: 200px;
+  width: auto;
+`;
 
 export default class ArticleForm extends React.Component {
   constructor(props) {
@@ -27,6 +35,14 @@ export default class ArticleForm extends React.Component {
   }
 
   handleUpload(event) {
+    let reader = new FileReader();
+
+    reader.onload = (e) => {
+      document.getElementById('image').src = e.target.result;
+    };
+
+    reader.readAsDataURL(event.target.files[0]);
+
     this.setState({
       image: event.target.files[0]
     });
@@ -48,6 +64,7 @@ export default class ArticleForm extends React.Component {
   }
 
   render() {
+    console.log(`${IMAGES_URL}${this.state.article.image}`);
     return (
       <form onSubmit={this.handleSubmit.bind(this)}>
         <Text type="body2">{this.state.error}</Text>
@@ -73,6 +90,10 @@ export default class ArticleForm extends React.Component {
         <br />
 
         <input type="file" onChange={this.handleUpload.bind(this)} accept="image/*" />
+        <br />
+        <br />
+
+        <ImagePreview id="image" src={`${IMAGES_URL}${this.state.article.image}`} />
         <br />
 
         <TextField

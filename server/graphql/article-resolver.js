@@ -2,10 +2,9 @@ let _ = require('lodash');
 let fs = require('fs');
 let uuidv4 = require('uuid/v4');
 
+let { UPLOAD_DIR } = require('../constants');
 let auth = require('../auth');
-var Article = require('../models/article');
-
-const UPLOAD_DIR = './images';
+let Article = require('../models/article');
 
 let articleResolver = (req) => {
   return {
@@ -66,7 +65,7 @@ let articleResolver = (req) => {
     updateArticle: ({ id, input }) => {
       return new Promise((resolve, reject) => {
         auth(req).then(() => {
-          Article.findOne({ _id: id }, (err, article) => {
+          Article.findOne({ _id: id }, async (err, article) => {
             if (err || !article) {
               reject('Article not found!');
               return;
@@ -81,7 +80,18 @@ let articleResolver = (req) => {
             }
 
             if (input.image) {
-              article.image = input.image;
+              const { filename, createReadStream } = await input.image;
+              const image = `${uuidv4()}-${filename}`;
+
+              await new Promise((resolve, reject) => {
+                createReadStream()
+                  .pipe(fs.createWriteStream(`${UPLOAD_DIR}/${image}`))
+                  .on('error', (error) => reject(error))
+                  .on('finish', () => {
+                    article.image = image;
+                    resolve();
+                  });
+              }).catch((error) => reject(error));
             }
 
             if (input.url) {
