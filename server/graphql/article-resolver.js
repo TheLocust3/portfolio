@@ -1,7 +1,11 @@
 let _ = require('lodash');
-let auth = require('../auth');
+let fs = require('fs');
+let uuidv4 = require('uuid/v4');
 
+let auth = require('../auth');
 var Article = require('../models/article');
+
+const UPLOAD_DIR = './images';
 
 let articleResolver = (req) => {
   return {
@@ -32,22 +36,30 @@ let articleResolver = (req) => {
 
     createArticle: ({ input }) => {
       return new Promise((resolve, reject) => {
-        auth(req).then(() => {
-          const article = new Article({
-            title: input.title,
-            body: input.body,
-            image: input.image,
-            url: input.url
-          });
+        auth(req).then(async () => {
+          const { filename, createReadStream } = await input.image;
+          const image = `${uuidv4()}-${filename}`;
 
-          article.save((err, article) => {
-            if (err || !article) {
-              reject('Failed to save!');
-              return;
-            }
+          createReadStream()
+            .pipe(fs.createWriteStream(`${UPLOAD_DIR}/${image}`))
+            .on('error', (error) => reject(error))
+            .on('finish', () => {
+              const article = new Article({
+                title: input.title,
+                body: input.body,
+                image: image,
+                url: input.url
+              });
 
-            resolve(article);
-          });
+              article.save((err, article) => {
+                if (err || !article) {
+                  reject('Failed to save!');
+                  return;
+                }
+
+                resolve(article);
+              });
+            });
         });
       });
     },
@@ -87,10 +99,10 @@ let articleResolver = (req) => {
         });
       });
     },
-    removeArticle: ({ input }) => {
+    removeArticle: ({ id }) => {
       return new Promise((resolve, reject) => {
         auth(req).then(() => {
-          Article.deleteOne({ _id: input.id }, function(err) {
+          Article.deleteOne({ _id: id }, function(err) {
             if (err) {
               reject('Failed to remove!');
               return;

@@ -9,7 +9,7 @@ export default class ArticleForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { error: '' };
+    this.state = { error: '', image: '' };
     if (_.isEmpty(this.props.article)) {
       this.state.article = {};
     } else {
@@ -26,17 +26,25 @@ export default class ArticleForm extends React.Component {
     });
   }
 
+  handleUpload(event) {
+    this.setState({
+      image: event.target.files[0]
+    });
+  }
+
   handleSubmit(event) {
     event.preventDefault();
     event.stopPropagation();
 
     let article = this.state.article;
 
-    this.props.onSubmit(article.title, article.body, article.image, article.url).catch((error) => {
-      this.setState({
-        error: error
+    this.props
+      .onSubmit(article.title, article.body, this.state.image, article.url)
+      .catch((error) => {
+        this.setState({
+          error: error
+        });
       });
-    });
   }
 
   render() {
@@ -62,14 +70,9 @@ export default class ArticleForm extends React.Component {
           required
         />
         <br />
+        <br />
 
-        <TextField
-          label="Image"
-          name="image"
-          defaultValue={this.state.article.image}
-          onChange={this.handleChange.bind(this)}
-          required
-        />
+        <input type="file" onChange={this.handleUpload.bind(this)} accept="image/*" />
         <br />
 
         <TextField

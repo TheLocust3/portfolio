@@ -38,3 +38,5 @@ export const client = new ApolloClient({
   link: authLink.concat(createUploadLink({ uri: 'http://localhost:2001/graphql' })),
   cache: new InMemoryCache()
 });
+
+export const IMAGES_URL = 'http://localhost:2001/images/';

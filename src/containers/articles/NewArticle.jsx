@@ -48,7 +48,7 @@ class NewArticle extends React.Component {
                 mutation CreateArticle(
                   $title: String!
                   $body: String!
-                  $image: String!
+                  $image: Upload!
                   $url: String!
                 ) {
                   createArticle(input: { title: $title, body: $body, image: $image, url: $url }) {

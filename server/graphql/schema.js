@@ -6,6 +6,7 @@ let {
   GraphQLList,
   GraphQLNonNull
 } = require('graphql');
+let { GraphQLUpload } = require('graphql-upload');
 
 let User = new GraphQLObjectType({
   name: 'User',
@@ -28,7 +29,7 @@ let ArticleInput = new GraphQLInputObjectType({
   fields: {
     title: { type: GraphQLString },
     body: { type: GraphQLString },
-    image: { type: GraphQLString },
+    image: { type: GraphQLUpload },
     url: { type: GraphQLString }
   }
 });
