@@ -30,45 +30,45 @@ class Blog extends React.Component {
 
   render() {
     return (
-      <Query
-        query={gql`
-          {
-            articles {
-              id
-              title
-              body
-              image
-              url
-            }
-          }
-        `}>
-        {({ loading, error, data }) => {
-          if (loading) return <Text type="body2">Loading...</Text>;
-          if (error) return <Text type="body2">Error</Text>;
+      <div>
+        <Helmet>
+          <title>Jake Kinsella - Blog</title>
+          <meta name="description" content="Blog." />
+        </Helmet>
 
-          return (
-            <div>
-              <Helmet>
-                <title>Jake Kinsella - Blog</title>
-                <meta name="description" content="Blog." />
-              </Helmet>
+        <FadeIn>
+          <Content>
+            <Text type="headline3" header>
+              Blog
+            </Text>
+            <br />
 
-              <FadeIn>
-                <Content>
-                  <Text type="headline3" header>
-                    Blog
-                  </Text>
-                  <br />
+            <SideMargin margin="2.5%">
+              <Query
+                query={gql`
+                  {
+                    articles {
+                      id
+                      title
+                      body
+                      image
+                      url
+                    }
+                  }
+                `}>
+                {({ loading, error, data }) => {
+                  if (loading) return <Text type="body2">Loading...</Text>;
+                  if (error) return <Text type="body2">Error</Text>;
 
-                  <SideMargin margin="2.5%">{this.renderArticleList(data.articles)}</SideMargin>
-                </Content>
+                  return this.renderArticleList(data.articles);
+                }}
+              </Query>
+            </SideMargin>
+          </Content>
 
-                <ScrollUp />
-              </FadeIn>
-            </div>
-          );
-        }}
-      </Query>
+          <ScrollUp />
+        </FadeIn>
+      </div>
     );
   }
 }

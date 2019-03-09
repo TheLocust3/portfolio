@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
 import Text from '../../components/common/Text';
+import RenderedText from '../../components/common/RenderedText';
+import SideMargin from '../../components/common/SideMargin';
 
 let Thumbnail = styled('div')`
   margin-bottom: 5%;
@@ -18,7 +20,11 @@ class ArticleThumbnail extends React.Component {
           {article.title}
         </Text>
 
-        <Text type="body2">{article.body}</Text>
+        <SideMargin margin="2.5%">
+          <RenderedText type="body2" lineClamp={20}>
+            {article.body}
+          </RenderedText>
+        </SideMargin>
       </Thumbnail>
     );
   }

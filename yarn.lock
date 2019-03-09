@@ -5858,6 +5858,11 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
+line-clamp@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/line-clamp/-/line-clamp-0.0.9.tgz#cea751375299c94f8565e4367d7b6c65d150a04b"
+  integrity sha512-2Xcw3VD3e7Ki9gyd0I9sKzfn65H2VvaKktrbTCtC8dTo3iWpuvYlW8DHFjUOpK09mgED1ttU5I2bQR8ruv82bA==
+
 load-json-file@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-1.1.0.tgz#956905708d58b4bab4c2261b04f59f31c99374c0"
@@ -7673,7 +7678,7 @@ react-is@^16.7.0:
 
 "react-material-components-web@git+https://github.com/TheLocust3/react-material-components-web.git":
   version "0.1.0"
-  resolved "git+https://github.com/TheLocust3/react-material-components-web.git#b6e46a329b1db99328097478bfd6dbee033d4b5d"
+  resolved "git+https://github.com/TheLocust3/react-material-components-web.git#784d4a1b84ceb6d7e149908a25841c52c1e3a877"
   dependencies:
     babel-cli "^6.26.0"
     babel-polyfill "^6.26.0"

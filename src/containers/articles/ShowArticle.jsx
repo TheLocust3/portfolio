@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { setSolidNavbar } from '../../actions/global-actions';
 
 import Text from '../../components/common/Text';
+import RenderedText from '../../components/common/RenderedText';
 import ScrollUp from '../../components/common/ScrollUp';
 import Content from '../../components/common/Content';
 import FadeIn from '../../components/common/FadeIn';
@@ -50,9 +51,7 @@ class ShowArticle extends React.Component {
                       {article.title}
                     </Text>
 
-                    <Text type="body1" header>
-                      {article.body}
-                    </Text>
+                    <RenderedText type="body1">{article.body}</RenderedText>
                   </div>
                 );
               }}

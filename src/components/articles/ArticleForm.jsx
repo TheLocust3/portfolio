@@ -64,7 +64,6 @@ export default class ArticleForm extends React.Component {
   }
 
   render() {
-    console.log(`${IMAGES_URL}${this.state.article.image}`);
     return (
       <form onSubmit={this.handleSubmit.bind(this)}>
         <Text type="body2">{this.state.error}</Text>
