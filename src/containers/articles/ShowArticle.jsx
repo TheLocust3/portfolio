@@ -3,7 +3,9 @@ import { Helmet } from 'react-helmet';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import { connect } from 'react-redux';
+import styled from 'react-emotion';
 
+import { IMAGES_URL } from '../../constants';
 import { setSolidNavbar } from '../../actions/global-actions';
 
 import Text from '../../components/common/Text';
@@ -11,6 +13,11 @@ import RenderedText from '../../components/common/RenderedText';
 import ScrollUp from '../../components/common/ScrollUp';
 import Content from '../../components/common/Content';
 import FadeIn from '../../components/common/FadeIn';
+import SideMargin from '../../components/common/SideMargin';
+
+let ArticleImage = styled('img')`
+  width: 80vw;
+`;
 
 class ShowArticle extends React.Component {
   componentWillMount() {
@@ -47,11 +54,20 @@ class ShowArticle extends React.Component {
 
                 return (
                   <div>
-                    <Text type="headline4" header>
+                    <Text type="headline3" header>
                       {article.title}
                     </Text>
+                    <br />
+                    <br />
 
-                    <RenderedText type="body1">{article.body}</RenderedText>
+                    <center>
+                      <ArticleImage src={`${IMAGES_URL}${article.image}`} />
+                    </center>
+                    <br />
+
+                    <SideMargin margin="5%">
+                      <RenderedText type="body1">{article.body}</RenderedText>
+                    </SideMargin>
                   </div>
                 );
               }}

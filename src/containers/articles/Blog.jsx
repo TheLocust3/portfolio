@@ -42,6 +42,7 @@ class Blog extends React.Component {
               Blog
             </Text>
             <br />
+            <br />
 
             <SideMargin margin="2.5%">
               <Query

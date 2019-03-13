@@ -13,8 +13,10 @@ class RenderedText extends React.Component {
   }
 
   componentDidMount() {
-    const element = document.querySelector(`#${this.state.id}`);
-    lineClamp(element, this.props.lineClamp);
+    if (this.props.lineClamp) {
+      const element = document.querySelector(`#${this.state.id}`);
+      lineClamp(element, this.props.lineClamp);
+    }
   }
 
   render() {

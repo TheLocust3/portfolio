@@ -1,6 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
+
+import { IMAGES_URL } from '../../constants';
 
 import Text from '../../components/common/Text';
 import RenderedText from '../../components/common/RenderedText';
@@ -10,20 +13,34 @@ let Thumbnail = styled('div')`
   margin-bottom: 5%;
 `;
 
+let ThumbnailImage = styled('img')`
+  width: 80vw;
+`;
+
 class ArticleThumbnail extends React.Component {
   render() {
     let article = this.props.article;
 
     return (
       <Thumbnail>
-        <Text type="headline5" header>
+        <Text type="headline4" header>
           {article.title}
         </Text>
+        <br />
 
-        <SideMargin margin="2.5%">
+        <center>
+          <ThumbnailImage src={`${IMAGES_URL}${article.image}`} />
+        </center>
+        <br />
+
+        <SideMargin margin="5%">
           <RenderedText type="body2" lineClamp={20}>
             {article.body}
           </RenderedText>
+
+          <Text type="body2">
+            <Link to={`/blog/${article.url}`}>Read More</Link>
+          </Text>
         </SideMargin>
       </Thumbnail>
     );

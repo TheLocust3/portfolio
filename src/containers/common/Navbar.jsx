@@ -26,6 +26,7 @@ let solidNavbar = css`
   color: ${colors.textBlack};
 
   padding-top: 3%;
+  margin-bottom: 5%;
 `;
 
 class Navbar extends React.Component {
