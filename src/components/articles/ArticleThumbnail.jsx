@@ -3,18 +3,23 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
-import { IMAGES_URL } from '../../constants';
+import { IMAGES_URL, MAX_MOBILE_WIDTH } from '../../constants';
 
 import Text from '../../components/common/Text';
 import RenderedText from '../../components/common/RenderedText';
 import SideMargin from '../../components/common/SideMargin';
 
 let Thumbnail = styled('div')`
+  margin-right: 35%;
   margin-bottom: 5%;
+
+  @media (max-width: ${MAX_MOBILE_WIDTH}) {
+    margin-right: 0;
+  }
 `;
 
 let ThumbnailImage = styled('img')`
-  width: 80vw;
+  width: 100%;
 `;
 
 class ArticleThumbnail extends React.Component {
@@ -28,12 +33,10 @@ class ArticleThumbnail extends React.Component {
         </Text>
         <br />
 
-        <center>
+        <SideMargin margin="2.5%">
           <ThumbnailImage src={`${IMAGES_URL}${article.image}`} />
-        </center>
-        <br />
+          <br />
 
-        <SideMargin margin="5%">
           <RenderedText type="body2" lineClamp={20}>
             {article.body}
           </RenderedText>

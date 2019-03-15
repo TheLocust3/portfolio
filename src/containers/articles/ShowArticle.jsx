@@ -16,7 +16,7 @@ import FadeIn from '../../components/common/FadeIn';
 import SideMargin from '../../components/common/SideMargin';
 
 let ArticleImage = styled('img')`
-  width: 80vw;
+  width: 100%;
 `;
 
 class ShowArticle extends React.Component {
@@ -53,22 +53,21 @@ class ShowArticle extends React.Component {
                 let article = data.article;
 
                 return (
-                  <div>
+                  <SideMargin leftMargin="0%" rightMargin="25%">
                     <Text type="headline3" header>
                       {article.title}
                     </Text>
                     <br />
                     <br />
 
-                    <center>
+                    <SideMargin margin="2.5%">
                       <ArticleImage src={`${IMAGES_URL}${article.image}`} />
-                    </center>
-                    <br />
+                      <br />
+                      <br />
 
-                    <SideMargin margin="5%">
-                      <RenderedText type="body1">{article.body}</RenderedText>
+                      <RenderedText type="body2">{article.body}</RenderedText>
                     </SideMargin>
-                  </div>
+                  </SideMargin>
                 );
               }}
             </Query>

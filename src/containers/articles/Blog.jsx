@@ -12,6 +12,7 @@ import Content from '../../components/common/Content';
 import SideMargin from '../../components/common/SideMargin';
 import FadeIn from '../../components/common/FadeIn';
 import ArticleThumbnail from '../../components/articles/ArticleThumbnail';
+import ArchivesSidebar from '../../components/articles/ArchivesSidebar';
 
 class Blog extends React.Component {
   componentWillMount() {
@@ -61,7 +62,13 @@ class Blog extends React.Component {
                   if (loading) return <Text type="body2">Loading...</Text>;
                   if (error) return <Text type="body2">Error</Text>;
 
-                  return this.renderArticleList(data.articles);
+                  return (
+                    <div>
+                      {this.renderArticleList(data.articles)}
+
+                      <ArchivesSidebar articles={data.articles} />
+                    </div>
+                  );
                 }}
               </Query>
             </SideMargin>
