@@ -3,13 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "apollo-boost": "^0.3.1",
+    "apollo-link-context": "^1.0.15",
+    "apollo-upload-client": "^10.0.0",
     "emotion": "^9.2.12",
+    "graphql": "^14.1.1",
     "install": "^0.12.1",
     "jquery": "^3.3.1",
+    "line-clamp": "^0.0.9",
     "lodash": "^4.17.11",
+    "moment": "^2.24.0",
     "prop-types": "^15.6.2",
     "query-string": "5",
     "react": "^16.5.2",
+    "react-apollo": "^2.5.2",
     "react-dom": "^16.5.2",
     "react-emotion": "^9.2.12",
     "react-helmet": "^5.2.0",
@@ -21,7 +28,8 @@
     "react-snap": "^1.23.0",
     "redux": "^4.0.0",
     "redux-actions": "^2.6.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts start",

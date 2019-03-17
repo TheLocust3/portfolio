@@ -26,6 +26,7 @@ let solidNavbar = css`
   color: ${colors.textBlack};
 
   padding-top: 3%;
+  margin-bottom: 5%;
 `;
 
 class Navbar extends React.Component {
@@ -61,6 +62,10 @@ class Navbar extends React.Component {
           <NavbarDiv className={this.props.solidNavbar ? solidNavbar : ''}>
             <NavbarLink to="/" solid={this.props.solidNavbar}>
               Home
+            </NavbarLink>
+
+            <NavbarLink to="/blog" solid={this.props.solidNavbar}>
+              Blog
             </NavbarLink>
 
             <NavbarLink to="/projects" solid={this.props.solidNavbar}>

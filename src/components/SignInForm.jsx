@@ -1,8 +1,8 @@
 import React from 'react';
-import { Text, Button, TextField } from 'react-material-components-web';
+import PropTypes from 'prop-types';
+import { Button, TextField } from 'react-material-components-web';
 
-import AuthApi from '../api/auth-api';
-import { history } from '../constants';
+import Text from '../components/common/Text';
 
 class SignInForm extends React.Component {
   constructor(props) {
@@ -20,20 +20,11 @@ class SignInForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    AuthApi.signIn(this.state.email, this.state.password)
-      .then((response) => {
-        history.push('/admin');
-        window.location.reload();
-      })
-      .catch((response) => {
-        if (response.status === 401) {
-          this.setState({
-            error: response.body.message
-          });
-        } else {
-          console.log(response.raw);
-        }
+    this.props.onSubmit(this.state.email, this.state.password).catch((error) => {
+      this.setState({
+        error: error
       });
+    });
   }
 
   render() {
@@ -67,5 +58,9 @@ class SignInForm extends React.Component {
     );
   }
 }
+
+SignInForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired
+};
 
 export default SignInForm;

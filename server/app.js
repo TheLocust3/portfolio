@@ -4,11 +4,16 @@ const path = require('path');
 var cookieParser = require('cookie-parser');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-// var mongoose = require('mongoose');
-// var passport = require('passport');
+let cors = require('cors');
+var mongoose = require('mongoose');
+var passport = require('passport');
+let graphqlHTTP = require('express-graphql');
+let { graphqlUploadExpress } = require('graphql-upload');
 
-// var configDB = require('./config/database.js');
-// var strategy = require('./config/passport.js');
+var configDB = require('./config/database.js');
+var strategy = require('./config/passport.js');
+let graphqlSchema = require('./graphql/schema');
+let graphqlRoot = require('./graphql/root');
 
 var app = express();
 const port = app.get('env') === 'production' ? 80 : 2001;
@@ -17,23 +22,37 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(cors());
 app.use(favicon(path.join(__dirname, '../public/favicon.ico')));
 app.use(compression());
 
-// mongoose.connect(configDB.url);
+mongoose.connect('mongodb://localhost/portfolio', configDB);
 
-// app.use(passport.initialize());
-// passport.use(strategy);
+app.use(passport.initialize());
+passport.use(strategy);
 
-// var authRouter = require('./routes/api/auth');
-// var usersRouter = require('./routes/api/users');
-// var articlesRouter = require('./routes/api/articles');
+app.use(
+  '/graphql',
+  graphqlUploadExpress({ maxFileSize: 10000000, maxFiles: 1 }),
+  graphqlHTTP((req, res, params) => ({
+    schema: graphqlSchema,
+    rootValue: graphqlRoot(req),
+    graphiql: true,
+    formatError: (error) => {
+      if (req.app.get('env') === 'development') {
+        console.log(error);
+      }
 
-// app.use('/api/auth', authRouter);
-// app.use('/api/users', usersRouter);
-// app.use('/api/articles', articlesRouter);
+      return error;
+    }
+  }))
+);
 
 app.use(express.static(path.join(__dirname, '../build')));
+app.use('/images', express.static(path.join(__dirname, './images/')));
+app.use('/', (req, res, next) => {
+  res.sendFile(path.join(__dirname, '../build', 'index.html'));
+});
 
 // error handler
 app.use((err, req, res, next) => {

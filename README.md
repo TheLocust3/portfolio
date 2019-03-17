@@ -8,3 +8,7 @@ I don't expect people to actually be deploying my blog, so this is really just h
 
 `yarn build`  
 `./deploy/deploy`
+
+## To-Do
+
+- Add share links on blogs

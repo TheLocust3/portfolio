@@ -2,8 +2,9 @@ import $ from 'jquery';
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { ApolloProvider } from 'react-apollo';
 
-import { store, history } from './constants';
+import { store, history, client } from './constants';
 import './global-styles';
 
 import Navbar from './containers/common/Navbar';
@@ -23,7 +24,7 @@ class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <div>
+        <ApolloProvider client={client}>
           <Router history={history}>
             <div>
               <Navbar />
@@ -39,7 +40,7 @@ class App extends React.Component {
               <Footer />
             </div>
           </Router>
-        </div>
+        </ApolloProvider>
       </Provider>
     );
   }

@@ -1,47 +1,45 @@
-import _ from 'lodash';
 import React from 'react';
-import { connect } from 'react-redux';
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
 import { Route, Switch } from 'react-router-dom';
 
-import { fetchCurrentUser } from '../actions/user-actions';
+import { history } from '../constants';
 
-import SignIn from '../containers/SignIn';
 import AdminDashboard from '../containers/AdminDashboard';
-import AllArticles from '../containers/articles/AllArticles';
 import NewArticle from '../containers/articles/NewArticle';
 import EditArticle from '../containers/articles/EditArticle';
 import NotFound from '../containers/NotFound';
 
 class AdminRoutes extends React.Component {
-  componentWillMount() {
-    this.props.dispatch(fetchCurrentUser());
-  }
-
   render() {
-    if (!this.props.isReady) return null;
-
-    if (_.isEmpty(this.props.user)) {
-      return <SignIn />;
-    }
-
     return (
-      <Switch>
-        <Route exact path="/admin/" component={AdminDashboard} />
+      <Query
+        query={gql`
+          {
+            currentUser {
+              id
+            }
+          }
+        `}>
+        {({ loading, error, data }) => {
+          if (loading || error) {
+            history.push('/sign-in');
+          }
 
-        {/* <Route exact path="/admin/articles" component={AllArticles} /> */}
-        {/* <Route exact path="/admin/articles/new" component={NewArticle} /> */}
-        {/* <Route exact path="/admin/articles/:url" component={EditArticle} /> */}
+          return (
+            <Switch>
+              <Route exact path="/admin/" component={AdminDashboard} />
 
-        <Route component={NotFound} />
-      </Switch>
+              <Route exact path="/admin/articles/new" component={NewArticle} />
+              <Route exact path="/admin/articles/:url" component={EditArticle} />
+
+              <Route component={NotFound} />
+            </Switch>
+          );
+        }}
+      </Query>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    isReady: state.users.isReady,
-    user: state.users.currentUser
-  };
-}
-export default connect(mapStateToProps)(AdminRoutes);
+export default AdminRoutes;
