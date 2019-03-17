@@ -44,15 +44,15 @@ class Experience extends React.Component {
       let title = '';
       let description = '';
 
-      if (parsed.scroll == 1) {
+      if (parsed.scroll === 1) {
         title = ': Team 4761';
         description =
           'I joined my high school’s robotics team during my freshman year of high school, called the Reading Robockets (or Team 4761, the number that FIRST robotics lovingly assigned to us). We were a part of FIRST of FIRST Robotics Competition, a non-profit dedicated to inspiring kids to pursue STEM careers through having them create people sized robots to solve challenges and generally bash into other robots.';
-      } else if (parsed.scroll == 2) {
+      } else if (parsed.scroll === 2) {
         title = ': Talla';
         description =
           'I joined Talla during the summer between my junior and senior years of high school. Talla is a Boston startup builds intelligent Slackbots to manage common HR tasks.';
-      } else if (parsed.scroll == 3) {
+      } else if (parsed.scroll === 3) {
         title = ': Nutonian';
         description =
           'I worked at Nutonian, a startup that developed a general purpose machine learning platform, during the summer before my sophomore year of high school. There I worked as a one of two QA developers. As a result I got a full view into how QA and DevOps worked and their interaction with the wider software development world.';

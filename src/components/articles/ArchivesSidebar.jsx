@@ -38,6 +38,14 @@ class ArchivesSidebar extends React.Component {
   renderArchives() {
     let archives = getArchives(this.props.articles);
 
+    if (_.isEmpty(archives)) {
+      return (
+        <div>
+          <Text type="body2">Empty</Text>
+        </div>
+      );
+    }
+
     return (
       <Text type="body2">
         {archives.map((archive) => {

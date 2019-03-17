@@ -70,6 +70,10 @@ class MobileNavbar extends React.Component {
                   <Text type="body1">Home</Text>
                 </Link>
 
+                <Link className="mdc-list-item" to="/blog" onClick={this.onLinkClick.bind(this)}>
+                  <Text type="body1">Blog</Text>
+                </Link>
+
                 <Link
                   className="mdc-list-item"
                   to="/projects"

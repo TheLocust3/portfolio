@@ -1,10 +1,13 @@
+import _ from 'lodash';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import { connect } from 'react-redux';
+import styled from 'react-emotion';
 
 import { setSolidNavbar } from '../../actions/global-actions';
+import { MAX_MOBILE_WIDTH } from '../../constants';
 
 import Text from '../../components/common/Text';
 import ScrollUp from '../../components/common/ScrollUp';
@@ -14,12 +17,33 @@ import FadeIn from '../../components/common/FadeIn';
 import ArticleThumbnail from '../../components/articles/ArticleThumbnail';
 import ArchivesSidebar from '../../components/articles/ArchivesSidebar';
 
+let PagePadding = styled('div')`
+  margin-bottom: 50vh;
+`;
+
+let Spacer = styled('div')`
+  margin-top: 7.5%;
+
+  @media (max-width: ${MAX_MOBILE_WIDTH}) {
+    margin-top: 25%;
+  }
+`;
+
 class Blog extends React.Component {
   componentWillMount() {
     this.props.dispatch(setSolidNavbar(true));
   }
 
   renderArticleList(articles) {
+    if (_.isEmpty(articles)) {
+      return (
+        <PagePadding>
+          <br />
+          <Text type="headline5">Stay tuned for my first blog post</Text>
+        </PagePadding>
+      );
+    }
+
     return articles.map((article) => {
       return (
         <span key={article.id}>
@@ -42,6 +66,7 @@ class Blog extends React.Component {
 
         <FadeIn>
           <Content>
+            <Spacer />
             <Text type="headline3" header>
               Blog
             </Text>
