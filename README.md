@@ -11,4 +11,4 @@ I don't expect people to actually be deploying my blog, so this is really just h
 
 ## To-Do
 
-- Add share links
+- Add share links on blogs

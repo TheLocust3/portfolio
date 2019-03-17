@@ -3,7 +3,8 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import { Route, Switch } from 'react-router-dom';
 
-import SignIn from '../containers/SignIn';
+import { history } from '../constants';
+
 import AdminDashboard from '../containers/AdminDashboard';
 import NewArticle from '../containers/articles/NewArticle';
 import EditArticle from '../containers/articles/EditArticle';
@@ -22,7 +23,7 @@ class AdminRoutes extends React.Component {
         `}>
         {({ loading, error, data }) => {
           if (loading || error) {
-            return <SignIn />;
+            history.push('/sign-in');
           }
 
           return (
