@@ -4,6 +4,7 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import { connect } from 'react-redux';
 import styled from 'react-emotion';
+import moment from 'moment';
 
 import { IMAGES_URL } from '../../constants';
 import { setSolidNavbar } from '../../actions/global-actions';
@@ -43,6 +44,7 @@ class ShowArticle extends React.Component {
                     body
                     image
                     url
+                    createdAt
                   }
                 }
               `}>
@@ -62,7 +64,11 @@ class ShowArticle extends React.Component {
 
                     <SideMargin margin="2.5%">
                       <ArticleImage src={`${IMAGES_URL}${article.image}`} />
-                      <br />
+                      <center>
+                        <Text type="caption">
+                          <i>{moment(article.createdAt).format('dddd, MMMM Do YYYY, h:mma')}</i>
+                        </Text>
+                      </center>
                       <br />
 
                       <RenderedText type="body2">{article.body}</RenderedText>

@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Query } from 'react-apollo';
@@ -5,6 +6,7 @@ import gql from 'graphql-tag';
 import { connect } from 'react-redux';
 
 import { setSolidNavbar } from '../../actions/global-actions';
+import { filterByMonth } from '../../api/articles';
 
 import Text from '../../components/common/Text';
 import ScrollUp from '../../components/common/ScrollUp';
@@ -14,13 +16,13 @@ import FadeIn from '../../components/common/FadeIn';
 import ArticleThumbnail from '../../components/articles/ArticleThumbnail';
 import ArchivesSidebar from '../../components/articles/ArchivesSidebar';
 
-class Blog extends React.Component {
+class Archives extends React.Component {
   componentWillMount() {
     this.props.dispatch(setSolidNavbar(true));
   }
 
   renderArticleList(articles) {
-    return articles.map((article) => {
+    return filterByMonth(articles, this.props.match.params.month).map((article) => {
       return (
         <span key={article.id}>
           <ArticleThumbnail article={article} />
@@ -30,17 +32,19 @@ class Blog extends React.Component {
   }
 
   render() {
+    let month = _.capitalize(this.props.match.params.month);
+
     return (
       <div>
         <Helmet>
-          <title>Jake Kinsella - Blog</title>
-          <meta name="description" content="Blog." />
+          <title>Jake Kinsella - {month} Archives</title>
+          <meta name="description" content={`Archives for ${month}.`} />
         </Helmet>
 
         <FadeIn>
           <Content>
             <Text type="headline3" header>
-              Blog
+              Archives - {month}
             </Text>
             <br />
             <br />
@@ -83,4 +87,4 @@ class Blog extends React.Component {
   }
 }
 
-export default connect()(Blog);
+export default connect()(Archives);

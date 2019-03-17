@@ -7,6 +7,7 @@ let {
   GraphQLNonNull
 } = require('graphql');
 let { GraphQLUpload } = require('graphql-upload');
+let { GraphQLDateTime } = require('graphql-iso-date');
 
 let User = new GraphQLObjectType({
   name: 'User',
@@ -41,7 +42,8 @@ let Article = new GraphQLObjectType({
     title: { type: GraphQLString },
     body: { type: GraphQLString },
     image: { type: GraphQLString },
-    url: { type: GraphQLString }
+    url: { type: GraphQLString },
+    createdAt: { type: GraphQLDateTime }
   }
 });
 

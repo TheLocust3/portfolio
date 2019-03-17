@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -40,8 +41,8 @@ class ArchivesSidebar extends React.Component {
       <Text type="body2">
         {archives.map((archive) => {
           return (
-            <div key={archive.number}>
-              <Link to={`/archives/${archive.number}`}>{archive.label}</Link>
+            <div key={archive}>
+              <Link to={`/archives/${_.lowerCase(archive)}`}>{archive}</Link>
             </div>
           );
         })}
@@ -52,7 +53,7 @@ class ArchivesSidebar extends React.Component {
   render() {
     return (
       <Sidebar>
-        <Text type="headline6">Archive</Text>
+        <Text type="headline6">Archives</Text>
         <Divider />
 
         <SideMargin margin="2.5%">{this.renderArchives()}</SideMargin>

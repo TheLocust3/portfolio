@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
+import moment from 'moment';
 
 import { IMAGES_URL, MAX_MOBILE_WIDTH } from '../../constants';
 
@@ -35,7 +36,11 @@ class ArticleThumbnail extends React.Component {
 
         <SideMargin margin="2.5%">
           <ThumbnailImage src={`${IMAGES_URL}${article.image}`} />
-          <br />
+          <center>
+            <Text type="caption">
+              <i>{moment(article.createdAt).format('dddd, MMMM Do YYYY, h:mma')}</i>
+            </Text>
+          </center>
 
           <RenderedText type="body2" lineClamp={20}>
             {article.body}

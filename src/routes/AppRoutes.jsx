@@ -14,6 +14,7 @@ import GameboyEmulator from '../containers/projects/GameboyEmulator';
 import PongAimbot from '../containers/projects/PongAimbot';
 
 import ShowArticle from '../containers/articles/ShowArticle';
+import Archives from '../containers/articles/Archives';
 
 class AppRoutes extends React.Component {
   render() {
@@ -32,6 +33,7 @@ class AppRoutes extends React.Component {
 
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/blog/:url" component={ShowArticle} />
+        <Route exact path="/archives/:month" component={Archives} />
 
         <Route component={NotFound} />
       </Switch>
