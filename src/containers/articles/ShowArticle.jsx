@@ -55,7 +55,7 @@ class ShowArticle extends React.Component {
                 let article = data.article;
 
                 return (
-                  <SideMargin leftMargin="0%" rightMargin="25%">
+                  <SideMargin leftMargin="20%" rightMargin="20%">
                     <Text type="headline3" header>
                       {article.title}
                     </Text>

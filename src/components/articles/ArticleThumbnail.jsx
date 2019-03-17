@@ -11,7 +11,7 @@ import RenderedText from '../../components/common/RenderedText';
 import SideMargin from '../../components/common/SideMargin';
 
 let Thumbnail = styled('div')`
-  margin-right: 35%;
+  margin-right: 40%;
   margin-bottom: 5%;
 
   @media (max-width: ${MAX_MOBILE_WIDTH}) {
