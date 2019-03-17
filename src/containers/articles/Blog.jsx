@@ -34,7 +34,10 @@ class Blog extends React.Component {
       <div>
         <Helmet>
           <title>Jake Kinsella - Blog</title>
-          <meta name="description" content="Blog." />
+          <meta
+            name="description"
+            content="Blogging about being a junior developer in college, trying to start my career as a software developers and entrepreneur."
+          />
         </Helmet>
 
         <FadeIn>

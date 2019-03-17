@@ -28,11 +28,6 @@ class ShowArticle extends React.Component {
   render() {
     return (
       <div>
-        <Helmet>
-          <title>Jake Kinsella - Article</title>
-          <meta name="description" content="Show article." />
-        </Helmet>
-
         <FadeIn>
           <Content>
             <Query
@@ -55,25 +50,31 @@ class ShowArticle extends React.Component {
                 let article = data.article;
 
                 return (
-                  <SideMargin leftMargin="20%" rightMargin="20%">
-                    <Text type="headline3" header>
-                      {article.title}
-                    </Text>
-                    <br />
-                    <br />
+                  <div>
+                    <Helmet>
+                      <title>Jake Kinsella - {data.article.title}</title>
+                    </Helmet>
 
-                    <SideMargin margin="2.5%">
-                      <ArticleImage src={`${IMAGES_URL}${article.image}`} />
-                      <center>
-                        <Text type="caption">
-                          <i>{moment(article.createdAt).format('dddd, MMMM Do YYYY, h:mma')}</i>
-                        </Text>
-                      </center>
+                    <SideMargin leftMargin="20%" rightMargin="20%">
+                      <Text type="headline3" header>
+                        {article.title}
+                      </Text>
+                      <br />
                       <br />
 
-                      <RenderedText type="body2">{article.body}</RenderedText>
+                      <SideMargin margin="2.5%">
+                        <ArticleImage src={`${IMAGES_URL}${article.image}`} />
+                        <center>
+                          <Text type="caption">
+                            <i>{moment(article.createdAt).format('dddd, MMMM Do YYYY, h:mma')}</i>
+                          </Text>
+                        </center>
+                        <br />
+
+                        <RenderedText type="body2">{article.body}</RenderedText>
+                      </SideMargin>
                     </SideMargin>
-                  </SideMargin>
+                  </div>
                 );
               }}
             </Query>

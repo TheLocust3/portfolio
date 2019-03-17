@@ -38,7 +38,10 @@ class Archives extends React.Component {
       <div>
         <Helmet>
           <title>Jake Kinsella - {month} Archives</title>
-          <meta name="description" content={`Archives for ${month}.`} />
+          <meta
+            name="description"
+            content={`Blog archives for ${month}. Blogging about being a junior developer in college, trying to start my career as a software developers and entrepreneur.`}
+          />
         </Helmet>
 
         <FadeIn>
