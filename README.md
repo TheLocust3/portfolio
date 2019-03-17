@@ -8,3 +8,10 @@ I don't expect people to actually be deploying my blog, so this is really just h
 
 `yarn build`  
 `./deploy/deploy`
+
+## To-Do
+
+- Update page titles and descriptions for blog
+- Write initial blog post
+- Add share links
+- Change fonts

@@ -15,7 +15,8 @@ let Sidebar = styled('div')`
   top: 0;
   right: 0;
 
-  width: 30%;
+  width: 25%;
+  margin-right: 5%;
 
   @media (max-width: ${MAX_MOBILE_WIDTH}) {
     display: none;
