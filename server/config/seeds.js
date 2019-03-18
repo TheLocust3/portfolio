@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var User = require('../models/user');
 var configDB = require('./database.js');
 
-mongoose.connect(configDB.url);
+mongoose.connect('mongodb://localhost/portfolio', configDB);
 
 var admin = new User();
 
