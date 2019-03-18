@@ -4,6 +4,7 @@ After=network.target
 
 [Service]
 User=www-data
+EnvironmentFile=/home/ubuntu/secrets.env
 Environment=NODE_ENV=production
 WorkingDirectory=/home/ubuntu/server
 TimeoutStartSec=300
