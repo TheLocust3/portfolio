@@ -178,10 +178,6 @@ class CandidateXYZ extends React.Component {
               </p>
 
               <div>
-                <a href="https://candidatexyz.com">candidateXYZ Website</a>
-                <br />
-                <br />
-
                 <Text type="headline6">GitHub Repos</Text>
 
                 <SideMargin margin="1%">
