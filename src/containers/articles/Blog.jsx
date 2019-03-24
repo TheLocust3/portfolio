@@ -25,7 +25,7 @@ let Spacer = styled('div')`
   margin-top: 7.5%;
 
   @media (max-width: ${MAX_MOBILE_WIDTH}) {
-    margin-top: 25%;
+    margin-top: 100px;
   }
 `;
 

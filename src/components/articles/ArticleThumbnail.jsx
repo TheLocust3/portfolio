@@ -23,6 +23,12 @@ let ThumbnailImage = styled('img')`
   width: 100%;
 `;
 
+let ArticleContainer = styled('div')`
+  p {
+    margin-bottom: 25px;
+  }
+`;
+
 class ArticleThumbnail extends React.Component {
   render() {
     let article = this.props.article;
@@ -42,9 +48,11 @@ class ArticleThumbnail extends React.Component {
             </Text>
           </center>
 
-          <RenderedText type="body2" lineClamp={20}>
-            {article.body}
-          </RenderedText>
+          <ArticleContainer>
+            <RenderedText type="body2" lineClamp={20}>
+              {article.body}
+            </RenderedText>
+          </ArticleContainer>
 
           <Text type="body2">
             <Link to={`/blog/${article.url}`}>Read More</Link>

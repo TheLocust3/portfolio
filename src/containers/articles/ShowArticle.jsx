@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import styled from 'react-emotion';
 import moment from 'moment';
 
-import { IMAGES_URL } from '../../constants';
+import { IMAGES_URL, MAX_MOBILE_WIDTH } from '../../constants';
 import { setSolidNavbar } from '../../actions/global-actions';
 
 import Text from '../../components/common/Text';
@@ -18,6 +18,21 @@ import SideMargin from '../../components/common/SideMargin';
 
 let ArticleImage = styled('img')`
   width: 100%;
+`;
+
+let ArticleContainer = styled('div')`
+  margin-right: 20%;
+  margin-left: 20%;
+
+  @media (max-width: ${MAX_MOBILE_WIDTH}) {
+    margin-top: 100px;
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+
+  p {
+    margin-bottom: 25px;
+  }
 `;
 
 class ShowArticle extends React.Component {
@@ -55,10 +70,8 @@ class ShowArticle extends React.Component {
                       <title>Jake Kinsella - {data.article.title}</title>
                     </Helmet>
 
-                    <SideMargin leftMargin="20%" rightMargin="20%">
-                      <Text type="headline3" header>
-                        {article.title}
-                      </Text>
+                    <ArticleContainer>
+                      <Text type="headline3">{article.title}</Text>
                       <br />
                       <br />
 
@@ -73,7 +86,7 @@ class ShowArticle extends React.Component {
 
                         <RenderedText type="body2">{article.body}</RenderedText>
                       </SideMargin>
-                    </SideMargin>
+                    </ArticleContainer>
                   </div>
                 );
               }}
