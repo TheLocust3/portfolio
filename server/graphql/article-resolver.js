@@ -2,7 +2,7 @@ let _ = require('lodash');
 let fs = require('fs');
 let uuidv4 = require('uuid/v4');
 
-let { UPLOAD_DIR } = require('../constants');
+let { UPLOAD_DIR_DEV, UPLOAD_DIR } = require('../constants');
 let auth = require('../auth');
 let Article = require('../models/article');
 
@@ -40,7 +40,11 @@ let articleResolver = (req) => {
           const image = `${uuidv4()}-${filename}`;
 
           createReadStream()
-            .pipe(fs.createWriteStream(`${UPLOAD_DIR}/${image}`))
+            .pipe(
+              fs.createWriteStream(
+                `${app.get('env') === 'production' ? UPLOAD_DIR : UPLOAD_DIR_DEV}/${image}`
+              )
+            )
             .on('error', (error) => reject(error))
             .on('finish', () => {
               const article = new Article({
@@ -85,7 +89,11 @@ let articleResolver = (req) => {
 
               await new Promise((resolve, reject) => {
                 createReadStream()
-                  .pipe(fs.createWriteStream(`${UPLOAD_DIR}/${image}`))
+                  .pipe(
+                    fs.createWriteStream(
+                      `${app.get('env') === 'production' ? UPLOAD_DIR : UPLOAD_DIR_DEV}/${image}`
+                    )
+                  )
                   .on('error', (error) => reject(error))
                   .on('finish', () => {
                     article.image = image;
