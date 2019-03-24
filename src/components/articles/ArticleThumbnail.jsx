@@ -35,9 +35,7 @@ class ArticleThumbnail extends React.Component {
 
     return (
       <Thumbnail>
-        <Text type="headline4" header>
-          {article.title}
-        </Text>
+        <Text type="headline4">{article.title}</Text>
         <br />
 
         <SideMargin margin="2.5%">
