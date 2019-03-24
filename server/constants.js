@@ -1,4 +1,3 @@
 module.exports = {
-  UPLOAD_DIR_DEV: 'images/',
-  UPLOAD_DIR: '/home/ubuntu/server/server/images'
+  UPLOAD_DIR: process.env.NODE_ENV === 'production' ? '/home/ubuntu/server/server/images' : 'images'
 };
