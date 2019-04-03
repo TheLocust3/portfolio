@@ -99,15 +99,15 @@ class ProjectsPanel extends React.Component {
         <ContentContainer>
           <Project to="/projects/full-stack-vm">
             <Text type="headline5" header>
-              Full Stack VM
+              Custom CPU Emulator
             </Text>
             <br />
 
             <Text type="body2">
               <SideMargin margin={3}>
-                A virtual machine built from the ground up, emulating a complete CPU with a limited
-                instruction set, building out an assembler for the emulator with plans to create
-                higher level languages on top of it.
+                A custom cpu emulator and stack built from the ground up, emulating a complete CPU
+                with a limited instruction set, building out an assembler for the emulator with
+                plans to create higher level languages on top of it.
               </SideMargin>
             </Text>
           </Project>

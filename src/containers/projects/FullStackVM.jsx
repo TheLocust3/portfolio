@@ -20,10 +20,10 @@ class Intel8080 extends React.Component {
     return (
       <div>
         <Helmet>
-          <title>Jake Kinsella - Project: Full Stack VM</title>
+          <title>Jake Kinsella - Project: Custom CPU Emulator</title>
           <meta
             name="description"
-            content="A virtual machine built from the ground up, emulating a complete CPU with a limited
+            content="A a custom cpu emulator and stack built from the ground up, emulating a complete CPU with a limited
             instruction set, building out an assembler for the emulator with plans to create higher level
             languages on top of it."
           />
@@ -32,21 +32,21 @@ class Intel8080 extends React.Component {
         <FadeIn>
           <SplashScreen
             src="/images/full-stack-vm.jpeg"
-            alt="Full Stack VM"
-            header="Full Stack VM"
+            alt="Custom CPU Emulator"
+            header="Custom CPU Emulator"
             height="60vh"
           />
 
           <Content>
             <Text type="body1">
-              <ProjectImage src="/images/projects/vm.png" alt="VM Tests" />
+              <ProjectImage src="/images/projects/vm.png" alt="Emulator Tests" />
 
               <Text type="headline4">Overview</Text>
 
               <p>
-                A virtual machine built from the ground up, emulating a complete CPU with a limited
-                instruction set, building out an assembler for the emulator with plans to create
-                higher level languages on top of it.
+                A custom CPU emulator and stack built from the ground up, emulating a complete CPU
+                with a limited instruction set, building out an assembler for the emulator with
+                plans to create higher level languages on top of it.
               </p>
 
               <br />
