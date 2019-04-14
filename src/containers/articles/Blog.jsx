@@ -44,7 +44,7 @@ class Blog extends React.Component {
       );
     }
 
-    return articles.map((article) => {
+    return _.reverse(_.sortBy(articles, (article) => article.createdAt)).map((article) => {
       return (
         <span key={article.id}>
           <ArticleThumbnail article={article} />
