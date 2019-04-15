@@ -35,7 +35,7 @@ class AppRoutes extends React.Component {
 
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/blog/:url" component={ShowArticle} />
-        <Route exact path="/archives/:month" component={Archives} />
+        <Route exact path="/archives/:year/:month" component={Archives} />
 
         <Route component={NotFound} />
       </Switch>

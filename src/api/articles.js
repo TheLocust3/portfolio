@@ -3,19 +3,23 @@ import moment from 'moment';
 
 export function getArchives(articles) {
   let unique = [];
-  _.forEach(articles, (article) => {
-    let month = moment(article.createdAt).format('MMMM');
+  _.forEach(_.reverse(_.sortBy(articles, (article) => article.createdAt)), (article) => {
+    let label = moment(article.createdAt).format('MMMM YYYY');
+    let url = moment(article.createdAt).format('YYYY/MMMM');
 
-    if (!_.includes(unique, month)) {
-      unique.push(month);
+    let entry = { label: label, url: url };
+    if (!_.includes(unique, entry)) {
+      unique.push(entry);
     }
   });
 
   return unique;
 }
 
-export function filterByMonth(articles, month) {
+export function filterByMonth(articles, year, month) {
   return articles.filter((article) => {
-    return _.lowerCase(moment(article.createdAt).format('MMMM')) === _.lowerCase(month);
+    return (
+      _.lowerCase(moment(article.createdAt).format('YYYY MMMM')) === _.lowerCase(`${year} ${month}`)
+    );
   });
 }

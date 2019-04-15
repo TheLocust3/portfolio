@@ -50,8 +50,8 @@ class ArchivesSidebar extends React.Component {
       <Text type="body2">
         {archives.map((archive) => {
           return (
-            <div key={archive}>
-              <Link to={`/archives/${_.lowerCase(archive)}`}>{archive}</Link>
+            <div key={archive.url}>
+              <Link to={`/archives/${archive.url}`}>{archive.label}</Link>
             </div>
           );
         })}

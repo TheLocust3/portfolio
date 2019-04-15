@@ -22,32 +22,37 @@ class Archives extends React.Component {
   }
 
   renderArticleList(articles) {
-    return filterByMonth(articles, this.props.match.params.month).map((article) => {
-      return (
-        <span key={article.id}>
-          <ArticleThumbnail article={article} />
-        </span>
-      );
-    });
+    return filterByMonth(articles, this.props.match.params.year, this.props.match.params.month).map(
+      (article) => {
+        return (
+          <span key={article.id}>
+            <ArticleThumbnail article={article} />
+          </span>
+        );
+      }
+    );
   }
 
   render() {
+    let year = this.props.match.params.year;
     let month = _.capitalize(this.props.match.params.month);
 
     return (
       <div>
         <Helmet>
-          <title>Jake Kinsella - {month} Archives</title>
+          <title>
+            Jake Kinsella - {month} {year} Archives
+          </title>
           <meta
             name="description"
-            content={`Blog archives for ${month}. Blogging about being a junior developer in college, trying to start my career as a software developers and entrepreneur.`}
+            content={`Blog archives for ${month} ${year}. Blogging about being a junior developer in college, trying to start my career as a software developers and entrepreneur.`}
           />
         </Helmet>
 
         <FadeIn>
           <Content>
             <Text type="headline3" header>
-              Archives - {month}
+              Archives - {month} {year}
             </Text>
             <br />
             <br />
