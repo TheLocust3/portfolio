@@ -22,14 +22,16 @@ class Archives extends React.Component {
   }
 
   renderArticleList(articles) {
-    return filterByMonth(articles, this.props.match.params.year, this.props.match.params.month).map(
-      (article) => {
-        return (
-          <span key={article.id}>
-            <ArticleThumbnail article={article} />
-          </span>
-        );
-      }
+    return _.reverse(
+      filterByMonth(articles, this.props.match.params.year, this.props.match.params.month).map(
+        (article) => {
+          return (
+            <span key={article.id}>
+              <ArticleThumbnail article={article} />
+            </span>
+          );
+        }
+      )
     );
   }
 
