@@ -8,7 +8,7 @@ export function getArchives(articles) {
     let url = moment(article.createdAt).format('YYYY/MMMM');
 
     let entry = { label: label, url: url };
-    if (_.reduce(unique, (acc, e) => acc && e.url != entry.url, true)) {
+    if (_.reduce(unique, (acc, e) => acc && e.url !== entry.url, true)) {
       unique.push(entry);
     }
   });

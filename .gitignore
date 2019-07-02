@@ -26,3 +26,5 @@ yarn-error.log*
 *.tfstate.backup
 
 server/images
+
+.metals/

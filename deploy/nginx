@@ -3,7 +3,7 @@ upstream app {
 }
 
 server {
-    server_name jakekinsella.com;
+    server_name www.jakekinsella.com;
 
     try_files $uri @app;
 
@@ -16,8 +16,8 @@ server {
 
     listen [::]:443 ssl ipv6only=on;
     listen 443 ssl;
-    ssl_certificate /etc/letsencrypt/live/jakekinsella.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/jakekinsella.com/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/www.jakekinsella.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/www.jakekinsella.com/privkey.pem;
     include /etc/letsencrypt/options-ssl-nginx.conf;
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
@@ -26,7 +26,7 @@ server {
 
 
 server {
-    if ($host = jakekinsella.com) {
+    if ($host = www.jakekinsella.com) {
         return 301 https://$host$request_uri;
     }
 
