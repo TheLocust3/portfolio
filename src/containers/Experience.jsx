@@ -14,6 +14,7 @@ import FadeIn from '../components/common/FadeIn';
 import ScrollUp from '../components/common/ScrollUp';
 import Team4761 from '../components/experience/Team4761';
 import Talla from '../components/experience/Talla';
+import ThreatStack from '../components/experience/ThreatStack';
 import Nutonian from '../components/experience/Nutonian';
 import CloudHealth from '../components/experience/CloudHealth';
 
@@ -45,9 +46,9 @@ class Experience extends React.Component {
       let description = '';
 
       if (parsed.scroll === 1) {
-        title = ': Team 4761';
+        title = ': Threat Stack';
         description =
-          'I joined my high school’s robotics team during my freshman year of high school, called the Reading Robockets (or Team 4761, the number that FIRST robotics lovingly assigned to us). We were a part of FIRST of FIRST Robotics Competition, a non-profit dedicated to inspiring kids to pursue STEM careers through having them create people sized robots to solve challenges and generally bash into other robots.';
+          'At Threat Stack, I worked as a data engineer, fully integrated with one of their development teams. We were tasked with building out event search using real-time streaming/batch processing applications to process billions of events and make them queryable.';
       } else if (parsed.scroll === 2) {
         title = ': Talla';
         description =
@@ -56,10 +57,14 @@ class Experience extends React.Component {
         title = ': Nutonian';
         description =
           'I worked at Nutonian, a startup that developed a general purpose machine learning platform, during the summer before my sophomore year of high school. There I worked as a one of two QA developers. As a result I got a full view into how QA and DevOps worked and their interaction with the wider software development world.';
-      } else {
+      } else if (parsed.scroll === 4) {
         title = ': CloudHealth Tech';
         description =
           'CloudHealth Technologies was my first software developing job and I worked there for two summers in high school (between eighth grade->freshman year and freshman year->sophomore year). This was a formational experience for me because it gave me my first experience working on a project larger than me and working as part of a team.';
+      } else {
+        title = ': Team 4761';
+        description =
+          'I joined my high school’s robotics team during my freshman year of high school, called the Reading Robockets (or Team 4761, the number that FIRST robotics lovingly assigned to us). We were a part of FIRST of FIRST Robotics Competition, a non-profit dedicated to inspiring kids to pursue STEM careers through having them create people sized robots to solve challenges and generally bash into other robots.';
       }
 
       $('html, body').animate(
@@ -89,18 +94,22 @@ class Experience extends React.Component {
             <Spacer />
 
             <div id="1">
-              <Talla />
+              <ThreatStack />
             </div>
 
             <div id="2">
-              <Nutonian />
+              <Talla />
             </div>
 
             <div id="3">
-              <CloudHealth />
+              <Nutonian />
             </div>
 
             <div id="4">
+              <CloudHealth />
+            </div>
+
+            <div id="5">
               <Team4761 />
             </div>
 

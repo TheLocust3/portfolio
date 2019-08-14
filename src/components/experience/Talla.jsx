@@ -106,11 +106,6 @@ class Talla extends React.Component {
                   alt="Terraform"
                   href="https://www.terraform.io/"
                 />
-                <TechLogo
-                  src="/images/logos/vscode.png"
-                  alt="VSCode"
-                  href="https://code.visualstudio.com/"
-                />
               </div>
             </center>
           </div>

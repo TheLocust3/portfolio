@@ -33,6 +33,22 @@ class ExperiencePanel extends React.Component {
         <ContentContainer>
           <Project to="/experience?scroll=1">
             <Text type="headline5" header>
+              Threat Stack
+            </Text>
+            <br />
+
+            <Text type="body2">
+              <SideMargin margin={3}>
+                At Threat Stack, I worked as a data engineer, fully integrated with one of their
+                development teams. We were tasked with building out event search using real-time
+                streaming/batch processing applications to process billions of events and make them
+                queryable.
+              </SideMargin>
+            </Text>
+          </Project>
+
+          <Project to="/experience?scroll=2">
+            <Text type="headline5" header>
               Talla
             </Text>
             <br />
@@ -47,7 +63,7 @@ class ExperiencePanel extends React.Component {
             </Text>
           </Project>
 
-          <Project to="/experience?scroll=2">
+          <Project to="/experience?scroll=3">
             <Text type="headline5" header>
               Nutonian
             </Text>
@@ -63,7 +79,7 @@ class ExperiencePanel extends React.Component {
             </Text>
           </Project>
 
-          <Project to="/experience?scroll=3">
+          <Project to="/experience?scroll=4">
             <Text type="headline5" header>
               CloudHealth Tech
             </Text>
@@ -79,7 +95,7 @@ class ExperiencePanel extends React.Component {
             </Text>
           </Project>
 
-          <Project to="/experience?scroll=4">
+          <Project to="/experience?scroll=5">
             <Text type="headline5" header>
               Tech President of Team 4761
             </Text>
