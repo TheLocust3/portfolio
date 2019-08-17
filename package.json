@@ -7,13 +7,14 @@
     "apollo-link-context": "^1.0.15",
     "apollo-upload-client": "^10.0.0",
     "emotion": "^9.2.12",
+    "eslint": "^6.1.0",
     "graphql": "^14.1.1",
     "handlebars": "^4.1.2",
     "install": "^0.12.1",
     "jquery": "^3.4.0",
-    "js-yaml": "^3.13.1",
     "line-clamp": "^0.0.9",
     "lodash": "^4.17.14",
+    "lodash-es": "^4.17.15",
     "lodash.template": "^4.5.0",
     "mem": "^5.1.1",
     "moment": "^2.24.0",
@@ -33,7 +34,8 @@
     "redux": "^4.0.0",
     "redux-actions": "^2.6.1",
     "redux-thunk": "^2.3.0",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "webpack-dev-server": "^3.8.0"
   },
   "scripts": {
     "start": "react-scripts start",
