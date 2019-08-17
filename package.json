@@ -12,6 +12,7 @@
     "handlebars": "^4.1.2",
     "install": "^0.12.1",
     "jquery": "^3.4.0",
+    "js-yaml": "^3.13.1",
     "line-clamp": "^0.0.9",
     "lodash": "^4.17.14",
     "lodash-es": "^4.17.15",
