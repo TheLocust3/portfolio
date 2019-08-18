@@ -1,7 +1,8 @@
 import React from 'react';
-import styled from 'react-emotion';
+import styled, { css } from 'react-emotion';
+import { Button } from 'react-material-components-web';
 
-import { MAX_MOBILE_WIDTH } from '../../constants';
+import { MAX_MOBILE_WIDTH, history } from '../../constants';
 
 import SideMargin from '../common/SideMargin';
 import Text from '../common/Text';
@@ -18,6 +19,13 @@ let ContentContainer = styled('div')`
     padding-left: 10vw;
     padding-right: 10vw;
   }
+`;
+
+let moreButton = css`
+  width: 80%;
+
+  background-color: #e0e0e0 !important;
+  text-transform: none;
 `;
 
 class ExperiencePanel extends React.Component {
@@ -78,6 +86,14 @@ class ExperiencePanel extends React.Component {
               </SideMargin>
             </Text>
           </Project>
+          <br />
+          <br />
+
+          <center>
+            <Button className={moreButton} onClick={() => history.push('/experience')} noRipple>
+              <Text type="body2">See more experience</Text>
+            </Button>
+          </center>
         </ContentContainer>
       </Panel>
     );
