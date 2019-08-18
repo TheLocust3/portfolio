@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'react-emotion';
+import styled from 'react-emotion';
 
 import { MAX_MOBILE_WIDTH } from '../../constants';
 
@@ -13,10 +13,6 @@ const Container = styled('div')`
   position: relative;
 
   padding: 20px;
-`;
-
-const imageClass = css`
-  width: 300px;
 `;
 
 const LeftColumn = styled('div')`
