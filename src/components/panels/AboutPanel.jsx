@@ -42,7 +42,7 @@ class AboutPanel extends React.Component {
           </RoundedImage>
           <br />
 
-          <Content margin={30} style={{ marginTop: '0', marginBottom: '0' }}>
+          <Content margin={35} style={{ marginTop: '0', marginBottom: '0' }}>
             <Text type="body2">
               I'm a software developer, and entrepreneur, with a passion for building technology.
               Currently a freshman Computer Science student at Northeastern.

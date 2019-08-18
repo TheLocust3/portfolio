@@ -33,7 +33,7 @@ class ExperiencePanel extends React.Component {
         <ContentContainer>
           <Project to="/experience?scroll=1">
             <Text type="headline5" header>
-              Threat Stack
+              Threat Stack - Data Engineering Intern
             </Text>
             <br />
 
@@ -49,7 +49,7 @@ class ExperiencePanel extends React.Component {
 
           <Project to="/experience?scroll=2">
             <Text type="headline5" header>
-              Talla
+              Talla - Web Development Intern
             </Text>
             <br />
 
@@ -65,7 +65,7 @@ class ExperiencePanel extends React.Component {
 
           <Project to="/experience?scroll=3">
             <Text type="headline5" header>
-              Nutonian
+              Nutonian - QA Engineering Intern
             </Text>
             <br />
 
@@ -75,40 +75,6 @@ class ExperiencePanel extends React.Component {
                 Nutonian was (recently aquired by DataRobot) a general purpose Machine Learning
                 company. While there I was a QA engineer, developing their first performance suite
                 of tests for their api and maintaining a large number of Selenium tests.
-              </SideMargin>
-            </Text>
-          </Project>
-
-          <Project to="/experience?scroll=4">
-            <Text type="headline5" header>
-              CloudHealth Tech
-            </Text>
-            <br />
-
-            <Text type="body2">
-              <SideMargin margin={3}>
-                During the summers before my freshman and sophomore year of high school, I interned
-                at CloudHealth Tech, a cloud management company whose product optimized your cloud
-                infrastructure. During my time there, I was part of the development team and built
-                out features and fixed bugs for them.
-              </SideMargin>
-            </Text>
-          </Project>
-
-          <Project to="/experience?scroll=5">
-            <Text type="headline5" header>
-              Tech President of Team 4761
-            </Text>
-            <br />
-
-            <Text type="body2">
-              <SideMargin margin={3}>
-                I joined my high school's robotics team (FRC Team 4761) during my freshman year of
-                high school and spent four years working my way through the ranks of the team until
-                I was the Technical President. Every year, we were assigned a challenge by FIRST and
-                built a robot in an intense six weeks. As Tech President, my role was to oversee the
-                creation of the robot and manage our resources to ensure that we built the best
-                robot possible, on time.
               </SideMargin>
             </Text>
           </Project>

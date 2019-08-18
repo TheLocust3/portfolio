@@ -12,8 +12,10 @@ let navbarLink = css`
   color: inherit;
   text-decoration: none;
 
+  transition: color 0.5s;
+
   &:hover {
-    color: #cccccc;
+    color: #ccc;
   }
 `;
 

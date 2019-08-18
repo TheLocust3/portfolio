@@ -22,9 +22,9 @@ let ProjectContainer = styled('div')`
 
   cursor: pointer;
 
-  -webkit-transition: background-color 150ms linear;
-  -ms-transition: background-color 150ms linear;
-  transition: background-color 150ms linear;
+  -webkit-transition: background-color 400ms ease;
+  -ms-transition: background-color 400ms ease;
+  transition: background-color 400ms ease;
 
   &:hover {
     background-color: rgba(
@@ -50,9 +50,9 @@ let ProjectContainer = styled('div')`
   }
 
   .mdc-typography--headline5 div {
-    -webkit-transition: color 150ms linear;
-    -ms-transition: color 150ms linear;
-    transition: color 150ms linear;
+    -webkit-transition: color 300ms ease;
+    -ms-transition: color 300ms ease;
+    transition: color 300ms ease;
   }
 `;
 
@@ -62,9 +62,9 @@ let arrowClass = css`
   top: 50%;
   transform: translate(0%, -50%);
 
-  -webkit-transition: opacity 250ms;
-  -ms-transition: opacity 250ms;
-  transition: opacity 250ms;
+  -webkit-transition: opacity 500ms ease;
+  -ms-transition: opacity 500ms ease;
+  transition: opacity 500ms ease;
 
   opacity: 0;
   color: ${colors.accent};

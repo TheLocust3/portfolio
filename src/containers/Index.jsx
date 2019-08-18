@@ -39,10 +39,10 @@ class Index extends React.Component {
 
           <AboutPanel />
 
-          <ProjectsPanel />
+          <ExperiencePanel />
           <br />
 
-          <ExperiencePanel />
+          <ProjectsPanel />
 
           <ScrollUp />
         </FadeIn>

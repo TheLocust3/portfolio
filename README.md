@@ -12,3 +12,4 @@ I don't expect people to actually be deploying my blog, so this is really just h
 ## To-Do
 
 - Add share links on blogs
+- Change experience url to `/experience/:experience_name`
