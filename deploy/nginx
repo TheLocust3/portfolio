@@ -30,6 +30,9 @@ server {
         return 301 https://$host$request_uri;
     }
 
+    if ($host = jakekinsella.com) {
+        return 301 https://$host$request_uri;
+    }
 
     listen 80 default_server;
     listen [::]:80 default_server;
