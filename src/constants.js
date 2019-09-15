@@ -38,6 +38,7 @@ export let PRODUCTION = true;
 export let SERVER = PRODUCTION ? 'https://jakekinsella.com' : 'http://localhost:2001';
 
 export const client = new ApolloClient({
+  link: authLink,
   cache: new InMemoryCache()
 });
 

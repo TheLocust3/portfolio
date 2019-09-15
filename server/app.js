@@ -8,7 +8,6 @@ let cors = require('cors');
 var mongoose = require('mongoose');
 var passport = require('passport');
 let graphqlHTTP = require('express-graphql');
-let { graphqlUploadExpress } = require('graphql-upload');
 
 var configDB = require('./config/database.js');
 var strategy = require('./config/passport.js');
@@ -33,7 +32,6 @@ passport.use(strategy);
 
 app.use(
   '/graphql',
-  graphqlUploadExpress({ maxFileSize: 10000000, maxFiles: 1 }),
   graphqlHTTP((req, res, params) => ({
     schema: graphqlSchema,
     rootValue: graphqlRoot(req),
