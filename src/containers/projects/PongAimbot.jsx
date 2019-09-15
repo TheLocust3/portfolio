@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 
+import { IMAGES_URL } from '../../constants';
 import { setSolidNavbar } from '../../actions/global-actions';
 
 import Text from '../../components/common/Text';
@@ -30,7 +31,7 @@ class PongAimbot extends React.Component {
 
         <FadeIn>
           <SplashScreen
-            src="/images/pongaimbot.jpeg"
+            src={`${IMAGES_URL}pongaimbot.jpeg`}
             alt="3D Pong Aimbot"
             header="3D Pong Aimbot"
             height="60vh"
@@ -38,7 +39,7 @@ class PongAimbot extends React.Component {
 
           <Content>
             <Text type="body1">
-              <ProjectImage src="/images/projects/pong.png" alt="3D Pong" />
+              <ProjectImage src={`${IMAGES_URL}projects/pong.png`} alt="3D Pong" />
 
               <Text type="headline4">Overview</Text>
 
@@ -53,13 +54,9 @@ class PongAimbot extends React.Component {
                 <Text type="headline6">Key Technologies</Text>
 
                 <div>
+                  <TechLogo src="logos/java.png" alt="Java" href="https://www.java.com/en/" />
                   <TechLogo
-                    src="/images/logos/java.png"
-                    alt="Java"
-                    href="https://www.java.com/en/"
-                  />
-                  <TechLogo
-                    src="/images/logos/intellij.png"
+                    src="logos/intellij.png"
                     alt="IntelliJ IDEA"
                     href="https://www.jetbrains.com/idea/"
                     width="75px"

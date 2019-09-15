@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'react-emotion';
 
-import { MAX_MOBILE_WIDTH } from '../../constants';
+import { MAX_MOBILE_WIDTH, IMAGES_URL } from '../../constants';
 
 import Text from '../common/Text';
 import SideMargin from '../common/SideMargin';
@@ -78,7 +78,7 @@ class CloudHealth extends React.Component {
             <br />
             <CompanyLogo
               to="https://www.cloudhealthtech.com/"
-              src="/images/cloudhealth.svg"
+              src={`${IMAGES_URL}cloudhealth.svg`}
               alt="CloudHealth Tech"
               width="300px"
             />
@@ -92,13 +92,13 @@ class CloudHealth extends React.Component {
 
             <div style={{ paddingLeft: '5%', paddingRight: '5%' }}>
               <TechLogo
-                src="/images/logos/rails.png"
+                src="logos/rails.png"
                 alt="Ruby on Rails"
                 href="https://rubyonrails.org/"
                 width="80px"
               />
-              <TechLogo src="/images/logos/aws.png" alt="AWS" href="https://aws.amazon.com/" />
-              <TechLogo src="/images/logos/mysql.png" alt="MySQL" href="https://www.mysql.com/" />
+              <TechLogo src="logos/aws.png" alt="AWS" href="https://aws.amazon.com/" />
+              <TechLogo src="logos/mysql.png" alt="MySQL" href="https://www.mysql.com/" />
             </div>
           </center>
         </RightColumn>

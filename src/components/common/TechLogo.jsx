@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'react-emotion';
 
+import { IMAGES_URL } from '../../constants';
+
 import Text from './Text';
 
 let outerClassName = css`
@@ -81,7 +83,7 @@ class TechLogo extends React.Component {
         <a href={this.props.href}>
           <img
             className={`${imgClassName} ${this.props.black ? blackImgClassName : ''}`}
-            src={this.props.src}
+            src={`${IMAGES_URL}${this.props.src}`}
             alt={this.props.alt}
           />
         </a>

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'react-emotion';
 
-import { MAX_MOBILE_WIDTH } from '../../constants';
+import { MAX_MOBILE_WIDTH, IMAGES_URL } from '../../constants';
 import Text from '../common/Text';
 import SideMargin from '../common/SideMargin';
 import VerticalSpacer from '../common/VerticalSpacer';
@@ -99,7 +99,7 @@ class Team4761 extends React.Component {
             <br />
             <CompanyLogo
               to="https://robockets.weebly.com/"
-              src="/images/robockets.png"
+              src={`${IMAGES_URL}robockets.png`}
               alt="Robockets"
               width="200px"
             />

@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 
+import { IMAGES_URL } from '../../constants';
 import { setSolidNavbar } from '../../actions/global-actions';
 
 import Text from '../../components/common/Text';
@@ -33,7 +34,7 @@ class CandidateXYZ extends React.Component {
 
         <FadeIn>
           <SplashScreen
-            src="/images/candidatexyz.jpeg"
+            src={`${IMAGES_URL}candidatexyz.jpeg`}
             alt="candidateXYZ"
             header="candidateXYZ"
             height="60vh"
@@ -42,7 +43,7 @@ class CandidateXYZ extends React.Component {
           <Content>
             <Text type="body1">
               <ProjectImage
-                src="/images/projects/candidatexyz_finance.png"
+                src={`${IMAGES_URL}projects/candidatexyz_finance.png`}
                 alt="candidateXYZ Finance"
               />
 
@@ -69,36 +70,32 @@ class CandidateXYZ extends React.Component {
 
                 <div>
                   <TechLogo
-                    src="/images/logos/rails.png"
+                    src="logos/rails.png"
                     alt="Ruby on Rails"
                     href="https://rubyonrails.org/"
                     width="80px"
                   />
                   <TechLogo
-                    src="/images/logos/javascript.png"
+                    src="logos/javascript.png"
                     alt="Javascript (Babel)"
                     href="https://babeljs.io/"
                     width="105px"
                   />
-                  <TechLogo src="/images/logos/react.png" alt="React" href="https://reactjs.org/" />
+                  <TechLogo src="logos/react.png" alt="React" href="https://reactjs.org/" />
+                  <TechLogo src="logos/redux.png" alt="Redux" href="https://redux.js.org/" />
                   <TechLogo
-                    src="/images/logos/redux.png"
-                    alt="Redux"
-                    href="https://redux.js.org/"
-                  />
-                  <TechLogo
-                    src="/images/logos/postgresql.png"
+                    src="logos/postgresql.png"
                     alt="PostgreSQL"
                     href="https://www.postgresql.org/"
                   />
-                  <TechLogo src="/images/logos/aws.png" alt="AWS" href="https://aws.amazon.com/" />
+                  <TechLogo src="logos/aws.png" alt="AWS" href="https://aws.amazon.com/" />
                   <TechLogo
-                    src="/images/logos/terraform.png"
+                    src="logos/terraform.png"
                     alt="Terraform"
                     href="https://www.terraform.io/"
                   />
                   <TechLogo
-                    src="/images/logos/vscode.png"
+                    src="logos/vscode.png"
                     alt="VSCode"
                     href="https://code.visualstudio.com/"
                   />

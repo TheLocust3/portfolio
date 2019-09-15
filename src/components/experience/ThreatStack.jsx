@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'react-emotion';
 
-import { MAX_MOBILE_WIDTH } from '../../constants';
+import { MAX_MOBILE_WIDTH, IMAGES_URL } from '../../constants';
 
 import Text from '../common/Text';
 import SideMargin from '../common/SideMargin';
@@ -78,7 +78,7 @@ class ThreatStack extends React.Component {
             <br />
             <CompanyLogo
               to="https://www.threatstack.com/"
-              src="/images/threatstack.png"
+              src={`${IMAGES_URL}threatstack.png`}
               alt="Threat Stack"
               width="150px"
             />
@@ -91,37 +91,37 @@ class ThreatStack extends React.Component {
 
             <div style={{ paddingLeft: '5%', paddingRight: '5%' }}>
               <TechLogo
-                src="/images/logos/scala.png"
+                src="logos/scala.png"
                 alt="Scala"
                 href="https://scala-lang.org/"
                 width="40px"
               />
               <TechLogo
-                src="/images/logos/kafka.png"
+                src="logos/kafka.png"
                 alt="Apache Kafka"
                 href="https://kafka.apache.org/"
                 width="80px"
               />
               <TechLogo
-                src="/images/logos/flink.png"
+                src="logos/flink.png"
                 alt="Apache Flink"
                 href="https://flink.apache.org/"
                 width="75px"
               />
               <TechLogo
-                src="/images/logos/spark.png"
+                src="logos/spark.png"
                 alt="Apache Spark"
                 href="https://spark.apache.org/"
                 width="85px"
               />
-              <TechLogo src="/images/logos/akka.png" alt="Akka" href="https://akka.io/" />
+              <TechLogo src="logos/akka.png" alt="Akka" href="https://akka.io/" />
               <TechLogo
-                src="/images/logos/elasticsearch.png"
+                src="logos/elasticsearch.png"
                 alt="Elasticsearch"
                 href="https://www.elastic.co/"
               />
-              <TechLogo src="/images/logos/aws.png" alt="AWS" href="https://aws.amazon.com/" />
-              <TechLogo src="/images/logos/chef.png" alt="Chef" href="https://www.chef.io/" />
+              <TechLogo src="logos/aws.png" alt="AWS" href="https://aws.amazon.com/" />
+              <TechLogo src="logos/chef.png" alt="Chef" href="https://www.chef.io/" />
             </div>
           </center>
         </RightColumn>

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'react-emotion';
 
-import { MAX_MOBILE_WIDTH } from '../../constants';
+import { MAX_MOBILE_WIDTH, IMAGES_URL } from '../../constants';
 
 import Text from '../common/Text';
 import SideMargin from '../common/SideMargin';
@@ -78,7 +78,7 @@ class Talla extends React.Component {
             <br />
             <CompanyLogo
               to="https://talla.com/"
-              src="/images/talla.png"
+              src={`${IMAGES_URL}talla.png`}
               alt="Talla"
               width="150px"
             />
@@ -92,27 +92,27 @@ class Talla extends React.Component {
 
             <div style={{ paddingLeft: '5%', paddingRight: '5%' }}>
               <TechLogo
-                src="/images/logos/rails.png"
+                src="logos/rails.png"
                 alt="Ruby on Rails"
                 href="https://rubyonrails.org/"
                 width="80px"
               />
               <TechLogo
-                src="/images/logos/javascript.png"
+                src="logos/javascript.png"
                 alt="Javascript (Babel)"
                 href="https://babeljs.io/"
                 width="105px"
               />
-              <TechLogo src="/images/logos/react.png" alt="React" href="https://reactjs.org/" />
-              <TechLogo src="/images/logos/redux.png" alt="Redux" href="https://redux.js.org/" />
+              <TechLogo src="logos/react.png" alt="React" href="https://reactjs.org/" />
+              <TechLogo src="logos/redux.png" alt="Redux" href="https://redux.js.org/" />
               <TechLogo
-                src="/images/logos/postgresql.png"
+                src="logos/postgresql.png"
                 alt="PostgreSQL"
                 href="https://www.postgresql.org/"
               />
-              <TechLogo src="/images/logos/aws.png" alt="AWS" href="https://aws.amazon.com/" />
+              <TechLogo src="logos/aws.png" alt="AWS" href="https://aws.amazon.com/" />
               <TechLogo
-                src="/images/logos/terraform.png"
+                src="logos/terraform.png"
                 alt="Terraform"
                 href="https://www.terraform.io/"
               />

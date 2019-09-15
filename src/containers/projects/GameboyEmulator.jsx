@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 
+import { IMAGES_URL } from '../../constants';
 import { setSolidNavbar } from '../../actions/global-actions';
 
 import Text from '../../components/common/Text';
@@ -32,7 +33,7 @@ class GameboyEmulator extends React.Component {
 
         <FadeIn>
           <SplashScreen
-            src="/images/gameboyemulator.jpeg"
+            src={`${IMAGES_URL}gameboyemulator.jpeg`}
             alt="Gameboy Emulator"
             header="Gameboy Emulator"
             height="60vh"
@@ -40,7 +41,7 @@ class GameboyEmulator extends React.Component {
 
           <Content>
             <Text type="body1">
-              <ProjectImage src="/images/projects/gameboy_specs.png" alt="Gameboy Specs" />
+              <ProjectImage src={`${IMAGES_URL}projects/gameboy_specs.png`} alt="Gameboy Specs" />
 
               <Text type="headline4">Overview</Text>
 
@@ -58,14 +59,10 @@ class GameboyEmulator extends React.Component {
                 <Text type="headline6">Key Technologies</Text>
 
                 <div>
-                  <TechLogo src="/images/logos/lua.png" alt="Lua" href="https://www.lua.org/" />
+                  <TechLogo src="logos/lua.png" alt="Lua" href="https://www.lua.org/" />
+                  <TechLogo src="logos/ruby.png" alt="Ruby" href="https://www.ruby-lang.org/en/" />
                   <TechLogo
-                    src="/images/logos/ruby.png"
-                    alt="Ruby"
-                    href="https://www.ruby-lang.org/en/"
-                  />
-                  <TechLogo
-                    src="/images/logos/sublime-text.png"
+                    src="logos/sublime-text.png"
                     alt="Sublime Text"
                     href="https://www.sublimetext.com/"
                     width="75px"

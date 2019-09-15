@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'react-emotion';
 
-import { MAX_MOBILE_WIDTH } from '../../constants';
+import { MAX_MOBILE_WIDTH, IMAGES_URL } from '../../constants';
 
 import Text from '../common/Text';
 import SideMargin from '../common/SideMargin';
@@ -78,7 +78,7 @@ class Nutonian extends React.Component {
             <br />
             <CompanyLogo
               to="https://www.nutonian.com/"
-              src="/images/nutonian.png"
+              src={`${IMAGES_URL}nutonian.png`}
               alt="Nutonian"
               width="300px"
             />
@@ -89,20 +89,16 @@ class Nutonian extends React.Component {
             <Text type="headline6">Key Technologies</Text>
 
             <div style={{ paddingLeft: '5%', paddingRight: '5%' }}>
+              <TechLogo src="logos/python.png" alt="Python" href="https://www.python.org/" />
               <TechLogo
-                src="/images/logos/python.png"
-                alt="Python"
-                href="https://www.python.org/"
-              />
-              <TechLogo
-                src="/images/logos/pytest.png"
+                src="logos/pytest.png"
                 alt="PyTest"
                 href="https://docs.pytest.org/en/latest/"
               />
-              <TechLogo src="/images/logos/jenkins.png" alt="Jenkins" href="https://jenkins.io/" />
-              <TechLogo src="/images/logos/java.png" alt="Java" href="https://www.java.com/en/" />
+              <TechLogo src="logos/jenkins.png" alt="Jenkins" href="https://jenkins.io/" />
+              <TechLogo src="logos/java.png" alt="Java" href="https://www.java.com/en/" />
               <TechLogo
-                src="/images/logos/selenium.png"
+                src="logos/selenium.png"
                 alt="Selenium"
                 href="https://www.seleniumhq.org/"
               />

@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 
+import { IMAGES_URL } from '../../constants';
 import { setSolidNavbar } from '../../actions/global-actions';
 
 import Text from '../../components/common/Text';
@@ -31,7 +32,7 @@ class Intel8080 extends React.Component {
 
         <FadeIn>
           <SplashScreen
-            src="/images/intel8080.jpeg"
+            src={`${IMAGES_URL}intel8080.jpeg`}
             alt="Intel 8080 Emulator"
             header="Intel 8080 Emulator"
             height="60vh"
@@ -39,7 +40,10 @@ class Intel8080 extends React.Component {
 
           <Content>
             <Text type="body1">
-              <ProjectImage src="/images/projects/intel8080_code.png" alt="Intel 8080 Code" />
+              <ProjectImage
+                src={`${IMAGES_URL}projects/intel8080_code.png`}
+                alt="Intel 8080 Code"
+              />
 
               <Text type="headline4">Overview</Text>
 
@@ -56,12 +60,12 @@ class Intel8080 extends React.Component {
 
                 <div>
                   <TechLogo
-                    src="/images/logos/c.png"
+                    src="logos/c.png"
                     alt="C"
                     href="https://en.wikipedia.org/wiki/C_%28programming_language%29"
                   />
                   <TechLogo
-                    src="/images/logos/clion.png"
+                    src="logos/clion.png"
                     alt="CLion"
                     href="https://www.jetbrains.com/clion/"
                   />
