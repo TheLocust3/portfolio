@@ -34,7 +34,7 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-export let PRODUCTION = false;
+export let PRODUCTION = true;
 
 export let SERVER = PRODUCTION ? 'https://jakekinsella.com' : 'http://localhost:2001';
 
