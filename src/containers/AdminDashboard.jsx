@@ -65,7 +65,6 @@ class AdminDashboard extends React.Component {
                 }
               `}>
               {({ loading, error, data }) => {
-                console.log(error);
                 if (loading) return <Text type="body2">Loading...</Text>;
                 if (error) return <Text type="body2">Error</Text>;
 

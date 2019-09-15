@@ -90,10 +90,7 @@ class Blog extends React.Component {
                 `}>
                 {({ loading, error, data }) => {
                   if (loading) return <Text type="body2">Loading...</Text>;
-                  if (error) {
-                    console.log(error);
-                    return <Text type="body2">Error</Text>;
-                  }
+                  if (error) return <Text type="body2">Error</Text>;
 
                   return (
                     <div>
