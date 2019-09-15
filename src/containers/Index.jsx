@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 
+import { IMAGES_URL } from '../constants';
 import { setSolidNavbar } from '../actions/global-actions';
 
 import ScrollUp from '../components/common/ScrollUp';
@@ -31,7 +32,7 @@ class Index extends React.Component {
 
         <FadeIn>
           <SplashScreen
-            src="/images/splash.jpeg"
+            src={`${IMAGES_URL}splash.jpeg`}
             header="Jake Kinsella"
             subtitle="Developer and aspiring entrepreneur."
           />

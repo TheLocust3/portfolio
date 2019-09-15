@@ -28,6 +28,7 @@ class SignIn extends React.Component {
         window.location.reload();
       })
       .catch(({ graphQLErrors }) => {
+        console.log(graphQLErrors);
         throw graphQLErrors[0].message;
       });
   }

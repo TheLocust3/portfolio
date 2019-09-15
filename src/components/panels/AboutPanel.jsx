@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, { css } from 'react-emotion';
 
+import { IMAGES_URL } from '../../constants';
+
 import Text from '../common/Text';
 import Content from '../common/Content';
 import Panel from './Panel';
@@ -38,7 +40,7 @@ class AboutPanel extends React.Component {
           <br />
 
           <RoundedImage>
-            <img src="/images/jake.png" alt="Jake" className={image} />
+            <img src={`${IMAGES_URL}jake.png`} alt="Jake" className={image} />
           </RoundedImage>
           <br />
 

@@ -4,6 +4,7 @@ import { createBrowserHistory } from 'history';
 import { ApolloClient } from 'apollo-client';
 import { setContext } from 'apollo-link-context';
 import { InMemoryCache } from 'apollo-cache-inmemory';
+import { createUploadLink } from 'apollo-upload-client';
 
 import { getCookie } from './helpers';
 import reducer from './reducers/root-reducer';
@@ -33,12 +34,12 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-export let PRODUCTION = true;
+export let PRODUCTION = false;
 
 export let SERVER = PRODUCTION ? 'https://jakekinsella.com' : 'http://localhost:2001';
 
 export const client = new ApolloClient({
-  link: authLink,
+  link: authLink.concat(createUploadLink({ uri: `${SERVER}/graphql` })),
   cache: new InMemoryCache()
 });
 
