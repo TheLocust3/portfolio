@@ -43,4 +43,4 @@ export const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-export const IMAGES_URL = `${SERVER}/images/`;
+export const IMAGES_URL = `https://jakekinsella-portfolio.s3.amazonaws.com/images/`;

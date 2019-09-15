@@ -39,7 +39,7 @@ class ArticleThumbnail extends React.Component {
         <br />
 
         <SideMargin margin="2.5%">
-          <ThumbnailImage src={`${IMAGES_URL}${article.image}`} />
+          <ThumbnailImage src={`${IMAGES_URL}blog/${article.image}`} />
           <center>
             <Text type="caption">
               <i>{moment(article.createdAt).format('dddd, MMMM Do YYYY, h:mma')}</i>

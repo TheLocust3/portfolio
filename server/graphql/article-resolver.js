@@ -1,8 +1,3 @@
-let _ = require('lodash');
-let fs = require('fs');
-let uuidv4 = require('uuid/v4');
-
-let { UPLOAD_DIR } = require('../constants');
 let auth = require('../auth');
 let Article = require('../models/article');
 
@@ -35,30 +30,22 @@ let articleResolver = (req) => {
 
     createArticle: ({ input }) => {
       return new Promise((resolve, reject) => {
-        auth(req).then(async () => {
-          const { filename, createReadStream } = await input.image;
-          const image = `${uuidv4()}-${filename}`;
+        auth(req).then(() => {
+          const article = new Article({
+            title: input.title,
+            body: input.body,
+            image: input.image,
+            url: input.url
+          });
 
-          createReadStream()
-            .pipe(fs.createWriteStream(`${UPLOAD_DIR}/${image}`))
-            .on('error', (error) => reject(error))
-            .on('finish', () => {
-              const article = new Article({
-                title: input.title,
-                body: input.body,
-                image: image,
-                url: input.url
-              });
+          article.save((err, article) => {
+            if (err || !article) {
+              reject('Failed to save!');
+              return;
+            }
 
-              article.save((err, article) => {
-                if (err || !article) {
-                  reject('Failed to save!');
-                  return;
-                }
-
-                resolve(article);
-              });
-            });
+            resolve(article);
+          });
         });
       });
     },
@@ -80,18 +67,7 @@ let articleResolver = (req) => {
             }
 
             if (input.image) {
-              const { filename, createReadStream } = await input.image;
-              const image = `${uuidv4()}-${filename}`;
-
-              await new Promise((resolve, reject) => {
-                createReadStream()
-                  .pipe(fs.createWriteStream(`${UPLOAD_DIR}/${image}`))
-                  .on('error', (error) => reject(error))
-                  .on('finish', () => {
-                    article.image = image;
-                    resolve();
-                  });
-              }).catch((error) => reject(error));
+              article.image = input.image;
             }
 
             if (input.url) {

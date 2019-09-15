@@ -67,7 +67,7 @@ class EditArticle extends React.Component {
                         $id: String!
                         $title: String!
                         $body: String!
-                        $image: Upload!
+                        $image: String!
                         $url: String!
                       ) {
                         updateArticle(
