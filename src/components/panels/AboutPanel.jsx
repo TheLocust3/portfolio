@@ -47,7 +47,7 @@ class AboutPanel extends React.Component {
           <Content margin={35} style={{ marginTop: '0', marginBottom: '0' }}>
             <Text type="body2">
               I'm a software developer, and entrepreneur, with a passion for building technology.
-              Currently a freshman Computer Science student at Northeastern.
+              Currently a sophomore Computer Science student at Northeastern.
             </Text>
           </Content>
         </center>
