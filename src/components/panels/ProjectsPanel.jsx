@@ -97,6 +97,21 @@ class ProjectsPanel extends React.Component {
         </center>
 
         <ContentContainer>
+          <Project to="/projects/hierarchy">
+            <Text type="headline5" header>
+              Hierarchy
+            </Text>
+            <br />
+
+            <Text type="body2">
+              <SideMargin margin={3}>
+                A Trello-like goal manager webapp that uses trees to express hierarchical
+                relationships between goals and tasks in your life while retaining the task oriented
+                list/column view.
+              </SideMargin>
+            </Text>
+          </Project>
+
           <Project to="/projects/full-stack-vm">
             <Text type="headline5" header>
               Custom CPU Emulator

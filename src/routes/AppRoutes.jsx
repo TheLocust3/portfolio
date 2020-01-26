@@ -9,6 +9,7 @@ import SignIn from '../containers/SignIn';
 import NotFound from '../containers/NotFound';
 
 import CandidateXYZ from '../containers/projects/CandidateXYZ';
+import Hierarchy from '../containers/projects/Hierarchy';
 import Intel8080 from '../containers/projects/Intel8080';
 import GameboyEmulator from '../containers/projects/GameboyEmulator';
 import PongAimbot from '../containers/projects/PongAimbot';
@@ -28,6 +29,7 @@ class AppRoutes extends React.Component {
         <Route exact path="/projects" component={Projects} />
         <Route exact path="/experience" component={Experience} />
         <Route exact path="/projects/candidatexyz" component={CandidateXYZ} />
+        <Route exact path="/projects/hierarchy" component={Hierarchy} />
         <Route exact path="/projects/intel8080" component={Intel8080} />
         <Route exact path="/projects/gameboy-emulator" component={GameboyEmulator} />
         <Route exact path="/projects/pong-aimbot" component={PongAimbot} />
