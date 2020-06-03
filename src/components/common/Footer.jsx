@@ -50,7 +50,7 @@ class Footer extends React.Component {
 
         <br />
 
-        <Text type="body2">© 2018-2019 Jake Kinsella</Text>
+        <Text type="body2">© 2018-2020 Jake Kinsella</Text>
 
         <br />
       </FooterOuter>
