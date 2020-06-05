@@ -5,7 +5,6 @@ import Index from '../containers/Index';
 import Blog from '../containers/articles/Blog';
 import Experience from '../containers/Experience';
 import Projects from '../containers/Projects';
-import SignIn from '../containers/SignIn';
 import NotFound from '../containers/NotFound';
 
 import CandidateXYZ from '../containers/projects/CandidateXYZ';
@@ -22,8 +21,6 @@ class AppRoutes extends React.Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/sign-in" component={SignIn} />
-
         <Route exact path="/" component={Index} />
         <Route exact path="/about" component={Index} />
         <Route exact path="/projects" component={Projects} />

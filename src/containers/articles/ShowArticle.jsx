@@ -1,13 +1,12 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
 import { connect } from 'react-redux';
 import styled from 'react-emotion';
 import moment from 'moment';
 
 import { IMAGES_URL, MAX_MOBILE_WIDTH } from '../../constants';
 import { setSolidNavbar } from '../../actions/global-actions';
+import { getArticle } from '../../api/articles';
 
 import Text from '../../components/common/Text';
 import RenderedText from '../../components/common/RenderedText';
@@ -15,6 +14,7 @@ import ScrollUp from '../../components/common/ScrollUp';
 import Content from '../../components/common/Content';
 import FadeIn from '../../components/common/FadeIn';
 import SideMargin from '../../components/common/SideMargin';
+import NotFound from '../NotFound'
 
 let ArticleImage = styled('img')`
   width: 100%;
@@ -41,56 +41,39 @@ class ShowArticle extends React.Component {
   }
 
   render() {
+    let article = getArticle(this.props.match.params.url)
+
+    if (article === undefined) {
+      return <NotFound />;
+    }
+
     return (
       <div>
         <FadeIn>
           <Content>
-            <Query
-              query={gql`
-                {
-                  article(url: "${this.props.match.params.url}") {
-                    id
-                    title
-                    body
-                    image
-                    url
-                    createdAt
-                  }
-                }
-              `}>
-              {({ loading, error, data }) => {
-                if (loading) return <Text type="body2">Loading...</Text>;
-                if (error) return <Text type="body2">Error</Text>;
+            <div>
+              <Helmet>
+                <title>Jake Kinsella - {article.title}</title>
+              </Helmet>
 
-                let article = data.article;
+              <ArticleContainer>
+                <Text type="headline3">{article.title}</Text>
+                <br />
+                <br />
 
-                return (
-                  <div>
-                    <Helmet>
-                      <title>Jake Kinsella - {data.article.title}</title>
-                    </Helmet>
+                <SideMargin margin="2.5%">
+                  <ArticleImage src={`${IMAGES_URL}blog/${article.image}`} />
+                  <center>
+                    <Text type="caption">
+                      <i>{moment(article.createdAt).format('dddd, MMMM Do YYYY, h:mma')}</i>
+                    </Text>
+                  </center>
+                  <br />
 
-                    <ArticleContainer>
-                      <Text type="headline3">{article.title}</Text>
-                      <br />
-                      <br />
-
-                      <SideMargin margin="2.5%">
-                        <ArticleImage src={`${IMAGES_URL}blog/${article.image}`} />
-                        <center>
-                          <Text type="caption">
-                            <i>{moment(article.createdAt).format('dddd, MMMM Do YYYY, h:mma')}</i>
-                          </Text>
-                        </center>
-                        <br />
-
-                        <RenderedText type="body2">{article.body}</RenderedText>
-                      </SideMargin>
-                    </ArticleContainer>
-                  </div>
-                );
-              }}
-            </Query>
+                  <RenderedText type="body2">{article.body}</RenderedText>
+                </SideMargin>
+              </ArticleContainer>
+            </div>
 
             <ScrollUp />
           </Content>

@@ -1,12 +1,10 @@
 import _ from 'lodash';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
 import { connect } from 'react-redux';
 
 import { setSolidNavbar } from '../../actions/global-actions';
-import { filterByMonth } from '../../api/articles';
+import { filterByMonth, getAllArticles } from '../../api/articles';
 
 import Text from '../../components/common/Text';
 import ScrollUp from '../../components/common/ScrollUp';
@@ -39,6 +37,8 @@ class Archives extends React.Component {
     let year = this.props.match.params.year;
     let month = _.capitalize(this.props.match.params.month);
 
+    let articles = getAllArticles()
+
     return (
       <div>
         <Helmet>
@@ -61,32 +61,11 @@ class Archives extends React.Component {
             <br />
 
             <SideMargin margin="2.5%">
-              <Query
-                query={gql`
-                  {
-                    articles {
-                      id
-                      title
-                      body
-                      image
-                      url
-                      createdAt
-                    }
-                  }
-                `}>
-                {({ loading, error, data }) => {
-                  if (loading) return <Text type="body2">Loading...</Text>;
-                  if (error) return <Text type="body2">Error</Text>;
+              <div>
+                {this.renderArticleList(articles)}
 
-                  return (
-                    <div>
-                      {this.renderArticleList(data.articles)}
-
-                      <ArchivesSidebar articles={data.articles} />
-                    </div>
-                  );
-                }}
-              </Query>
+                <ArchivesSidebar articles={articles} />
+              </div>
             </SideMargin>
           </Content>
 
