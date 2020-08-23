@@ -34,6 +34,41 @@ export function getArticle(url) {
 
 const articles = [
   {
+    title: "Find Un-Googleable Problems",
+    image: "chaossearch.png",
+    url: "find-un-googleable-problems",
+    createdAt: "2020-08-23 19:42",
+    body: `
+    <p>
+      Being a software developer means solving a never-ending stream of problems. The problems come in all shapes, from high-level system design, to the minutia of compiler errors. As my experience grows, I recognize patterns in the problems, and find some that repeat wholesale. Anyone who has written enough React knows that their problem has probably been solved already by someone on StackOverflow.
+    </p>
+
+    <p>
+      I’ve done my time working in domains like this. Domains where the answer to most problems can be found on the internet. Where most of the work consists of effectively glueing other people’s solutions together. I was a plumber.
+    </p>
+
+    <p>
+      When I first met Thomas Hazel, CTO and Founder of CHAOSSEARCH, he told me, “we’re not plumbers here.” That made enough sense to me, CHAOSSEARCH is a Boston startup building a Data Lake Analytic Platform backed by S3. To strip away the marketing lingo, we build a proprietary database on top of S3. Underneath the hood, there’s some breakthrough indexing/query technology orchestrated by a sprawling distributed system.
+    </p>
+
+    <p>
+      I joined CHAOSSEARCH in January as a Northeastern Co-op and was immediately thrown into the deep end. After a lightning fast design session, I was tasked with building out our Real-Time feature. An alternate ingest path that allows customers to index data at low latencies through the familiar Elasticsearch Bulk API.
+    </p>
+
+    <p>
+      From day one, I was tackling the complexities of a huge distributed system I knew nothing about. As I grow, I rediscover code I previously thought I understood, and realize the subtle complexities and constraints surrounding it. Each line of code and each solution fits perfectly into the larger puzzle. “The rabbit-hole is deep” as Tom likes to say.
+    </p>
+
+    <p>
+      Distributed systems are inherently complex, a database even more so. I quickly realized that answers to the problems I was facing could no longer be found on the internet. You can learn about concepts like Repeatable Reads, but you won’t find an implementation guide or a pre-built package to drop into your system.
+    </p>
+
+    <p>
+      Eight months later, my Co-op at CHAOSSEARCH is officially ending. When I started here, I remember how incredibly naive I was, yet right off the bat, the team put their trust in me. They never for one moment treated me as anything but a full-time employee, giving me the freedom and responsibility to grow. Working here has genuinely been a blast, and I’m excited to continue through the Fall and my next Co-op.
+    </p>
+    `
+  },
+  {
     title: "The 80-20 Rule of Distributed Systems",
     image: "complex.jpg",
     url: "the-80-20-rule-of-distributed-systems",
