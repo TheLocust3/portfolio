@@ -5,7 +5,7 @@
   "dependencies": {
     "emotion": "^9.2.12",
     "eslint": "^6.1.0",
-    "handlebars": "^4.1.2",
+    "handlebars": "^4.5.3",
     "install": "^0.12.1",
     "jquery": "^3.4.0",
     "js-yaml": "^3.13.1",
